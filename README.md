@@ -2,6 +2,15 @@
 
 MVP Checklist
 
+Poll Everywhere
+Questions
+Web URL to take poll
+Live-update Poll view
+Group/Ungroup Questions
+Bonus: Text to polls
+Bonus: Reports
+
+
 Project: Poll Everywhere Clone
 Summary: Twitter is a work productivity app that connects allows hosts to hold meetings and teach classes. The app provides many tools to help the host effectively convey and receive information.
 
