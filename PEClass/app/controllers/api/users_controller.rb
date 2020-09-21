@@ -28,3 +28,5 @@ class UsersController < ApplicationController
         params.require(:user).params(:email, :password)
     end
 end
+
+# auth branch test
