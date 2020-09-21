@@ -11,4 +11,4 @@ const mDTP = dispatch => {
     };
 };
 
-export default connect(null, mDTP)(Signup)
+export default connect(null, mDTP)(Signup);

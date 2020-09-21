@@ -1,4 +1,4 @@
-import {postUser, postSession, deleteSession} from '../utils/session'
+import {postUser, postSession, deleteSession} from '../utils/session';
 
 
  
