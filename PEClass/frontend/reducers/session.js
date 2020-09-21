@@ -2,7 +2,7 @@ import {
     RECEIVE_CURRRENT_USER,
     LOGOUT_CURRENT_USER,
 } from '../actions/session'
-import { RECEIVE_CURRENT_USER } from '../actions/sessions';
+import { RECEIVE_CURRENT_USER } from '../actions/session';
 
 // Default Session that returns a POJO
 const _nullSession = {
