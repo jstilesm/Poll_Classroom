@@ -1,4 +1,4 @@
-class UsersController < ApplicationController 
+class Api::UsersController < ApplicationController 
 
 
     def show
@@ -25,6 +25,8 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).params(:email, :password)
+        params.require(:user).permit(:email, :first_name, :last_name, :password)
     end
 end
+
+# auth branch test
