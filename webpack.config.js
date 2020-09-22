@@ -5,8 +5,8 @@ module.exports = {
     entry: "./frontend/polle.jsx",
     output: {
         path: path.resolve(__dirname),
-        filename: "bundle.js"
-        //app/assets/javascripts
+        filename: "app/assets/javascripts/bundle.js"
+        //app/assets/javascripts/bundle.js
     },
     module: {
         rules: [

@@ -1,14 +1,16 @@
 class Api::SessionsController < ApplicationController
+
+    before_action :ensure_logged_in, only: [:destroy]
+
     def create
         @user = User.find_by_credentials(
             params[:user][:username],
             params[:user][:password])
-            # params[:user][:first_name]
-            # params[:user][:last_name]
-        
+
+           
         if @user
             login(@user)
-            render # `/api/users/${user.id}`
+            render "api/sers/show"
         else
             render json: ['Account not found'], status: 401
         end
@@ -19,7 +21,7 @@ class Api::SessionsController < ApplicationController
         @user = current_user
         if @user
             logout
-            render # `/api/users/${user.id}`
+            render 'api/users/show'
         else
             render json: ["No Current User"], status: 404
         end

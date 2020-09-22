@@ -11,14 +11,15 @@ const _nullUser = Object.freeze({
 
 const sessionReducer = (state = _nullUser, action) => {
     Object.freeze(state);
-    nextState = Object.assign({}, state);
+    // let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            nextState[id] = action.currentUser.id;
-
-            return nextState;
-            // return {id: action.currentUser.id}
+             return {id: action.currentUser.id}
             // return Object.assign({}, {currentUser: action.user})
+            // nextState[id] = action.currentUser.id;
+
+            // return nextState;
+            // //
         case LOGOUT_CURRENT_USER:
             return _nullUser;
     
