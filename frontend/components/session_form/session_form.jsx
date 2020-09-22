@@ -25,12 +25,23 @@ class SessionForm extends React.Component {
         // .then(() => this.props.history.push('/questions'));
     }
 
+    errors() {
+        return (
+            <ul>
+                {this.props.errors.map((error,i) => (
+                    <li key={`error-${i}}`}>
+                    {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
     render() {
         return (
             <div className ="session-form">
                 <h2>{this.props.formType}</h2>
                 <form onSubmit={this.handleSubmit} className="form-box">
-
+                    {this.errors()}
 
                     <label>FirstName:
                         <input className="firstname-input" type="text" value={this.state.first_name} onChange={this.update('first_name')}/>

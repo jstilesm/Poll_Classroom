@@ -7,10 +7,10 @@ class Api::SessionsController < ApplicationController
             params[:user][:username],
             params[:user][:password])
 
-           
+        # debugger
         if @user
             login(@user)
-            render "api/sers/show"
+            render "api/users/show"
         else
             render json: ['Account not found'], status: 401
         end
