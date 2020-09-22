@@ -1,6 +1,4 @@
 import * as APIUtil from '../utils/api_util_session';
-
-
  
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -42,6 +40,3 @@ export const logout = () => dispatch => (
     error => (dispatch(receiveErrors(error.responseJSON)))
 );
     
-
-
-// Dispatch Errors?

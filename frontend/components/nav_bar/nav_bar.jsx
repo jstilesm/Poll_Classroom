@@ -2,18 +2,25 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const NavBar = ({currentUser, logout}) => {
-    return (
-        <div>
+    const sessionLink = () => (
+        <nav className="login-signup">
+            <Link className="button" to="/signup">Sign Up</Link>
+            <Link className="button" to="/login">Log In</Link>
+        </nav>
 
+    );
+    const personalNav = () => (
+        <div>
         <header className="nav-bar">
         <h1> Poll EveryWhere </h1>
             <div>
-            <Link className="button" to="/signup">Sign Up</Link>  
-            <Link className="button" to="/login">Log In</Link>
+                <h2 className="header-main">Hi, {currentUser.username}!</h2>
+                <button className="header-button" onCLick={logout}>Log Out</button>
             </div>
         </header>
         </div>
     )
+    return currentUser ? personalNav() : sessionLink();
 };
 
 
