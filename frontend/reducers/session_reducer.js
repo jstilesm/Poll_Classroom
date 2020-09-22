@@ -5,16 +5,17 @@ import {
 
 
 // Default User that returns a POJO
-const _nullUser = Object.freeze({
+const _nullUser = {
     id: null
-});
+};
 
 const sessionReducer = (state = _nullUser, action) => {
     Object.freeze(state);
     // let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-             return {id: action.user.id}
+             return {id: action.user.id};
+
             // return Object.assign({}, {currentUser: action.user})
             // nextState[id] = action.currentUser.id;
 

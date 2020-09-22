@@ -7,10 +7,14 @@ import NavContainer from './nav_bar/nav_bar_container';
 
 const App = () => (
     <div>
-        <h1>Poll Everywhere</h1>
+        <h1 className="main-header">Class Everywhere</h1>
+
+        <NavContainer /> 
+        <br/>  
+
         <Route path='/login' component={LoginContainer} />
         <Route path='/signup' component={SignupContainer} />
-        <NavContainer /> 
+        
     </div>
 )
 

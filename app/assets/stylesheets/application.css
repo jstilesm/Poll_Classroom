@@ -15,3 +15,40 @@
  */
 
 
+.main-header {
+    /* float: left; */
+    color: blue;
+    font-size: 30px;
+    font-family: Belle Sans, bold;
+}
+
+.session-submit {
+    background-color: red;
+};
+
+.header-main {
+    color: red;
+};
+.signup-button {
+    color: red;
+};
+
+.buttons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.nav-bar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+};
+
+.session-form {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
