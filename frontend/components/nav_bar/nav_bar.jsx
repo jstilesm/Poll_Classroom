@@ -5,6 +5,7 @@ const NavBar = ({currentUser, logout}) => {
     const sessionLink = () => (
         <nav className="login-signup">
             <Link className="button" to="/signup">Sign Up</Link>
+            <br/>
             <Link className="button" to="/login">Log In</Link>
         </nav>
 
