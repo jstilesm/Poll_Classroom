@@ -9,11 +9,10 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save!
-            login_user!(@user)
-            render #JBUILDER
+            login(@user)
+            render '/api/users/show'
         else 
-            flash.now[:errors] = @user.errors.full_messages
-            render #JBUILDER
+            render json: @user.errors.full_messages
         end
     end
 
@@ -25,7 +24,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :first_name, :last_name, :password)
+        params.require(:user).permit(:username, :email, :first_name, :last_name, :password)
     end
 end
 
