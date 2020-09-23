@@ -14,41 +14,172 @@
  *= require_self
  */
 
+ /* MAIN PAGE CSS */
 
-.main-header {
-    /* float: left; */
-    color: blue;
-    font-size: 30px;
-    font-family: Belle Sans, bold;
+
+/* main logo to the page */
+ .logo {
+    font-family: 'Gill Sans';
+    color: white;
+    font-size: 40px;
 }
 
-.session-submit {
-    background-color: red;
-};
+ /* nav for the nav bar, keeps its top right */
+ .login-signup {
+     float: right;
+     display: flex;
+     justify-content: right;
+}
 
+ /* nav bar username */
 .header-main {
-    color: red;
-};
-.signup-button {
-    color: red;
-};
+    position: relative;
+    right: 50px;
+    font-family: 'Gill Sans';
+}
+/* nav bar container */
+.topnav {
+    background-color:#2869B0;
+}
 
+/* Log out Button for User on Nav Bar */
+.header-button {
+    font-family: 'Gill Sans';
+}
+
+/* link to the sign up on nav bar */
+.signup-link {
+    color: white;
+    font-family: 'Gill Sans';
+    position: relative;
+    right: 10px;
+    top: 10px;
+}
+
+/* link to the log in on nav bar */
+.login-link {
+    color: white;
+    font-family: 'Gill Sans';
+    position: relative;
+    right: 10px;
+    top: 10px;
+}
+
+
+/*  div surrounding the buttons on the nav bar */
 .buttons {
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
+/*  nav bar header container */
 .nav-bar {
     position: absolute;
     top: 0px;
     right: 0px;
-};
+}
 
-.session-form {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+/* LOGIN PAGE CSS */
 
+
+
+/* Label for the log in Email or Username */
+
+/* Login Button */
+.login-submit {
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+    left: 500px;
+    background-color: #95372F;
+    background-size: 300px 100px;
+    color: white;
+    font-size: 20px;
+    padding: 10px 150px;
+    margin: 10px 10px;
+    
+}
+
+/*  Title for the log in page */
+.login-title {
+    font-family: 'Gill Sans';
+    font-size: 20px;
+    display: flex;
+    position: relative;
+    right: 85px;
+    justify-content: center;
+}
+
+.login-key {
+    display: flex;
+    justify-content: center; 
+    right: 400px;
+    font-style: italic;
+    color: grey;
+}
+
+/* login input */
+.login-email-input {
+    position: relative;
+    /* left: 500px; */
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+}
+
+
+/* SIGN UP PAGE CSS */
+
+/* title to the sign up page */
+.signup-title {
+    font-family: 'Gill Sans';
+    color: white;
+    
+}
+
+/*  surrounding div for the sign up form */
+.signup-form {
+    background-color: #2869B0;
+    
+
+}
+
+/* box around the form */
+.form-box {
+    background-color: white;
+    
+}
+
+/* Sign up button */
+.signup-submit {
+    /* position: relative;
+    left: 400px;
+    top: 50px; */
+    background-color: #2869B0;
+    /* background-size: 300px 100px; */
+    color: white;
+    font-size: 20px;
+    padding: 10px 100px;
+    margin: 10px 10px;
+}
+
+
+
+/* Labels for the Sign up inputs */
+.email, .password, .firstname, .lastname, .username {
+    color: grey;
+}
+
+/* Email label moved over to match others */
+/* .email {
+    position: relative;
+    left: 24px;
+} */
+/* text box's for input values */
+.email-input, .username-input, .firstname-input, .lastname-input, .password-input {
+    width: 150px;
+    height: 30px;
+    margin: 10px;
 }
 

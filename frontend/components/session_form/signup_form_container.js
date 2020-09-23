@@ -8,7 +8,7 @@ import SessionForm from './session_form';
 const mSTP = ({ errors}) => {
     return {
         errors: errors.session,
-        formType: 'Sign Up',
+        formType: 'sign up',
     };
 };
 const mDTP = dispatch => {
