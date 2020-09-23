@@ -10,8 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ 
  */
 
  /* MAIN PAGE CSS */
@@ -21,7 +20,14 @@
  .logo {
     font-family: 'Gill Sans';
     color: white;
-    font-size: 40px;
+    width: 20px;
+    height: 20px;
+
+}
+.title {
+    font-family: 'Gill Sans';
+    color: white;
+    size: 40px;
 }
 
  /* nav for the nav bar, keeps its top right */
@@ -40,11 +46,24 @@
 /* nav bar container */
 .topnav {
     background-color:#2869B0;
+    // display: flex;
+}
+.errors {
+    color: darkred;
+    list-style: none;
+    // padding: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.error-items {
+    padding: 2px;
 }
 
 /* Log out Button for User on Nav Bar */
 .header-button {
     font-family: 'Gill Sans';
+    left: 20px;
 }
 
 /* link to the sign up on nav bar */
@@ -86,19 +105,9 @@
 
 /* Label for the log in Email or Username */
 
-/* Login Button */
-.login-submit {
-    /* display: flex;
-    justify-content: center; */
-    position: relative;
-    left: 500px;
-    background-color: #95372F;
-    background-size: 300px 100px;
-    color: white;
-    font-size: 20px;
-    padding: 10px 150px;
-    margin: 10px 10px;
-    
+.login-form-container {
+    display: flex;
+    justify-content: center;
 }
 
 /*  Title for the log in page */
@@ -106,24 +115,40 @@
     font-family: 'Gill Sans';
     font-size: 20px;
     display: flex;
-    position: relative;
-    right: 85px;
-    justify-content: center;
+    /* right: 85px; */
+    /* justify-content: center; */
+    /* position: absolute; */
+    top: 45px;
+    flex-direction: column;
 }
+/* Login Button */
+.login-submit {
+    /* display: flex; */
+    /* align-content: center; */
+    /* position: relative;
+    left: 500px; */
+    background-color: #95372F;
+    background-size: 300px 100px;
+    color: white;
+    font-size: 20px;
+    padding: 10px 150px;
+    margin: 10px 10px;
+    font-family: 'Gill Sans'
+}
+
 
 .login-key {
     display: flex;
     justify-content: center; 
-    right: 400px;
     font-style: italic;
     color: grey;
 }
 
 /* login input */
 .login-email-input {
-    position: relative;
+    /* position: relative; */
     /* left: 500px; */
-    width: 200px;
+    width: 325px;
     height: 30px;
     margin: 10px;
 }
@@ -139,9 +164,9 @@
 }
 
 /*  surrounding div for the sign up form */
-.signup-form {
+
+.signup-form-container {
     background-color: #2869B0;
-    
 
 }
 
@@ -181,5 +206,6 @@
     width: 150px;
     height: 30px;
     margin: 10px;
+
 }
 

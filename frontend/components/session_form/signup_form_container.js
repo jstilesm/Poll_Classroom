@@ -5,7 +5,7 @@ import SessionForm from './session_form';
 
 // dont need to rely on state (mSTP) for session
 
-const mSTP = ({ errors}) => {
+const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'sign up',

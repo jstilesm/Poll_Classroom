@@ -15,29 +15,32 @@ const logoutCurrentUser = () => ({
 });
 
 // errors
-export const receiveErrors = errors => ({
-    type: RECEIVE_SESSION_ERRORS,
-    errors,
-});
+const receiveErrors = errors => {
+    // debugger;
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors,
+    };
+};
+
 
 
 // thunk actions
 
 export const signup = user => dispatch => (
     APIUtil.signup(user)
-    .then(user => dispatch(receiveCurrentUser(user))),
-    error => (dispatch(receiveErrors(error.responseJSON)))
+    .then(user => dispatch(receiveCurrentUser(user)),
+    er => (dispatch(receiveErrors(er.responseJSON))))
 );
 
 export const login = user => dispatch => (
     APIUtil.login(user)
-    .then(user => dispatch(receiveCurrentUser(user))),
-    error => (dispatch(receiveErrors(error.responseJSON)))
+    .then(user => dispatch(receiveCurrentUser(user)),
+    er => (dispatch(receiveErrors(er.responseJSON))))
 );
 
 export const logout = () => dispatch => (
     APIUtil.logout() 
-    .then(() => dispatch(logoutCurrentUser())),
-    error => (dispatch(receiveErrors(error.responseJSON)))
+    .then(() => dispatch(logoutCurrentUser()))
 );
     
