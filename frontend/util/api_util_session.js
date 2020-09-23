@@ -20,3 +20,13 @@ export const logout = () => (
         method: "DELETE"
     })
 );
+
+// check user Ajax request that meets back end
+
+export const checkUser = (user) => (
+    $.ajax({
+        url: '/api/users/exists',
+        method: "GET",
+        data: {user}
+    })
+);

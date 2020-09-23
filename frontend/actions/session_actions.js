@@ -4,6 +4,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+
  
 
 const receiveCurrentUser = user => ({
@@ -47,5 +48,13 @@ export const login = user => dispatch => (
 export const logout = () => dispatch => (
     APIUtil.logout() 
     .then(() => dispatch(logoutCurrentUser()))
+);
+
+// action for check user
+
+export const checkUser = user => dispatch => (
+    APIUtil.checkUser(user)
+    .then(user => dispatch(receiveCurrentUser(user)),
+    er => (dispatch(receiveErrors(er.responseJSON))))
 );
     

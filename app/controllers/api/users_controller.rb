@@ -21,6 +21,11 @@ class Api::UsersController < ApplicationController
     #     render #JBUILDER
     # end
 
+    def exists
+        identifier = params.require(:identifier) 
+        render json: User.where(username: identifier).or(User.where(email: identifier)).any?
+    end
+
     private
 
     def user_params
