@@ -33,17 +33,21 @@ export const clearErrors = () => ({
 
 // thunk actions
 
-export const signup = user => dispatch => (
+export const signup = user => dispatch => {
+    // debugger;
+    return (
     APIUtil.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)),
     er => (dispatch(receiveErrors(er.responseJSON))))
-);
+)};
 
-export const login = user => dispatch => (
+export const login = user => dispatch => {
+    // debugger
+    return ( 
     APIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
     er => (dispatch(receiveErrors(er.responseJSON))))
-);
+)};
 
 export const logout = () => dispatch => (
     APIUtil.logout() 
@@ -52,9 +56,9 @@ export const logout = () => dispatch => (
 
 // action for check user
 
-export const checkUser = user => dispatch => (
-    APIUtil.checkUser(user)
-    .then(user => dispatch(receiveCurrentUser(user)),
+export const checkUser = username => dispatch => (
+    APIUtil.checkUser(username)
+    .then(identifier => dispatch(receiveCurrentUser(identifier)),
     er => (dispatch(receiveErrors(er.responseJSON))))
 );
     

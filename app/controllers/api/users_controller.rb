@@ -23,13 +23,18 @@ class Api::UsersController < ApplicationController
 
     def exists
         identifier = params.require(:identifier) 
-        render json: User.where(username: identifier).or(User.where(email: identifier)).any?
+        # debugger
+        if identifier
+            render json: User.find_by_username_or_email(identifier)
+        else
+            render json: ['You messed up']
+        end
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :first_name, :last_name, :password)
+        params.require(:user).permit(:username,:password, :email, :first_name, :last_name, )
     end
 end
 

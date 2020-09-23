@@ -3,16 +3,15 @@ class Api::SessionsController < ApplicationController
     # before_action :ensure_logged_in, only: [:destroy]
 
     def create
-        @user = User.find_by_credentials(
-            params[:user][:username],
-            params[:user][:password])
-
+        @user = User.find_by_username_or_email(login_params[:identifier])
         # debugger
-        if @user
-            login(@user)
+        if @user.nil?
+            render json: ['Account not found'], status: 401
+        elsif @user.is_password?(login_params[:password])
+            login(@user)    
             render "api/users/show"
         else
-            render json: ['Account not found'], status: 401
+            render json: ['Invalid Password'], status: 401
         end
     end
 
@@ -28,5 +27,9 @@ class Api::SessionsController < ApplicationController
         end
     end
 
+    private
+    def login_params
+        params.require(:user).permit(:identifier, :password)
+    end
 
 end

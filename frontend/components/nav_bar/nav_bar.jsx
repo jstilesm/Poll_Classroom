@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const NavBar = ({currentUser, logout}) => {
+const NavBar = ({currentUser, logout, testUser}) => {
+    const test = { identifier: 'tester', password: 'password' };
     const sessionLink = () => (
         <nav className="login-signup">
-            <div className="buttons">
+            <div className="butt">
+                <button className="test-user" onClick={() => testUser(test)}>Test User</button>
                 <Link className="signup-link" to="/signup">Sign Up</Link>
                 <br/>
                 <Link className="login-link" to="/login">Log In</Link>

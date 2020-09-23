@@ -67,6 +67,12 @@
     // display: flex;
     // justify-content: center;
 }
+
+// nav bar test user 
+.test-user {
+    display: flex;
+    flex-wrap: wrap;
+}
 .errors {
     color: darkred;
     list-style: none;
@@ -108,7 +114,7 @@
 
 
 /*  div surrounding the buttons on the nav bar */
-.buttons {
+.butt {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -200,7 +206,7 @@
     background-color: #6193C5;
     // padding: 0px;
     // margin: 100px 100px;
-    width: 50%;
+    width: 70%;
     margin: auto;
 }
 

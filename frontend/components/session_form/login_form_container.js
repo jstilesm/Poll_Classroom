@@ -13,11 +13,11 @@ const mSTP = ({errors}) => {
 };
 
 const mDTP = dispatch => {
+    // debugger
     return { 
         formFunction: user => dispatch(login(user)),
         clearErrors: () => dispatch(clearErrors()),
-        checkUser: user => dispatch(checkUser(user))
-
+        checkUser: identifier => dispatch(checkUser(identifier)),
     };
 };
 

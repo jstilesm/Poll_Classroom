@@ -23,10 +23,10 @@ export const logout = () => (
 
 // check user Ajax request that meets back end
 
-export const checkUser = (user) => (
+export const checkUser = (identifier) => (
     $.ajax({
         url: '/api/users/exists',
         method: "GET",
-        data: {user}
+        data: {identifier}
     })
 );
