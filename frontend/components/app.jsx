@@ -9,8 +9,8 @@ const App = () => (
     <div>
         <header className="topnav">
             
-            <a className="logo" src="/"><img src="https://pbs.twimg.com/profile_images/1219756472151601153/iKrwqrSJ_400x400.jpg" alt=""/></a>
-            <h3 className="title">Class Everywhere</h3>
+            <a className="logo-form" href="/"><img className="logo" src="https://pbs.twimg.com/profile_images/1219756472151601153/iKrwqrSJ_400x400.jpg" alt=""/></a>
+            <a className="title" href="/">Class Everywhere</a>
             <NavContainer /> 
             
             
@@ -21,6 +21,7 @@ const App = () => (
         
         <Route path='/login' component={LoginContainer} />
         <Route path='/signup' component={SignupContainer} />
+        <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png"/>
         
     </div>
 )

@@ -17,17 +17,29 @@
 
 
 /* main logo to the page */
- .logo {
-    font-family: 'Gill Sans';
-    color: white;
-    width: 20px;
-    height: 20px;
 
+.logo-form {
+    display: flex;
 }
+.logo {
+    // font-family: 'Gill Sans';
+    // color: white;
+    width: 30%;
+    height: 70%;
+    align-self: start;
+}
+// Title of Main Page
 .title {
     font-family: 'Gill Sans';
     color: white;
-    size: 40px;
+    font-size: 40px;
+    display: flex;
+    justify-content: start;
+}
+
+.splash-image {
+    display: flex;
+    flex-wrap: wrap;
 }
 
  /* nav for the nav bar, keeps its top right */
@@ -46,13 +58,17 @@
 /* nav bar container */
 .topnav {
     background-color:#2869B0;
-    // display: flex;
+    padding: -10px;
+    margin: -10px;
+    display: flex;
+    // justify-content: center;
 }
 .errors {
     color: darkred;
     list-style: none;
     // padding: 2px;
     display: flex;
+    font-weight: bold;
     justify-content: center;
 }
 
@@ -63,7 +79,9 @@
 /* Log out Button for User on Nav Bar */
 .header-button {
     font-family: 'Gill Sans';
-    left: 20px;
+    background-color: #2869B0;
+    color: white;
+
 }
 
 /* link to the sign up on nav bar */
@@ -110,7 +128,7 @@
     justify-content: center;
 }
 
-/*  Title for the log in page */
+/*  Title   for the log in page */
 .login-title {
     font-family: 'Gill Sans';
     font-size: 20px;

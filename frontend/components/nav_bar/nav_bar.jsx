@@ -16,7 +16,7 @@ const NavBar = ({currentUser, logout}) => {
         <div>
         <header className="nav-bar">
             <div>
-                <h2 className="header-main">{currentUser.username}</h2>
+                {/* <h2 className="header-main">{currentUser.username}</h2> */}
                 <button className="header-button" onClick={logout}>Log Out</button>
             </div>
         </header>

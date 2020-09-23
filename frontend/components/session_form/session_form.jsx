@@ -20,6 +20,11 @@ class SessionForm extends React.Component {
     //     }
 
     // }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     update(field) {
         return e => {
             this.setState({ [field]: e.currentTarget.value});
@@ -63,7 +68,7 @@ class SessionForm extends React.Component {
                     
                     <br/>
                     <label className="email" >
-                        <input className="email-input" type="text" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
+                        <input className="email-input" type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
                     </label>
                     <br/>
                     <label className="username" >
@@ -99,7 +104,7 @@ class SessionForm extends React.Component {
 
                         <br />
                         <label className="email" >
-                            <input className="email-input" type="text" value={this.state.email} placeholder="Email" onChange={this.update('email')} />
+                            <input className="email-input" type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')} />
                         </label>
                         <br />
                         <label className="username" >
