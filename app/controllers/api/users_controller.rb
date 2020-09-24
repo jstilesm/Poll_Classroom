@@ -27,7 +27,7 @@ class Api::UsersController < ApplicationController
         if identifier
             render json: User.find_by_username_or_email(identifier)
         else
-            render json: ['You messed up']
+            render json: ['User does not exist']
         end
     end
 

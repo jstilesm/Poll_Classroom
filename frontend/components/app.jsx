@@ -10,7 +10,7 @@ const App = () => (
     <div>
         <header className="topnav">
             
-            <a className="logo-form" href="/"><img className="logo" src="https://s3.amazonaws.com/polleverywhere-external-assets/facebook-thumb.png" alt=""/></a>
+            <a className="logo-form" href="/"><img className="logo" src="https://davhizrhxzcu1.cloudfront.net/assets/media_kit/logo_blue-0a5ceed1257be54ad73861d21767f5c202bcf72d9b15e437d308655a24250702.png" alt=""/></a>
             {/* <a className="title" href="/">Class Everywhere</a> */}
             <NavContainer /> 
             
@@ -23,7 +23,7 @@ const App = () => (
             <AuthRoute path='/login' component={LoginContainer} />
             <AuthRoute path='/signup' component={SignupContainer} />
         </Switch>
-        <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png"/>
+        {/* <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png"/> */}
         
     </div>
 )
