@@ -5,7 +5,7 @@ const NavBar = ({currentUser, logout, testUser}) => {
     const test = { identifier: 'tester', password: 'password' };
     const sessionLink = () => (
         <nav className="login-signup">
-            <div className="butt">
+            <div className="button" >
                 <button className="test-user" onClick={() => testUser(test)}>Test User</button>
                 <Link className="signup-link" to="/signup">Sign Up</Link>
                 <br/>

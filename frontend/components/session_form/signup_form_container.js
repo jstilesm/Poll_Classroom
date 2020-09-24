@@ -14,7 +14,8 @@ const mSTP = ({ errors }) => {
 const mDTP = dispatch => {
     return {
     formFunction: user => dispatch(signup(user)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    // checkUser: identifier => dispatch(checkUser(identifier))
     };
 };
 

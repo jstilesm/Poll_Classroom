@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (!this.state.userExists) {
-            this.props.checkUser(this.state.identifier);
+            // this.props.checkUser(this.state.identifier);
             this.setState({ userExists: true });
         } else {
             this.setState({ userExists: false });
