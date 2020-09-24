@@ -89,6 +89,7 @@ class SessionForm extends React.Component {
             // debugger
         return (
             <main className="signup-page-container">
+
                 <div className = "signup-form-container">
                     <h2 className= "signup-title">Presenter {this.props.formType}</h2>
                     <form onSubmit={this.handleSubmit} className="form-box">
@@ -101,16 +102,14 @@ class SessionForm extends React.Component {
                         <label className="lastname">
                             <input className="lastname-input" type="text" value={this.state.last_name} placeholder="Last name" onChange={this.update('last_name')}/>
                         </label>
-                        
+                        <label className="username" >
+                            <input className="username-input" type="username" value={this.state.username} placeholder="Username" onChange={this.update('username')} />
+                        </label>
                         <br/>
                         <label className="email" >
                             <input className="email-input" type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
                         </label>
-                        <br/>
-                        <label className="username" >
-                            <input className="email-input" type="text" value={this.state.username} placeholder="Username" onChange={this.update('username')}/>
-                        </label>
-                        <br/>   
+                        <br/> 
                         <label className="password">
                             <input className="password-input" type="password" value={this.state.password} placeholder="Password" onChange={this.update('password')}/>
                         </label>
@@ -121,28 +120,29 @@ class SessionForm extends React.Component {
 
                     </form>
                 </div>
-                <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png" />
+                <div className="signup-visual">
+                    <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png" />
+                </div>
             </main>
             
         )
     } else {
             return (
-                
-                <div className="login-form">
-                    <h2 className="login-title">{this.props.formType}</h2>
-                    <form onSubmit={this.handleSubmit} className="login-form-box">
-                        
-                        <br />
-                        <label className="email" >
-                            <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
-                        </label>
-                        {this.renderPasswordField()}
-                        {this.errors()}
-                        <br/>
-                        <button className="login-submit" type="submit">{this.props.formType}</button>
+                    <div className="login-form">
+                        <h2 className="login-title">{this.props.formType}</h2>
+                        <form onSubmit={this.handleSubmit} className="login-form-box">
+                            
+                            <br />
+                            <label className="email" >
+                                <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
+                            </label>
+                            {this.renderPasswordField()}
+                            {this.errors()}
+                            <br/>
+                            <button className="login-submit" type="submit">{this.props.formType}</button>
 
-                    </form>
-                </div>
+                        </form>
+                    </div>
             )
         }
     }

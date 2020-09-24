@@ -14,10 +14,23 @@
  */
 
 //  Splash CSS
-.splash-main {
-    background-color: lightgrey;
+
+.main-paragraph {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+.main-paragraph-image {
+    display: flex;
+}
+
+.splash-main {
+    background-color: #EFEFEF;
+    display: flex;
+    height: 700px;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .main-text {
     font-weight: bold;
@@ -26,10 +39,18 @@
 }
 
 .main-content {
-    font-family: 'Gill Sans'
+    font-family: 'Gill Sans';
+    font-size: 20px;
 }
 .main-image {
     width: 300px;
+}
+
+.arrow {
+    align-items: flex-end;
+    // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
+    height: 63px;
+    width: 150px;
 }
  /* MAIN PAGE CSS */
 
@@ -43,6 +64,7 @@
 }
 .logo-form {
     display: flex;
+    margin: 13px;
     
 }
 /* main logo to the page */
@@ -50,7 +72,7 @@
 .logo {
     // font-family: 'Gill Sans';
     // color: white;
-    width: 15%;
+    width: 38%;
 
     // align-self: start;
 }
@@ -66,10 +88,10 @@
 .splash-image {
     display: flex;
     align-items: flex-end;
-    width: auto;
     height: 300px;
-    padding: 300px;
-    // flex-wrap: wrap;
+    padding: 700px 600px;
+    background-color: #EFEFEF;
+    margin: auto;
 }
 
  /* nav for the nav bar, keeps its top right */
@@ -89,6 +111,9 @@
 }
 /* nav bar container */
 .topnav {
+    // align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
     background-color:white;
     padding: -10px;
     margin: -10px;
@@ -120,6 +145,7 @@
 /* Log out Button for User on Nav Bar */
 .header-button {
     font-family: 'Gill Sans';
+    margin: auto;
     background-color: #2665A9;
     color: white;
     display: flex;
@@ -130,11 +156,12 @@
 
 /* link to the sign up on nav bar */
 .signup-link {
-    color: white;
+    color: #2665A9;
     font-family: 'Gill Sans';
     position: relative;
-    // right: 10px;
-    // top: 10px;
+    background-color: white;
+    text-decoration: none;
+    padding: 5px;
 }
 
 /* link to the log in on nav bar */
@@ -142,6 +169,7 @@
     color:white;
     font-family: 'Gill Sans';
     position: relative;
+    text-decoration: none;
     // right: 10px;
     // top: 10px;
 }
@@ -160,7 +188,7 @@ header {
     background-color: #2665A9;
     background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
     position: absolute;
-    height: 50px;
+    height: 60px;
     top: 0px;
     right: 0px;
 }
@@ -194,13 +222,16 @@ header {
     position: absolute;
     left: 50%;
     top: 20%;
+    /* margin: 0px; */
+    display: flex;
+    flex-direction: column;
 }
 
 /*  Title   for the log in page */
 .login-title {
     position: absolute;
     left: 50%;
-    top: 15%;
+    top: 17%;
     font-family: 'Gill Sans';
     font-size: 20px;
     display: flex;
@@ -220,7 +251,7 @@ header {
     background-size: 300px 100px;
     color: white;
     font-size: 20px;
-    padding: 10px 150px;
+    padding: 10px 125px;
     margin: 10px 10px;
     font-family: 'Gill Sans'
 }
@@ -248,8 +279,13 @@ header {
 .signup-title {
     font-family: 'Gill Sans';
     color: white;
-    margin: 0px 70px;
+    margin: 50px 70px;
     
+}
+
+.signup-visual {
+    display: flex;
+    height: 100vh;
 }
 
 /*  surrounding div for the sign up form */
@@ -260,13 +296,13 @@ header {
     // margin: 100px 100px;
     width: 40%;
     height: 100vh;
-    margin: 10px;
+    // margin: 10px;
 }
 
 /* box around the form */
 .form-box {
     background-color:white;
-    width: 50%;
+    width: auto;
     display: flex;  
     flex-wrap: wrap;
     margin: 50px
