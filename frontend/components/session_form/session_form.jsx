@@ -133,22 +133,26 @@ class SessionForm extends React.Component {
             if (this.state.userExists) {
 
                 return (
-                        <div className="login-form">
-                            <h2 className="login-title">{this.props.formType}</h2>
-                            <form onSubmit={this.handleSubmit} className="login-form-box">
+                        <main className="login-form">
+                            <div classname="login-page">
+                                <p>Loremispadsadasdfk;lsdfjs'd</p>
+
+                                <h2 className="login-title">{this.props.formType}</h2>
+                                <form onSubmit={this.handleSubmit} className="login-form-box">
+                                    
+                
+                                    <label className="email" >
+                                        <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
+                                    </label>
+                                    {this.renderPasswordField()}
+                                    {this.errors()}
+                
                                 
-            
-                                <label className="email" >
-                                    <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
-                                </label>
-                                {this.renderPasswordField()}
-                                {this.errors()}
-            
-                            
-                                <button className="login-submit" type="submit">{this.props.formType}</button>
-    
-                            </form>
-                        </div>
+                                    <button className="login-submit" type="submit">{this.props.formType}</button>
+        
+                                </form>
+                            </div>
+                        </main>
                 )
             } else {
                 return (
