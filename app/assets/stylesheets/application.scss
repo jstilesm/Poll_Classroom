@@ -14,6 +14,21 @@
  */
 
 //  Splash CSS
+.whole-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.main-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+}
+
 
 .main-paragraph {
     display: flex;
@@ -26,24 +41,33 @@
 }
 
 .splash-main {
+    width: 100%;
     background-color: #EFEFEF;
     display: flex;
     height: 700px;
+    width: 1550px;
     align-items: center;
     justify-content: space-evenly;
 }
 .main-text {
     font-weight: bold;
+    font-size: 40px;
     font-family: 'Gill Sans'
 
+}
+.subtext {
+    font-family: 'Gill Sans';
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
 }
 
 .main-content {
     font-family: 'Gill Sans';
-    font-size: 20px;
+    font-size: 30px;
 }
 .main-image {
-    width: 300px;
+    width: 550px;
 }
 
 .arrow {
@@ -60,10 +84,10 @@
     justify-content: space-around;
 }
 .blurb {
-    padding: 100px;
-    margin: 10px;
+    padding: 5px;
     font-family: 'Gill Sans';
     flex-wrap: flex;
+    font-size: 14px;
     display: flex;
     align-items:  center;
     flex-direction: column;
@@ -72,9 +96,46 @@
 
 .blurb-image {
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     justify-content: center;
+}
+
+.footer {
+    background-color: #EFEFEF;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer a {
+    text-decoration: none;
+    font-family: 'Gill Sans';
+    color: black;
+    font-size: 15px;
+}
+.footer-image {
+    width: 26%;
+}
+
+.signup-link-page {
+    box-shadow:inset 0px 34px 0px -15px #2665A9;
+	background-color:#2665A9;
+	border:1px solid #2665A9;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	// font-weight:bold;
+	padding:9px 23px;
+    text-decoration:none;
+    justify-content: center;
+}
+
+.get-started {
+    margin: 30px;
+    padding: 100px;
 }
 
 .engage-blurb {
@@ -82,32 +143,27 @@
     font-family: 'Gill Sans';
     align-items:  center;
     flex-direction: column;
+    padding: 100px;
+    margin: 10px;
     // justify-content: space-around;
 }
+
 
 .bottom-links {
     font-family: 'Gill Sans';
     display: flex;
-    // align-items: center;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 .github-link {
     display: flex; 
     align-items: center;
 }
 .github-logo {
-    display: flex;
-    // justify-content: center;
-    margin: 50px;
-    height: auto;
-    vertical-align: center;
+    width: 10%;
 }
  /* MAIN PAGE CSS */
 
-.stark-icon{
-    width: 30%;
-    height: auto;
-}
 .wayne-icon {
     width: auto;
     height: auto;
@@ -191,6 +247,14 @@
 // nav bar test user 
 .test-user {
     display: flex;
+    background-color: #2665A9 ;
+    color: white;
+    font-family: 'Gill Sans';
+    border-radius: 2px;
+    box-shadow:inset 0px 34px 0px -15px #2665A9;
+	background-color:#2665A9;
+	border:1px solid #2665A9;
+
     // flex-wrap: wrap;
 }
 .errors {
@@ -225,6 +289,7 @@
     color: #2665A9;
     font-family: 'Gill Sans';
     position: relative;
+    font-size: 12px;
     background-color: white;
     text-decoration: none;
     padding: 5px;
@@ -236,7 +301,7 @@
     font-family: 'Gill Sans';
     position: relative;
     text-decoration: none;
-    // right: 10px;
+    font-size: 12px;
     // top: 10px;
 }
 header {
@@ -309,18 +374,35 @@ header {
     flex-direction: column;
 }
 /* Login Button */
+// .login-submit {
+//     position: relative;
+//     top: 40%;
+//     // position: relative;
+//     // right: 500px;
+//     background-color: #96372F;
+//     background-size: 300px 100px;
+//     color: white;
+//     font-size: 20px;
+//     padding: 10px 125px;
+//     margin: 10px 10px;
+//     font-family: 'Gill Sans'
+// }
+
 .login-submit {
-    position: relative;
-    top: 40%;
-    // position: relative;
-    // right: 500px;
-    background-color: #95372F;
-    background-size: 300px 100px;
-    color: white;
-    font-size: 20px;
-    padding: 10px 125px;
-    margin: 10px 10px;
-    font-family: 'Gill Sans'
+	box-shadow:inset 0px 34px 0px -15px #A5332B;
+	background-color:#A5332B;
+	border:1px solid #A5332B;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	// font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+}
+.login-submit:hover {
+    opacity: 1
 }
 
 .login-key {
@@ -379,10 +461,12 @@ header {
 
 /* Sign up button */
 .signup-submit {
-    /* position: relative;
-    left: 400px;
-    top: 50px; */
-    background-color: #2665A9;
+    box-shadow:inset 0px 34px 0px -15px #2665A9;
+	background-color:#2665A9;
+	border:1px solid #2665A9;
+	display:inline-block;
+	cursor:pointer;
+	font-family:Arial;
     /* background-size: 300px 100px; */
     color: white;
     font-size: 20px;
