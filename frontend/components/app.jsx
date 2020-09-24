@@ -23,7 +23,7 @@ const App = () => (
             <AuthRoute path='/login' component={LoginContainer} />
             <AuthRoute path='/signup' component={SignupContainer} />
         </Switch>
-        {/* <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png"/> */}
+        <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png"/>
         
     </div>
 )

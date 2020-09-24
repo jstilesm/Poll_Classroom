@@ -37,12 +37,15 @@ class SessionForm extends React.Component {
  
     handleSubmit(e) {
         e.preventDefault();
-        if (!this.state.userExists) {
-            // this.props.checkUser(this.state.identifier);
+        if (!this.state.userExists && this.props.formType === "Log in") {
+            this.props.checkUser(this.state.identifier)
+                // .then(resp => (resp.json()))
+                // .then(exists => this.setState({userExists: exists }));
+    
             this.setState({ userExists: true });
         } else {
             this.setState({ userExists: false });
-            this.props.formFunction(this.state);
+            this.props.formFunction(this.state);    
 
         }
         // .then(() => this.props.history.push('/questions'));
@@ -80,6 +83,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        // console.log(this.state)
         if (this.props.formType === "sign up" ) { 
             // debugger
         return (
@@ -119,6 +123,7 @@ class SessionForm extends React.Component {
         )
     } else {
             return (
+                
                 <div className="login-form">
                     <h2 className="login-title">{this.props.formType}</h2>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
