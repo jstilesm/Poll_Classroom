@@ -39,8 +39,9 @@ class SessionForm extends React.Component {
         e.preventDefault();
         if (!this.state.userExists && this.props.formType === "Log in") {
             this.props.checkUser(this.state.identifier)
-                // .then(resp => (resp.json()))
-                // .then(exists => this.setState({userExists: exists }));
+                .then(resp => (resp.json()))
+                .then(exists => this.setState({userExists: exists }));
+            // chaining .then on promise to call view
     
             this.setState({ userExists: true });
         } else {
