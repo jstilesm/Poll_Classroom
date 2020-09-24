@@ -52,8 +52,41 @@
     height: 63px;
     width: 150px;
 }
- /* MAIN PAGE CSS */
 
+.learning-blurbs {
+    display: flex;
+    justify-content: space-around;
+}
+.blurb {
+    padding: 100px;
+    margin: 10px;
+    font-family: 'Gill Sans';
+    flex-wrap: flex;
+    display: flex;
+    align-items:  center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.blurb-image {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+}
+
+.bottom-links {
+    font-family: 'Gill Sans';
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+}
+
+.github-logo {
+    width: 30%;
+    height: 100%;
+}
+ /* MAIN PAGE CSS */
 
 
 
