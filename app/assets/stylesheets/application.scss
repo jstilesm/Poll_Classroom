@@ -75,21 +75,50 @@
     justify-content: center;
 }
 
+.engage-blurb {
+    display: flex;
+    font-family: 'Gill Sans';
+    align-items:  center;
+    flex-direction: column;
+    // justify-content: space-around;
+}
+
 .bottom-links {
     font-family: 'Gill Sans';
     display: flex;
     // align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
-
+.github-link {
+    display: flex; 
+    align-items: center;
+}
 .github-logo {
-    width: 30%;
-    height: 100%;
+    display: flex;
+    // justify-content: center;
+    margin: 50px;
+    height: auto;
+    vertical-align: center;
 }
  /* MAIN PAGE CSS */
 
+.stark-icon{
+    width: 30%;
+    height: auto;
+}
+.wayne-icon {
+    width: auto;
+    height: auto;
+}
+.lexcorp-icon {
+    width: 10%;
+    height: auto;
+}
 
-
+.icons {
+    display: flex;
+    justify-content: center;
+}
 /* hyperlink container for the logo */
 
 .signup-page-container {

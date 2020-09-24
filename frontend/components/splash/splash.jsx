@@ -1,5 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -39,9 +41,20 @@ class Splash extends React.Component {
                         <p>Lorem ipsum wordem arem difficultem ifem onlyem iem couldem randomem generateem morem wordsem.</p>
                     </div>
                 </div>
+                <div className="engage-blurb">
+                    <h2>Engaging, Literally Nobody</h2>
+                    <p>These companies have helped Poll Classroom engage literally trillions, because they all totally exist!</p>
+                    <div className="icons">
+                        <img className="wayne-icon" src="https://ichef.bbci.co.uk/images/ic/256xn/p03t1rrt.jpg" alt=""/>
+                        <img className="stark-icon" src="https://www.logolynx.com/images/logolynx/50/502772a77699667df61044e401ea1ca9.jpeg" alt=""/>
+                        <img className="lexcorp-icon" src="https://i.etsystatic.com/13357682/r/il/29d942/1174297059/il_570xN.1174297059_8wmo.jpg" alt=""/>
+                        
+                    </div>
+                </div>
                 <div className="bottom-links">
-                    <p>The Shamless Plug</p>
-                    <a  href="https://github.com/NStilesM/Poll_Classroom"><img className="github-logo" src="https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g.jpg" alt="" /></a>
+                    {/* <p>The Shameless Self Promotion</p> */}
+                    <a className="github-link" href="https://github.com/NStilesM/Poll_Classroom"><img className="github-logo" src="https://news.efinancialcareers.com/binaries/content/gallery/efinancial-careers/articles/2019/04/github.jpg" alt="" /></a>
+                    {/* <FontAwesomeIcon className="shopping-cart" icon={faShoppingCart} /> */}
                 </div>
             </div>
         )

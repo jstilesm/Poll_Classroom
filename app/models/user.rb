@@ -34,7 +34,6 @@ class User < ApplicationRecord
         User.where(username: identifier).or(User.where(email: identifier)).first
     end
 
-
     def self.find_by_credentials(identifier, password) 
         user = User.find_by_username_or_email(identifier)
         # puts user

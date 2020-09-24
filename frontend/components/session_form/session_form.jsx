@@ -1,4 +1,6 @@
 import React from 'react';
+import { checkUser } from '../../util/api_util_session';
+
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -38,9 +40,10 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (!this.state.userExists && this.props.formType === "Log in") {
-            this.props.checkUser(this.state.identifier)
-                .then(resp => (resp.json()))
-                .then(exists => this.setState({userExists: exists }));
+            // debugger
+            // checkUser(this.state.identifier);
+            //     .then(resp => (resp.json()))
+            //     .then(exists => this.setState({userExists: true }));
             // chaining .then on promise to call view
     
             this.setState({ userExists: true });
@@ -127,23 +130,43 @@ class SessionForm extends React.Component {
             
         )
     } else {
-            return (
+            if (this.state.userExists) {
+
+                return (
+                        <div className="login-form">
+                            <h2 className="login-title">{this.props.formType}</h2>
+                            <form onSubmit={this.handleSubmit} className="login-form-box">
+                                
+            
+                                <label className="email" >
+                                    <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
+                                </label>
+                                {this.renderPasswordField()}
+                                {this.errors()}
+            
+                            
+                                <button className="login-submit" type="submit">{this.props.formType}</button>
+    
+                            </form>
+                        </div>
+                )
+            } else {
+                return (
                     <div className="login-form">
                         <h2 className="login-title">{this.props.formType}</h2>
                         <form onSubmit={this.handleSubmit} className="login-form-box">
-                            
-                            <br />
+
                             <label className="email" >
                                 <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
                             </label>
-                            {this.renderPasswordField()}
                             {this.errors()}
-                            <br/>
-                            <button className="login-submit" type="submit">{this.props.formType}</button>
+
+                            <button className="login-submit" type="submit">Next</button>
 
                         </form>
                     </div>
-            )
+                )
+            }
         }
     }
 }

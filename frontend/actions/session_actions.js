@@ -56,9 +56,9 @@ export const logout = () => dispatch => (
 
 // action for check user
 
-export const checkUser = username => dispatch => (
-    APIUtil.checkUser(username)
-    .then(identifier => dispatch(receiveCurrentUser(identifier)),
-    er => (dispatch(receiveErrors(er.responseJSON))))
-);
+// export const checkUser = username => dispatch => (
+//     APIUtil.checkUser(username)
+//     .then(identifier => dispatch(receiveCurrentUser(identifier)),
+//     er => (dispatch(receiveErrors(er.responseJSON))))
+// );
     
