@@ -13,13 +13,37 @@
  
  */
 
+//  Splash CSS
+.splash-main {
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-around;
+}
+.main-text {
+    font-weight: bold;
+    font-family: 'Gill Sans'
+
+}
+
+.main-content {
+    font-family: 'Gill Sans'
+}
+.main-image {
+    width: 300px;
+}
  /* MAIN PAGE CSS */
+
+
 
 
 /* hyperlink container for the logo */
 
+.signup-page-container {
+    display: flex;
+}
 .logo-form {
     display: flex;
+    
 }
 /* main logo to the page */
 
@@ -41,7 +65,11 @@
 
 .splash-image {
     display: flex;
-    flex-wrap: wrap;
+    align-items: flex-end;
+    width: auto;
+    height: 300px;
+    padding: 300px;
+    // flex-wrap: wrap;
 }
 
  /* nav for the nav bar, keeps its top right */
@@ -50,7 +78,7 @@
      display: flex;
     //  justify-content: right;
      font-weight: bold;
-     flex-wrap: wrap;
+    //  flex-wrap: wrap;
 }
 
  /* nav bar username */
@@ -64,6 +92,9 @@
     background-color:white;
     padding: -10px;
     margin: -10px;
+    // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
+    background-position: 10000px;
+    // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
     // display: flex;
     // justify-content: center;
 }
@@ -71,7 +102,7 @@
 // nav bar test user 
 .test-user {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 }
 .errors {
     color: darkred;
@@ -229,7 +260,7 @@ header {
     // margin: 100px 100px;
     width: 40%;
     height: 100vh;
-    margin: 0px;
+    margin: 10px;
 }
 
 /* box around the form */

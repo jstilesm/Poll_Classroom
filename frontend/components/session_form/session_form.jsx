@@ -88,39 +88,42 @@ class SessionForm extends React.Component {
         if (this.props.formType === "sign up" ) { 
             // debugger
         return (
-            <div className = "signup-form-container">
-                <h2 className= "signup-title">Presenter {this.props.formType}</h2>
-                <form onSubmit={this.handleSubmit} className="form-box">
+            <main className="signup-page-container">
+                <div className = "signup-form-container">
+                    <h2 className= "signup-title">Presenter {this.props.formType}</h2>
+                    <form onSubmit={this.handleSubmit} className="form-box">
 
 
-                    <label className="firstname">
-                        <input className="firstname-input" type="text" value={this.state.first_name} placeholder="First name" onChange={this.update('first_name')}/>
-                    </label>
-                    <br/>
-                    <label className="lastname">
-                        <input className="lastname-input" type="text" value={this.state.last_name} placeholder="Last name" onChange={this.update('last_name')}/>
-                    </label>
-                    
-                    <br/>
-                    <label className="email" >
-                        <input className="email-input" type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
-                    </label>
-                    <br/>
-                    <label className="username" >
-                        <input className="email-input" type="text" value={this.state.username} placeholder="Username" onChange={this.update('username')}/>
-                    </label>
-                    <br/>   
-                    <label className="password">
-                        <input className="password-input" type="password" value={this.state.password} placeholder="Password" onChange={this.update('password')}/>
-                    </label>
-                    <br/>
-                    {this.errors()}
-                    <br/>
-                    <button className="signup-submit" type="submit">{this.props.formType}</button>
+                        <label className="firstname">
+                            <input className="firstname-input" type="text" value={this.state.first_name} placeholder="First name" onChange={this.update('first_name')}/>
+                        </label>
+                        <br/>
+                        <label className="lastname">
+                            <input className="lastname-input" type="text" value={this.state.last_name} placeholder="Last name" onChange={this.update('last_name')}/>
+                        </label>
+                        
+                        <br/>
+                        <label className="email" >
+                            <input className="email-input" type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
+                        </label>
+                        <br/>
+                        <label className="username" >
+                            <input className="email-input" type="text" value={this.state.username} placeholder="Username" onChange={this.update('username')}/>
+                        </label>
+                        <br/>   
+                        <label className="password">
+                            <input className="password-input" type="password" value={this.state.password} placeholder="Password" onChange={this.update('password')}/>
+                        </label>
+                        <br/>
+                        {this.errors()}
+                        <br/>
+                        <button className="signup-submit" type="submit">{this.props.formType}</button>
 
-  
-                </form>
-            </div>
+                    </form>
+                </div>
+                <img className="splash-image" src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png" />
+            </main>
+            
         )
     } else {
             return (
