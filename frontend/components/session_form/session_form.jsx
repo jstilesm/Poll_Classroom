@@ -136,7 +136,7 @@ class SessionForm extends React.Component {
                                     
                 
                                     <label className="email" >
-                                        <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
+                                        <input className="email-input" type="text" value={this.state.identifier} placeholder="Happy Birthday Megan" onChange={this.update('identifier')} />
                                     </label>
                                     {this.renderPasswordField()}
                                     {this.errors()}
