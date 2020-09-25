@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBarContainer from '../nav_bar/nav_bar_container';
 import {Link} from 'react-router-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +13,6 @@ class Splash extends React.Component {
         return (
             <div className="whole-page">
 
-                <NavBarContainer />
                 <div className="main-page">
                     <div className="splash-main">
 
@@ -55,7 +53,8 @@ class Splash extends React.Component {
                     <div className="get-started">
                         <h2 className="main-text">Get started with Poll Everywhere</h2>
                         <p className='subtext'>Create your account today for better engagement during online meetings, classes, and events.</p>
-                        <Link className="signup-link-page" to="/signup">Sign up today</Link>
+                            <Link className="signup-link-page" to="/signup">Sign up today</Link>
+        
                     </div>
                     <div className="bottom-links">
                         {/* <p>The Shameless Self Promotion</p> */}
@@ -65,7 +64,7 @@ class Splash extends React.Component {
                 </div>
                 <footer className="footer">
                     <a href="https://github.com/NStilesM/Poll_Classroom"><img className="github-logo" src="https://www.marksei.com/wp-content/uploads/2018/06/GitHub-logo.png" alt="" /></a>
-                    <a href="https://www.linkedin.com/in/nicholas-mcdonnell-328569108/"><img className="footer-image" src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-linkedin-icon-png-image_3547995.jpg" alt=""/></a>
+                    {/* <a href="https://www.linkedin.com/in/nicholas-mcdonnell-328569108/"><img className="footer-image" src="https://www.nicepng.com/png/detail/18-183646_linkedin-social-outline-logotype-comments-transparent-background-linkedin.png" alt=""/></a> */}
                 </footer>
             </div>
         )
