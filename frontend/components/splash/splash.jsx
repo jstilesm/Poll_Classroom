@@ -63,6 +63,12 @@ class Splash extends React.Component {
                     </div>
                 </div>
                 <footer className="footer">
+                    <a href=""><p className="footerlink-a">Status</p></a>
+                    <a href=""><p className="footerlinks">Cookies</p></a>
+                    <span className="pipe-seperator">|</span>
+                    <a href=""><p className="footerlinks">Terms</p></a>
+                    <span className="pipe-seperator">|</span>
+                    <a href=""><p className="footerlinks">Privacy</p></a>
                     <a href="https://github.com/NStilesM/Poll_Classroom"><img className="github-logo" src="https://www.marksei.com/wp-content/uploads/2018/06/GitHub-logo.png" alt="" /></a>
                     {/* <a href="https://www.linkedin.com/in/nicholas-mcdonnell-328569108/"><img className="footer-image" src="https://www.nicepng.com/png/detail/18-183646_linkedin-social-outline-logotype-comments-transparent-background-linkedin.png" alt=""/></a> */}
                 </footer>

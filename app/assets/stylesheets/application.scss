@@ -110,11 +110,42 @@ body {
     justify-content: left;
 }
 
-.footer a {
+.footerlink-a{
     text-decoration: none;
     font-family: 'Gill Sans';
     color: black;
     font-size: 15px;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    margin: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footerlinks {
+    text-decoration: none;
+    font-family: 'Gill Sans';
+    color: black;
+    font-size: 15px;
+    height: 50%;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    font-weight: 600;
+}
+
+.pipe-seperator{
+    color: grey;
+    font-size: 21px;
+    padding: 26px 10px;
+}
+
+.footer a {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
 }
 .footer-image {
     width: 26%;
