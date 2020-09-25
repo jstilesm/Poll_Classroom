@@ -1,10 +1,8 @@
-class QuestionsController < ApplicationController
+class Api::QuestionsController < ApplicationController
 
-    def new
-        @question = Question.new
-        render :new
+    def index
     end
-
+    
     def create
          @question = Question.new(question_params)
          @question.user_id = params[:user_id]
@@ -14,6 +12,9 @@ class QuestionsController < ApplicationController
         else 
             render json: @question.errors.full_messages, status: 422
         end 
+    end
+
+    def show
     end
 
 

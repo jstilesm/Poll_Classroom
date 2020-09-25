@@ -9,7 +9,9 @@ Rails.application.routes.draw do
         get "/exists" => "users#exists" 
       end
     end
-    resources :questions, only: [:create, :update, :show, :destroy]
+    resources :questions, only: [:index, :create, :update, :show, :destroy]
+    resources :text_responses, only: [:create, :update, :show, :destroy]
+    resources :mult_responses, only: [:create, :update, :show, :destroy]
     resource :session, only: [:create, :new, :destroy]
   end
 end

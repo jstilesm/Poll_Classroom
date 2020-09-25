@@ -1,6 +1,5 @@
-json.partial! "api/questions/question", question: @question
+# json.partial! "api/questions/question", question: @question
 # json.questions @user.questions, partial: 'api/questions/question', as: :question
-
 
 
 json.event do

@@ -17,5 +17,6 @@ class MultResponse < ApplicationRecord
 
 
     belongs_to :user, polymorphic: true
+    belongs_to :visitor, polymorphic: true
 
 end
