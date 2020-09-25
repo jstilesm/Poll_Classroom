@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_151424) do
+ActiveRecord::Schema.define(version: 2020_09_25_174022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "type", null: false
+    t.boolean "boolean", default: false, null: false
+    t.integer "response_limit", default: 1, null: false
+    t.boolean "allow_unregistered", default: false, null: false
+    t.integer "group_id", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_questions_on_author_id"
+    t.index ["group_id"], name: "index_questions_on_group_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
