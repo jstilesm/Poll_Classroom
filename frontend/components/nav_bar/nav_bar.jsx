@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const NavBar = ({currentUser, logout, testUser}) => {
-    const test = { identifier: 'tester', password: 'password' };
+    const test = {username: 'tester', email: 'tester@aol.com', first_name: 'test', last_name: 'er', password: 'password'};
     const sessionLink = () => (
         <header className="login-signup">
             <div className="site-header-right" >
