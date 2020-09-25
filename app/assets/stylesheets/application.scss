@@ -59,7 +59,7 @@ body {
 }
 .subtext {
     font-family: 'Gill Sans';
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     justify-content: center;
 }
@@ -199,6 +199,7 @@ body {
 
 .signup-page-container {
     display: flex;
+    background-color: #EFEFEF;
 }
 
 /* main logo to the page */
@@ -222,9 +223,9 @@ body {
 
 .splash-image {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     height: 300px;
-    padding: 700px 600px;
+    padding: 200px;
     background-color: #EFEFEF;
     margin: auto;
 }
@@ -468,7 +469,7 @@ header {
 .signup-title {
     font-family: 'Gill Sans';
     color: white;
-    margin: 50px 70px;
+    margin: 50px 80px;
     font-size: 30px;
     font-weight: 700;
     
@@ -497,7 +498,8 @@ header {
     width: auto;
     // display: flex;  
     flex-wrap: wrap;
-    margin: 50px
+    margin: 54px;
+    padding: 10px;
 }
 
 

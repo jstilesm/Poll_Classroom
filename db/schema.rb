@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 2020_09_21_180218) do
     t.index ["registerable_id"], name: "index_users_on_registerable_id"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
-
-    # migrate changes to heroku database
   end
 
 end

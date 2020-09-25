@@ -120,7 +120,7 @@ class SessionForm extends React.Component {
                         <br/>
                         {this.errors()}
                         <br/>
-                        <button className="signup-submit" type="submit">{this.props.formType}</button>
+                        <button className="signup-submit" type="submit">Sign up</button>
 
                     </form>
                 </div>
