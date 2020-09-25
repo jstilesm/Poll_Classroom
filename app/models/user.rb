@@ -37,7 +37,6 @@ class User < ApplicationRecord
 
 
     has_many :mult_responses, as: :registerable
-
     has_many :text_responses, as: :registerable
 
 

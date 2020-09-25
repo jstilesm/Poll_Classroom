@@ -13,4 +13,5 @@ class TextResponse < ApplicationRecord
     validates :body, presence: true
 
     belongs_to :user, polymorphic: true
+    belongs_to :visitor, polymorphic: true
 end
