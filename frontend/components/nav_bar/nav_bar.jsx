@@ -16,8 +16,9 @@ const NavBar = ({currentUser, logout, testUser}) => {
     const personalNav = () => (
         <div>
         <header className="nav-bar">
-            <div>
+            <div className="logged-in-bar">
                 {/* <h2 className="header-main">{currentUser.username}</h2> */}
+                <Link className="activities-link" to="/activities">Activities</Link>
                 <button className="header-button" onClick={logout}>Log Out</button>
             </div>
         </header>

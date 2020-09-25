@@ -1,5 +1,6 @@
 import React from 'react';
 import { checkUser } from '../../util/api_util_session';
+import {Link } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -133,8 +134,7 @@ class SessionForm extends React.Component {
             if (this.state.userExists) {
 
                 return (
-                        <main className="login-form">
-                            <div classname="login-page">
+                            <main classname="login-page">
 
                                 <h2 className="login-title">{this.props.formType}</h2>
                                 <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -148,16 +148,17 @@ class SessionForm extends React.Component {
                 
                                 
                                     <button className="login-submit" type="submit">{this.props.formType}</button>
-        
+                                    <div className="link-to-signup-container">
+                                        <p className="link-to-signup">Need an account?</p><Link className="link-to-signup" to="/signup">Create one now</Link>
+                                    </div>
                                 </form>
-                            </div>
-                        </main>
+                            </main>
                 )
             } else {
                 return (
                     <div className="login-form">
-                        <h2 className="login-title">{this.props.formType}</h2>
                         <form onSubmit={this.handleSubmit} className="login-form-box">
+                            <h2 className="login-title">{this.props.formType}</h2>
 
                             <label className="email" >
                                 <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
@@ -165,7 +166,10 @@ class SessionForm extends React.Component {
                             {this.errors()}
 
                             <button className="login-submit" type="submit">Next</button>
-
+                            <div className="link-to-signup-container">
+                                <p className="link-to-signup">Need an account?</p><Link className="link-to-signup" to="/signup">Create one now</Link>
+                            </div>
+                    
                         </form>
                     </div>
                 )

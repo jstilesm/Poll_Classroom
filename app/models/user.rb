@@ -14,6 +14,8 @@
 #  registerable_id   :integer
 #  registerable_type :string
 #
+
+
 class User < ApplicationRecord
     validates :session_token, :email, presence: true, uniqueness: true
     validates :password_digest, presence: { message: "Password can't blank"}

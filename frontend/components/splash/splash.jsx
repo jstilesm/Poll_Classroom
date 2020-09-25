@@ -55,7 +55,7 @@ class Splash extends React.Component {
                     <div className="get-started">
                         <h2 className="main-text">Get started with Poll Everywhere</h2>
                         <p className='subtext'>Create your account today for better engagement during online meetings, classes, and events.</p>
-                        <Link className="signup-link-page" to="/signup">Sign Up</Link>
+                        <Link className="signup-link-page" to="/signup">Sign up today</Link>
                     </div>
                     <div className="bottom-links">
                         {/* <p>The Shameless Self Promotion</p> */}
