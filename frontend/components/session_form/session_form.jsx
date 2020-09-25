@@ -1,7 +1,7 @@
 import React from 'react';
-import { checkUser } from '../../util/api_util_session';
 import {Link } from 'react-router-dom';
 
+import { checkUser } from '../../util/api_util_session';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -102,25 +102,20 @@ class SessionForm extends React.Component {
                         <label className="firstname">
                             <input className="firstname-input" type="text" value={this.state.first_name} placeholder="First name" onChange={this.update('first_name')}/>
                         </label>
-                        <br/>
                         <label className="lastname">
                             <input className="lastname-input" type="text" value={this.state.last_name} placeholder="Last name" onChange={this.update('last_name')}/>
                         </label>
                         <label className="username" >
                             <input className="username-input" type="username" value={this.state.username} placeholder="Username" onChange={this.update('username')} />
                         </label>
-                        <br/>
                         <label className="email" >
                             <input className="email-input" type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
                         </label>
-                        <br/> 
                         <label className="password">
                             <input className="password-input" type="password" value={this.state.password} placeholder="Password" onChange={this.update('password')}/>
                         </label>
-                        <br/>
                         {this.errors()}
-                        <br/>
-                        <button className="signup-submit" type="submit">Sign up</button>
+                        <button className="signup-submit blue-button" type="submit">Sign up</button>
 
                     </form>
                 </div>
@@ -134,10 +129,10 @@ class SessionForm extends React.Component {
             if (this.state.userExists) {
 
                 return (
-                            <main classname="login-page">
+                            <main className="login-page">
 
-                                <h2 className="login-title">{this.props.formType}</h2>
                                 <form onSubmit={this.handleSubmit} className="login-form-box">
+                                    <h2 className="login-title">{this.props.formType}</h2>
                                     
                 
                                     <label className="email" >

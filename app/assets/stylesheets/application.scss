@@ -43,11 +43,10 @@ body {
 }
 
 .splash-main {
-    width: 100%;
+    width: 250%;
     background-color: #EFEFEF;
     display: flex;
     height: 700px;
-    width: 1550px;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -91,7 +90,7 @@ body {
     flex-wrap: flex;
     font-size: 14px;
     display: flex;
-    align-items:  center;
+    align-items:  left;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -325,6 +324,8 @@ body {
     font-size: .9rem;
     justify-content: space-around;
     background-color: #FDBEB9;
+    margin: -5px 7px 0px 7px;
+    width: 290px;
 }
 
 /* Log out Button for User on Nav Bar */
@@ -336,7 +337,8 @@ body {
 	cursor:pointer;
 	color:#ffffff;
 	font-family: "Gill Sans";
-	font-size: 15px;
+    font-size: 15px;
+    margin: 15px;
 	// font-weight:bold;
 	// padding:9px 23px;
 	text-decoration:none;
@@ -391,17 +393,17 @@ header {
 }
 
 .site-header-right a {
-    margin: 0rem 1rem;
+    margin: 0rem 2rem;
 }
 
 
 .activities-link {
-    box-shadow:inset 0px 34px 0px -15px #2665A9 ;
-	background-color:#2665A9 ;
-	border:1px solid #2665A9 ;
+    box-shadow:inset 0px 34px 0px -15px #ffffff ;
+	background-color:#ffffff ;
+	border:1px solid #ffffff ;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:#2665A9 ;
 	font-family: "Gill Sans";
 	font-size: 15px;
 	// font-weight:bold;
@@ -428,10 +430,9 @@ header {
 
 .login-form-box {
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: 20%;
     /* margin: 0px; */
-    display: flex;
     flex-direction: column;
 }
 
@@ -471,7 +472,9 @@ header {
 	font-size:15px;
 	// font-weight:bold;
 	padding:9px 23px;
-	text-decoration:none;
+    text-decoration:none;
+    margin: 0px 10px;
+    width: 300px;
 }
 .login-submit:hover {
     opacity: 1
@@ -531,23 +534,32 @@ header {
     flex-wrap: wrap;
     margin: 54px;
     padding: 10px;
+    padding-bottom: 20px;
+    justify-content: center;
+    border-radius: 3px;
+
 }
 
 
 /* Sign up button */
 .signup-submit {
-    box-shadow:inset 0px 34px 0px -15px #2665A9;
-	background-color:#2665A9;
-	border:1px solid #2665A9;
-	display:inline-block;
-	cursor:pointer;
-	font-family:Arial;
-    /* background-size: 300px 100px; */
-    color: white;
+    
     font-size: 20px;
-    padding: 10px 80px;
     margin: 10px 10px;
     width: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+.blue-button {
+    box-shadow:inset 0px 34px 0px -15px #2665A9;
+    background-color:#2665A9;
+	border:1px solid #2665A9;
+	display:inline-block;
+    cursor:pointer;
+    color: white;
+    border-radius: 3px;
+    
 }
 
 
@@ -563,10 +575,15 @@ header {
     left: 24px;
 } */
 /* text box's for input values */
-.email-input, .username-input, .firstname-input, .lastname-input, .password-input {
-    width: 300px;
+.form-box input, .login-form-box input{
+    width: 290px;
     height: 30px;
-    margin: 5px;
+    margin: 10px;
+    padding-left: 5px;
+    margin-top: 15px;
+
+
+
     // font-style: italic;
 
 }

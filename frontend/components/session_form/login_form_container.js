@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {login, clearErrors} from '../../actions/session_actions';
 import SessionForm from './session_form';
-// import { checkUser } from '../../util/api_util_session';
+import { checkUser } from '../../util/api_util_session';
 
 const mSTP = ({errors}) => {
     // debugger
