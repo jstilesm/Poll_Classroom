@@ -26,13 +26,11 @@ class User < ApplicationRecord
 
 
     has_many :questions,
-        primary_key: :id, 
         foreign_key: :author_id,
         class_name: :Question
 
     has_many :groups,
-        primary_key: :id
-        foreign_key: :user_id
+        foreign_key: :user_id,
         class_name: :Group
 
 

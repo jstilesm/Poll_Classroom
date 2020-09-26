@@ -140,8 +140,6 @@ class SessionForm extends React.Component {
                                     </label>
                                     {this.renderPasswordField()}
                                     {this.errors()}
-                
-                                
                                     <button className="login-submit" type="submit">{this.props.formType}</button>
                                     <div className="link-to-signup-container">
                                         <p className="link-to-signup">Need an account?</p><Link className="link-to-signup" to="/signup">Create one now</Link>
@@ -157,7 +155,7 @@ class SessionForm extends React.Component {
                             <h2 className="login-title">{this.props.formType}</h2>
 
                             <label className="email" >
-                                <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
+                                <input className="email-input" type="text" value={this.state.identifier} placeholder="Happy Birthday Megan" onChange={this.update('identifier')} />
                             </label>
                             {this.errors()}
 

@@ -53,6 +53,11 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
   gem 'bcrypt'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
 end
 
 group :test do
