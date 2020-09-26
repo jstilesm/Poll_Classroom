@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe Api::QuestionsController, type: :controller do
   title = "What is the best color?"
   let!(:user) { User.create({ username: 'jack_bruce', first_name: 'jack', last_name: 'bruce', email: 'jack@bruce.com', password: 'abcdef' }) }
+  let!(:user2) { User.create({ username: 'jack_bruce', first_name: 'jack', last_name: 'bruce', email: 'jack@bruce.com', password: 'abcdef' }) }
   let!(:group) {Group.create({ name: "Dummies"})}
-  let!(:test_question) {Question.create({title: title, kind: 'text_response'})}
+  let!(:test_question) {Question.create({user: user, title: title, group_id: group.id, kind: 'text_response'})}
 
-  describe 'POST #create' do
+  describe 'POST #create' do  
     before do
       allow(controller).to receive(:current_user) { user }
     end
@@ -41,11 +42,11 @@ RSpec.describe Api::QuestionsController, type: :controller do
 
     context 'when NOT logged in as the question\'s owner' do
       before do
-        allow(controller).to receive(:current_user) { jack }
+        allow(controller).to receive(:current_user) { user2 }
       end
 
       it 'does not remove the question' do
-        delete :destroy, params: { format: :json, params: { id: test_question.id }}
+        delete :destroy, { format: :json, params: { id: test_question.id }}
         expect(Question.exists?(test_question.id)).to be true
       end
     end
