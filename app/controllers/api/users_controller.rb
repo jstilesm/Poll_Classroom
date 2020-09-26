@@ -24,10 +24,11 @@ class Api::UsersController < ApplicationController
     def exists
         identifier = params.require(:identifier) 
         # debugger
-        if identifier
-            render json: User.find_by_username_or_email(identifier)
+        @user = User.find_by_username_or_email(identifier)
+        if @user
+            render json: true
         else
-            render json: ['User does not exist']
+            render json: false
         end
     end
 
