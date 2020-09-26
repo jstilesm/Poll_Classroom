@@ -24,6 +24,20 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+
+    has_many :questions,
+        foreign_key: :author_id,
+        class_name: :Question
+
+    # has_many :groups,
+    #     foreign_key: :user_id,
+    #     class_name: :Group
+
+
+    has_many :mult_responses, as: :registerable
+    has_many :text_responses, as: :registerable
+
+
     #fig_vaper
 
     def self.generate_session_token

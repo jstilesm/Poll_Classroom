@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { checkUser } from '../../util/api_util_session';
+import {checkUser} from '../../util/api_util_session';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -13,7 +13,8 @@ class SessionForm extends React.Component {
             email: '',
             password: '',
             identifier: '',
-            userExists: false
+            userExists: false,
+            error_message: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderPasswordField = this.renderPasswordField.bind(this)
@@ -41,13 +42,20 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (!this.state.userExists && this.props.formType === "Log in") {
+            checkUser(this.state.identifier)
+            .then(resp => {
+                this.setState({userExists: resp});
+                if (resp === false) {
+                    this.setState({ error_message: 'Account not Found'});
+                } else {
+                    this.setState({error_message: ''})
+                }
+            });
             // debugger
-            // checkUser(this.state.identifier);
-            //     .then(resp => (resp.json()))
             //     .then(exists => this.setState({userExists: true }));
             // chaining .then on promise to call view
     
-            this.setState({ userExists: true });
+            // this.setState({ userExists: true });
         } else {
             this.setState({ userExists: false });
             this.props.formFunction(this.state);    
@@ -64,6 +72,10 @@ class SessionForm extends React.Component {
                         {error}
                     </li>
                 ))}
+                
+                { this.state.error_message.length > 0 ? (<li className="error-items">
+                    {this.state.error_message}
+                </li>): <> </>}
             </ul>
         );
     }
@@ -140,13 +152,12 @@ class SessionForm extends React.Component {
                                     </label>
                                     {this.renderPasswordField()}
                                     {this.errors()}
-                
-                                
                                     <button className="login-submit" type="submit">{this.props.formType}</button>
                                     <div className="link-to-signup-container">
                                         <p className="link-to-signup">Need an account?</p><Link className="link-to-signup" to="/signup">Create one now</Link>
                                     </div>
                                 </form>
+        
                             </main>
                 )
             } else {
@@ -156,7 +167,7 @@ class SessionForm extends React.Component {
                             <h2 className="login-title">{this.props.formType}</h2>
 
                             <label className="email" >
-                                <input className="email-input" type="text" value={this.state.identifier} placeholder="Email or Username" onChange={this.update('identifier')} />
+                                <input className="email-input" type="text" value={this.state.identifier} placeholder="Happy Birthday Megan" onChange={this.update('identifier')} />
                             </label>
                             {this.errors()}
 
