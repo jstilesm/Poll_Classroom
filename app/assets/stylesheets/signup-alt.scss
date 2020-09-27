@@ -1,0 +1,108 @@
+
+
+
+
+.signup-alt-form {
+    display: flex;
+    font-family: "Gill Sans";
+    align-items: center;
+    height: 1000px;
+    width: 100%;
+}
+
+
+.alt-header2 {
+    font-size: 40px;
+    font-weight: 650;
+}
+
+.alt-header1 {
+    font-size: 40px;
+    color: white;
+    font-weight: 650;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -8px; 
+    width: 340px;
+}
+
+.alt-subheader {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    width: 390px;
+
+}
+
+.alt-image {
+    margin: 70px;
+    display: flex;
+    padding-right: 100px;
+    min-width: 550px;
+    max-width: 600px;
+}
+
+.box-one-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 170px;
+    width: 300px;
+    justify-content: space-around;
+    width: 30%;
+}
+.box-two-content {
+    display: flex;
+    flex-direction: column;
+    padding: 140px;
+    margin-bottom: 50px;
+    width: 150px;
+   
+}
+
+.box-one {
+    background-color: #025D9D;
+    width: 60%;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.box-two {
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.button-one {
+    color: #025D9D;
+    background-color: white;
+    width: 120px;
+    padding: 10px;
+
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.button-two {
+    background-color: #025D9D;
+    color: white;
+    font-size: 18px;
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+

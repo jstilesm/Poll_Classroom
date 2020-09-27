@@ -4,11 +4,11 @@ import {Link, useLocation} from 'react-router-dom';
 const NavBar = ({currentUser, logout, testUser}) => {
     const test = { identifier: 'tester', password: 'password' };
     const location = useLocation();
-    const hidenav = (location.pathname == '/signup' || location.pathname == '/login' ) 
+    const hidenav = (location.pathname == '/signup' || location.pathname == '/login' || location.pathname == '/signup-alt') 
     const sessionButtons = () => (
         <>
         <button className="test-user" onClick={() => testUser(test)}>Test User</button>
-        <Link className="signup-link" to="/signup">Sign Up</Link>
+        <Link className="signup-link" to="/signup-alt">Sign Up</Link>
         <Link className="login-link" to="/login">Log In</Link>
         </>
     )

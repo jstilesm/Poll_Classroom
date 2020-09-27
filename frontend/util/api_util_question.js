@@ -3,3 +3,10 @@
 //         url: ''
 //     })
 // )
+
+// export const deleteQuestion = () => (
+//     $.ajax({
+//         url: 'api/session',
+//         method: "DELETE"
+//     })
+// )
