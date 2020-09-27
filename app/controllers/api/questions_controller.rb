@@ -1,9 +1,9 @@
 class Api::QuestionsController < ApplicationController
 
-    def index
-        @question = Questions.all
-        render # what?
-    end
+    # def index
+    #     @question = Questions.all
+    #     render '/api/questions/show'
+    # end
 
     def create
          @question = Question.new(question_params)
@@ -12,7 +12,8 @@ class Api::QuestionsController < ApplicationController
          
 
         if @question.save
-            render '/api/questions/show'
+        render '/api/questions/show'
+            #  '/api/groups/questions/show ?'
         else 
             render json: @question.errors.full_messages, status: 422
         end 
@@ -22,6 +23,8 @@ class Api::QuestionsController < ApplicationController
         @question = current_user.questions.find_by(id: params[:id])
         if @question
             render '/api/questions/show'
+        else
+            render json: @question.errors.full_messages, status: 422
         end
     end
 

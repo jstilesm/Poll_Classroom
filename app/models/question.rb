@@ -38,7 +38,6 @@ class Question < ApplicationRecord
         foreign_key: :question_id,
         class_name: :TextResponse
 
-
     has_many :responses, 
         through: :question_options
 

@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_235317) do
+ActiveRecord::Schema.define(version: 2020_09_27_045500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "mult_responses", force: :cascade do |t|
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2020_09_26_235317) do
     t.boolean "correct", default: false, null: false
     t.integer "registerable_id"
     t.string "registerable_type"
+    t.integer "question_options_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "question_options_id", null: false
     t.index ["question_options_id"], name: "index_mult_responses_on_question_options_id"
     t.index ["registerable_id"], name: "index_mult_responses_on_registerable_id"
   end
@@ -47,10 +47,9 @@ ActiveRecord::Schema.define(version: 2020_09_26_235317) do
     t.boolean "allow_unregistered", default: false, null: false
     t.integer "group_id", null: false
     t.integer "author_id", null: false
+    t.string "kind", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "closed", default: false
-    t.string "kind", null: false
     t.index ["author_id"], name: "index_questions_on_author_id"
     t.index ["group_id"], name: "index_questions_on_group_id"
   end
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_09_26_235317) do
     t.string "registerable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "question_id", null: false
     t.index ["registerable_id"], name: "index_text_responses_on_registerable_id"
   end
 
