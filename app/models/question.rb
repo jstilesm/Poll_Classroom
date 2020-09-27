@@ -23,10 +23,21 @@ class Question < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
+    belongs_to :group,
+        primary_key: :id, 
+        foreign_key: :group_id,
+        class_name: :Group
+
     has_many :question_options,
         primary_key: :id,
         foreign_key: :question_id,
         class_name: :QuestionOptions 
+
+    has_many :text_responses,
+        primary_key: :id,
+        foreign_key: :question_id,
+        class_name: :TextResponse
+
 
     has_many :responses, 
         through: :question_options

@@ -14,4 +14,12 @@ class TextResponse < ApplicationRecord
 
     belongs_to :user, polymorphic: true
     belongs_to :visitor, polymorphic: true
+
+
+    belongs_to :question,
+        primary_key: :id,
+        foreign_key: :question_id,
+        class_name: :Question
+
 end
+

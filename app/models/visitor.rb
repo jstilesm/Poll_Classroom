@@ -15,7 +15,6 @@ class Visitor < ApplicationRecord
     # validates :password, length: {minimum: 6, allow_nil: true}
 
 
-    
     has_many :mult_responses, as: :registerable
     has_many :text_responses, as: :registerable
 

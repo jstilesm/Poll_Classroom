@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_192435) do
+ActiveRecord::Schema.define(version: 2020_09_26_235317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_09_26_192435) do
     t.string "registerable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "question_id", null: false
     t.index ["registerable_id"], name: "index_text_responses_on_registerable_id"
   end
 

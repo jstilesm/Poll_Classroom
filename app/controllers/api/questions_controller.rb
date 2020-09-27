@@ -1,6 +1,8 @@
 class Api::QuestionsController < ApplicationController
 
     def index
+        @question = Questions.all
+        render # what?
     end
 
     def create
@@ -17,6 +19,10 @@ class Api::QuestionsController < ApplicationController
     end
 
     def show
+        @question = current_user.questions.find_by(id: params[:id])
+        if @question
+            render '/api/questions/show'
+        end
     end
 
 
