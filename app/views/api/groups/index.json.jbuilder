@@ -7,3 +7,7 @@ json.array! @groups do |group|
   end
   
 end
+ 
+json.questions do
+  json.array! @group.questions, :title, :kind, :response_limit, :closed, :allow_unregistered
+end

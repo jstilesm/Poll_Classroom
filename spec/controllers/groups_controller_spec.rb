@@ -102,12 +102,12 @@ RSpec.describe Api::GroupsController, type: :controller do
 #     end
 
     describe 'Index group' do
-      context 'index should show index' do
+      context 'index should show index of questions' do
         before do
           allow(controller).to receive(:current_user) { user }
         end
 
-        it 'should show the index page' do
+        it 'should show the index page with its questions' do
             get :index, {format: :json}
             # debugger
         end
