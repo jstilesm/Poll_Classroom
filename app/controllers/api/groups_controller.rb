@@ -1,5 +1,12 @@
 class Api::GroupsController < ApplicationController
 
+
+    def index
+        @groups = current_user.groups
+        # debugger
+        render 'api/groups/index'
+    end
+
     def create
         @group = Question.new(group_params)
         #  debugger
@@ -27,7 +34,7 @@ class Api::GroupsController < ApplicationController
     def update
         @group = current_user.groups.find_by(id: params[:id])
         if @group.nil?
-            flash[:errors] = ["Question not found!"]
+            render json: "Group not found", status: 422
         elsif @group.update(group_params)
             render '/api/groups/show'
         else

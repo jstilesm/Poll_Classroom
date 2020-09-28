@@ -32,7 +32,7 @@ class Api::QuestionsController < ApplicationController
     def update
         @question = current_user.questions.find_by(id: params[:id])
         if @question.nil?
-            flash[:errors] = ["Question not found!"]
+            render json: "Question not found!", status: 422
         elsif @question.update(question_params)
             render '/api/questions/show'
         else

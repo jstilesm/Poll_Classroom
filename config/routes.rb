@@ -10,14 +10,17 @@ Rails.application.routes.draw do
       end
       resources :visitors, only: [:create]
     end
-    resources :groups, only: [:show, :create, :update, :destroy] do
-      resources :questions, only: [:create, :update, :show] do 
-         resources :mult_responses, only: [:create, :update, :show, :destroy]
-         resources :text_responses, only: [:create, :update, :show, :destroy]
-         resources :question_options, only: [:create, :update, :show, :destroy]
-      end
+    resources :groups, only: [:index,:show, :create, :update, :destroy] do
+      resources :questions, only: [:create]
     end
-    resources :questions, only: [:destroy]
+    resources :questions, only: [ :update, :show, :destroy] do
+      resources :mult_responses, only: [:create]
+      resources :text_responses, only: [:create]
+      resources :question_options, only: [:create] 
+    end
+    resources :mult_responses, only: [:update, :show, :destroy]
+    resources :text_responses, only: [:update, :show, :destroy]
+    resources :question_options, only: [:update, :show, :destroy]
     resource :session, only: [:create, :destroy]
     resources :visitors, only: [:update, :destroy]
 
