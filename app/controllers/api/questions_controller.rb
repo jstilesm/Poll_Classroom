@@ -1,9 +1,9 @@
 class Api::QuestionsController < ApplicationController
 
-    # def index
-    #     @question = Questions.all
-    #     render '/api/questions/show'
-    # end
+    def index
+        @question = Questions.all
+        render '/api/questions/show'
+    end
 
     def create
          @question = Question.new(question_params)

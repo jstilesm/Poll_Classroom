@@ -6,7 +6,7 @@
 
 export const fetchGroups = () => (
     $.ajax({
-        url: 'api/reports',
+        url: 'api/groups',
         method: "GET"
     })
 );

@@ -327,7 +327,19 @@
 
     // flex-wrap: wrap;
 }
-.errors {
+.errors-signup {
+    color: darkred;
+    list-style: none;
+    // padding: 2px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    flex-wrap: flex;
+    padding: 0px 4px;
+    margin-top: 10px; 
+}
+
+.errors{
     color: darkred;
     list-style: none;
     // padding: 2px;

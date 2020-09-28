@@ -1,10 +1,17 @@
 
-
+// 1. `fetchQuestions()`
 // 2. `fetchQuestion(questionId)`
 // 3. `createQuestion(question)`
 // 4. `updateQuestion(question)`
 // 5. `deleteQuestion(questionId)`
 
+
+export const fetchQuestions = () => (
+    $.ajax({
+        url: 'api/questions',
+        method: "GET"
+    })
+);
 
 export const fetchQuestion = (questionId) => (
     $.ajax({

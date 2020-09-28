@@ -3,15 +3,16 @@ import * as APIUtil from '../util/api_util_question'
 
 // export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
+export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 
 
-// const receiveQuestions = questions => {
-//     return {
-//         type: RECEIVE_QUESTIONS,
-//         questions
-//     };
-// };
+const receiveQuestions = questions => {
+    return {
+        type: RECEIVE_QUESTIONS,
+        questions
+    };
+};
 
 const receiveQuestion = question => {
     return {
@@ -30,15 +31,18 @@ const removeQuestion = questionId => {
 
 
 /*
+1.  `requestQuestions`
+2. `requestQuestion(questionId)`
+3. `createQuestion(question)`
+4. `updateQuestion(question)`
+5. `deleteQuestion(questionId)`
 
-1. `requestQuestion(questionId)`
-2. `createQuestion(question)`
-3. `updateQuestion(question)`
-4. `deleteQuestion(questionId)`
-
-5. requestQuestions
 */
 
+export const requestQuestions = () => dispatch => {
+    return APIUtil.fetchQuestions()
+    .then(questions => dispatch(receiveQuestions(questions)));
+};
 
 export const requestQuestion = (questionId) => dispatch => {
     return APIUtil.fetchQuestion(questionId)

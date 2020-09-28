@@ -65,6 +65,7 @@ class SessionForm extends React.Component {
     }
 
     errors() {
+        if (this.props.formType == 'Log in') {
         return (
             <ul className="errors">
                 {this.props.errors.map((error, i) => (
@@ -77,7 +78,22 @@ class SessionForm extends React.Component {
                     {this.state.error_message}
                 </li>): <> </>}
             </ul>
-        );
+            );
+         } else { 
+             return (
+                 <ul className="errors-signup">
+                     {this.props.errors.map((error, i) => (
+                         <li className="error-items" key={`error-${i}`}>
+                             {error}
+                         </li>
+                     ))}
+
+                     { this.state.error_message.length > 0 ? (<li className="error-items">
+                         {this.state.error_message}
+                     </li>) : <> </>}
+                 </ul>
+             )
+         }
     }
 
     renderPasswordField() {
