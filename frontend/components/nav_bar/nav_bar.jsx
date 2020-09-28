@@ -14,7 +14,7 @@ const NavBar = ({currentUser, logout, testUser}) => {
     )
     const personalNavButtons = () => (
         <>
-        <Link className="activities-link" to="/activities">Activities</Link>
+        <Link className="activities-link" to="/questions">Activities</Link>
         <button className="header-button" onClick={logout}>Log Out</button>
         </>
     )

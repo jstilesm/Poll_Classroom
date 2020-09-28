@@ -10,9 +10,9 @@ const mSTP = state => {
             kind: "",
             response_limit: 1,
             closed: false,
-            allow_unregistered: "",
+            allow_unregistered: false
         },
-        formType: "Create Question"
+        formType: "Add Question"
     };
 };
 

@@ -8,6 +8,12 @@ import ConnectorContainer from './connector/connector_container';
 // import GroupsContainer from './groups/group_container';
 import { Protected, AuthRoute } from '../util/route_util';
 
+//questions containers
+import QuestionIndexContainer from './questions/question_index_container';
+import CreateQuestionFormContainer from './questions/create_question_form_container';
+import EditQuestionFormContainer from './questions/edit_question_form_container';
+import QuestionShowContainer from './questions/create_question_form_container';
+
 
 const App = () => (
     <>
@@ -16,6 +22,12 @@ const App = () => (
         {/* <h1 className="main-header">Class Everywhere</h1> */}
  
         <Switch>
+            <Route exact path='/api/questions' component={QuestionIndexContainer} />
+            <Route exact path='/api/questions/new' component={CreateQuestionFormContainer} />
+            <Route exact path='/api/questions/:questionId' component={EditQuestionFormContainer} />
+            <Route exact path='/api/questions/:questionId/edit' component={QuestionShowContainer} />
+
+            
             <Route exact path="/signup-alt" component={ConnectorContainer} />
             <Route exact path="/" component={SplashContainer} />
             <AuthRoute path='/login' component={LoginContainer} />

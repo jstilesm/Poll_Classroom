@@ -14,7 +14,7 @@
 #
 class Question < ApplicationRecord
     validates :title, :kind, presence: true
-    validates :kind, inclusion: {in: ['multiple_choice', 'text_response']}
+    validates :kind, inclusion: {in: ['mult_responses', 'text_responses']}
 
 
     belongs_to :user,

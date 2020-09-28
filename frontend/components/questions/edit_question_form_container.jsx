@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateQuestion, deleteQuestion} from '../../actions/question_actions';
+import { updateQuestion, requestQuestion} from '../../actions/question_actions';
 import EditQuestionForm from './edit_question_form';
 
 
@@ -12,8 +12,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        updateQuestion: question => dispatch(updateQuestion(question)),
-        deleteQuestion: questionId => dispatch(deleteQuestion(questionId))
+        action: question => dispatch(updateQuestion(question)),
+        requestQuestion: question => dispatch(requestQuestion(question))
     };
 };
 
