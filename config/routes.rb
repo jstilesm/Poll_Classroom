@@ -4,16 +4,17 @@ Rails.application.routes.draw do
   root "static_pages#root"
   
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:create, :new, :show] do
+    resources :users, only: [:create, :update, :show] do
       collection do
         get "/exists" => "users#exists" 
       end
       resources :visitors, only: [:create]
+      resources :groups, only: [:index, :create]
     end
-    resources :groups, only: [:index,:show, :create, :update, :destroy] do
+    resources :groups, only: [:update, :destroy] do
       resources :questions, only: [:create]
     end
-    resources :questions, only: [ :update, :show, :destroy] do
+    resources :questions, only: [:update, :show, :destroy] do
       resources :mult_responses, only: [:create]
       resources :text_responses, only: [:create]
       resources :question_options, only: [:create] 

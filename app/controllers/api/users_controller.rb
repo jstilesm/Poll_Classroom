@@ -16,10 +16,16 @@ class Api::UsersController < ApplicationController
         end 
     end
 
-    # def new
-    #     @user = User.new
-    #     render #JBUILDER
-    # end
+    def update
+        @user = User.find_by(id: params[:id])
+        if @user.nil?
+            render json: "User not Found", status: 422
+        elsif @user.update(user_params)
+            render '/api/users/show'
+        else
+            render json: @user.errors.full_messages, status: 422
+        end
+    end
 
     def exists
         identifier = params.require(:identifier) 

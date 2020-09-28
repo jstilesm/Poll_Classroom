@@ -21,14 +21,6 @@ class Api::GroupsController < ApplicationController
         end 
     end
 
-    def show
-        @group = current_user.groups.find_by(id: params[:id])
-        if @group
-            render '/api/groups/show'
-        else
-            render json: @group.errors.full_messages, status: 422
-        end
-    end
 
 
     def update

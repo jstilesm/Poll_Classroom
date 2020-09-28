@@ -4,7 +4,8 @@ import SignupContainer from './session_form/signup_form_container';
 import LoginContainer from './session_form/login_form_container';
 import SplashContainer from './splash/splash_container';
 import NavContainer from './nav_bar/nav_bar_container';
-import ConnectorContainer from './connector/connector_container'
+import ConnectorContainer from './connector/connector_container';
+// import GroupsContainer from './groups/group_container';
 import { Protected, AuthRoute } from '../util/route_util';
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-class QuestionForm extends React.Component {
+class EditQuestionForm extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -15,4 +15,4 @@ class QuestionForm extends React.Component {
 }
 
 
-export default QuestionForm;
+export default EditQuestionForm;

@@ -21,6 +21,15 @@ export const logout = () => (
     })
 );
 
+export const updateUser = user => (
+    $.ajax({
+        url: '/api/session',
+        method: "PATCH",
+        data: {user}
+
+    })
+);
+
 // check user Ajax request that meets back end
 
 export const checkUser = (identifier) => (
