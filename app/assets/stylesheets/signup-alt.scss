@@ -40,15 +40,19 @@
     margin: 70px;
     display: flex;
     padding-right: 100px;
-    min-width: 550px;
-    max-width: 600px;
+    // min-width: 550px;
+    // max-width: 600px; 
+    padding-left: 60px;
+    width: 100%;
+    height: auto;
+    
 }
 
 .box-one-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 170px;
+    margin-left: 280px;
     width: 300px;
     justify-content: space-around;
     width: 30%;
@@ -64,11 +68,12 @@
 
 .box-one {
     background-color: #025D9D;
-    width: 60%;
+    width: 70%;
     align-items: center;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-left: 125px;
 }
 
 .box-two {
