@@ -21,7 +21,7 @@ export const logout = () => (
     })
 );
 
-export const updateUser = user => (
+export const update = user => (
     $.ajax({
         url: '/api/session',
         method: "PATCH",

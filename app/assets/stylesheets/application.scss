@@ -12,7 +12,7 @@
  *
  
  */
-// @import "./reset.scss";
+@import "./reset.scss";
 @import "./signup-alt.scss";
 
 
@@ -26,6 +26,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 .main-page {
     display: flex;
@@ -58,7 +59,8 @@
 .main-text {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Gill Sans'
+    font-family: 'Gill Sans';
+    padding-bottom: 20px;
 
 }
 .subtext {
@@ -66,6 +68,7 @@
     font-size: 14px;
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 .main-content {
@@ -105,6 +108,8 @@
     height: 120px;
     width: 120px;
     justify-content: center;
+    padding-bottom: 20px;
+    
 }
 
 .footer {
@@ -112,6 +117,7 @@
     width: 100%;
     display: flex;
     justify-content: left;
+    overflow: hidden;
 }
 
 .footerlink-a{
@@ -270,7 +276,7 @@
     margin-top: 168px;
     padding-left: 50px;
     height: auto;
-    min-width: 45%;
+    width: auto;
     margin-left: 100px;
 
 }
@@ -279,7 +285,7 @@
     height: 60px;
     top: 0px;
     left: 0px;
-    position: absolute;
+    // position: absolute;
     width: 100%;
     background: white;
 }
@@ -457,6 +463,7 @@ header {
     font-family: 'Gill Sans';
     font-size: 20px;
     display: flex;
+    padding-left: 5px;
     /* right: 85px; */
     // justify-content: center;
    
@@ -477,6 +484,7 @@ header {
 // }
 
 .login-submit {
+    
 	box-shadow:inset 0px 34px 0px -15px #A5332B;
 	background-color:#A5332B;
 	border:1px solid #A5332B;
@@ -486,9 +494,10 @@ header {
 	font-family:Arial;
 	font-size:15px;
 	// font-weight:bold;
-	padding:9px 23px;
-    text-decoration:none;
+    padding:9px 23px;
+    text-decorastion:none;
     margin: 0px 10px;
+    margin-top: 10px;
     width: 300px;
 }
 .login-submit:hover {
@@ -580,6 +589,7 @@ header {
     cursor:pointer;
     color: white;
     border-radius: 3px;
+    margin-top: 20px;
     
 }
 

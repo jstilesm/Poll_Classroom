@@ -55,11 +55,12 @@ export const logout = () => dispatch => (
 );
 
 
-export const updateUser = () => dispatch => (
-    APIUtil.updateUser(user)
+export const update = () => dispatch => (
+    APIUtil.update(user)
     .then(user => dispatch(receiveCurrentUser(user)),
     er => (dispatch(receviveErrors(er.responseJSON))))
 );
+
 // action for check user
 
 // export const checkUser = username => dispatch => (

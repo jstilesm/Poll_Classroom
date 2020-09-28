@@ -6,7 +6,7 @@
     display: flex;
     font-family: "Gill Sans";
     align-items: center;
-    height: 1000px;
+    height: 100%;
     width: 100%;
 }
 
@@ -14,6 +14,7 @@
 .alt-header2 {
     font-size: 40px;
     font-weight: 650;
+    padding-bottom: 20px;
 }
 
 .alt-header1 {
@@ -24,7 +25,7 @@
     justify-content: center;
     margin-bottom: -8px; 
     width: 340px;
-    // padding-left: 100px;
+    padding-bottom: 20px;
 }
 
 .alt-subheader {
@@ -35,6 +36,7 @@
     justify-content: center;
     width: 390px;
     // padding-left: 100px;
+    padding-bottom: 20px;
 
 }
 
@@ -77,6 +79,7 @@
     display: flex;
     justify-content: flex-end;
     padding-left: 125px;
+    overflow: hidden;
 }
 
 .box-two {
@@ -86,6 +89,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 
