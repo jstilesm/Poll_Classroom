@@ -261,11 +261,17 @@
     display: flex;
     align-items: center;
     height: 350px;
-    padding: 200px;
+    // padding-left: 200px;
+    // padding-right: 200px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     background-color: #EFEFEF;
-    margin: 23px;
+    // margin: 23px;
     margin-top: 168px;
     padding-left: 50px;
+    height: auto;
+    min-width: 45%;
+    margin-left: 100px;
 
 }
 .nav-bar {
@@ -522,6 +528,7 @@ header {
 .signup-visual {
     display: flex;
     // height: 100vh;
+    width: 24.5%;
     background-color: #EFEFEF;
 }
 
@@ -531,9 +538,10 @@ header {
     background-color: #2665A9;
     padding: 200px;
     // margin: 100px 100px;
-    min-width: 500px;
+    min-width: 400px;
     // max-width: 450px;
     height: auto;
+    width: 35%;
     // margin: 10px;
 }
 
@@ -550,7 +558,7 @@ header {
     justify-content: center;
     border-radius: 3px;
     padding-left: 35px;
-    height: 400px;
+    // height: 400px;
 }
 
 

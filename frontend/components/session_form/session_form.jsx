@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
     }
 
     renderPasswordField() {
-        if (this.state.userExists) {
+        if (this.state.error_message.length > 0 || this.state.userExists) {
             return (
                 <>
                     <br />
@@ -138,7 +138,7 @@ class SessionForm extends React.Component {
             
         )
     } else {
-            if (this.state.userExists) {
+            if (this.state.error_message.length > 0 || this.state.userExists) {
 
                 return (
                             <main className="login-page">
