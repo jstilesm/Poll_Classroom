@@ -8,15 +8,23 @@ Rails.application.routes.draw do
       collection do
         get "/exists" => "users#exists" 
       end
+      resources :visitors, only: [:create]
     end
-    resources :groups do
-      resources :questions, only: [:index, :create, :update, :show]
+    resources :groups, only: [:index,:show, :create, :update, :destroy] do
+      resources :questions, only: [:create]
     end
-    resources :questions, only: [:destroy]
+    resources :questions, only: [ :update, :show, :destroy] do
+      resources :mult_responses, only: [:create]
+      resources :text_responses, only: [:create]
+      resources :question_options, only: [:create] 
+    end
+    resources :mult_responses, only: [:update, :show, :destroy]
+    resources :text_responses, only: [:update, :show, :destroy]
+    resources :question_options, only: [:update, :show, :destroy]
+    resource :session, only: [:create, :destroy]
+    resources :visitors, only: [:update, :destroy]
+
     
-    resources :text_responses, only: [:create, :update, :show, :destroy]
-    resources :mult_responses, only: [:create, :update, :show, :destroy]
-    resource :session, only: [:create, :new, :destroy]
   end
 end
  

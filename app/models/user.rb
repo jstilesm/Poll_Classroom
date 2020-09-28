@@ -29,9 +29,9 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Question
 
-    # has_many :groups,
-    #     foreign_key: :user_id,
-    #     class_name: :Group
+    has_many :groups,
+        foreign_key: :user_id,
+        class_name: :Group
 
 
     has_many :mult_responses, as: :registerable

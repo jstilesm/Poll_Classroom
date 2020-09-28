@@ -7,5 +7,6 @@ json.event do
 end
 
 json.creator do
-    json.exract! @question.user, :username, :first_name, :last_name
+    json.extract! @question.user, :username, :first_name, :last_name
 end
+

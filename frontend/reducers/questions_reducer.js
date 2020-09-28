@@ -1,0 +1,20 @@
+import { RECEIVE_QUESTION, REMOVE_QUESTION} from '../actions/question_actions'
+
+
+
+const questionsReducer = (state = {}, action) => {
+    Object.freeze(state);
+    let nextState = Object.assign({}, state);
+    switch (action.type) {
+        case RECEIVE_QUESTION:
+            nextState[action.question.id] = question.report;
+            return nextState;
+        case REMOVE_QUESTION:
+            delete nextState[action.questionId]
+            return nextState;
+        default:
+            return state;
+    }
+};
+
+export default questionsReducer;

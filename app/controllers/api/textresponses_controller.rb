@@ -11,4 +11,9 @@ class Api::TextResponsesController < ApplicationController
 
     def destroy
     end
+
+    private
+    def text_responses_params
+        params.require(:text_responses).permit(:body)
+    end
 end
