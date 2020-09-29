@@ -2,8 +2,9 @@ class Api::QuestionsController < ApplicationController
 
     def index
 
-        @question = Question.all
-        render '/api/questions/show'
+        @questions = Question.all
+        # debugger
+        render '/api/questions/index'
     end
     
     def create
@@ -21,10 +22,12 @@ class Api::QuestionsController < ApplicationController
     end
 
     def show
+        # debugger
         @question = current_user.questions.find_by(id: params[:id])
         if @question
             render '/api/questions/show'
         else
+            # debugger
             render json: @question.errors.full_messages, status: 422
         end
     end
@@ -43,7 +46,6 @@ class Api::QuestionsController < ApplicationController
     end
 
      def destroy
-        @question = current_user.questions.find_by(id: params[:id])
         if @question && @question.delete
             render '/api/questions/show'
         end

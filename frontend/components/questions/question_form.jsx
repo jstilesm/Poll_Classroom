@@ -19,7 +19,8 @@ class QuestionForm extends React.Component {
     render() {
         return (
             <>
-            <h1>{this.props.formType}</h1>
+            {/* <h1>HELLO THERE</h1> */}
+            <h1>Create A Question</h1>
             <form onSubmit="this.handleSubmit">
                 <label>
                     <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
@@ -27,13 +28,13 @@ class QuestionForm extends React.Component {
                 <label>
                     <input type="text" value={this.state.kind} placeholder="Kind" onChange={this.update('kind')}/>
                 </label>
-                <label>
-                    <input type="number" value={this.state.response_limit} name="response_limit" onChange={this.update('response_limit')}/>
+                <label>Response_Limit
+                    <input type="number" value={this.state.response_limit} onChange={this.update('response_limit')}/>
                 </label>
-                <label>
+                <label>Closed?
                     <input type="checkbox" value={this.state.closed} name="closed?" onChange={this.update('closed')} />
                 </label>
-                <label>
+                <label>Allow_Unregistered?
                     <input type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')}/>
                 </label>
             </form>

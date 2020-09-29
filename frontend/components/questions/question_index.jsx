@@ -11,6 +11,7 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
+        debugger
         return(
             <>
                 <ul>

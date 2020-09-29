@@ -5,6 +5,7 @@ import { requestQuestions, deleteQuestion} from '../../actions/question_actions'
 
 
 const mSTP = state => {
+    // debugger
     return {
         questions: Object.values(state.questions)
     };

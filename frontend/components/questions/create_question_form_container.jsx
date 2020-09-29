@@ -18,7 +18,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        action: question => dispatch(createQuestion(question))
+        createQuestion: question => dispatch(createQuestion(question))
     };
 };
 

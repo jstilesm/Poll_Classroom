@@ -22,10 +22,10 @@ const App = () => (
         {/* <h1 className="main-header">Class Everywhere</h1> */}
  
         <Switch>
-            <Route exact path='/api/questions' component={QuestionIndexContainer} />
-            <Route exact path='/api/questions/new' component={CreateQuestionFormContainer} />
-            <Route exact path='/api/questions/:questionId' component={EditQuestionFormContainer} />
-            <Route exact path='/api/questions/:questionId/edit' component={QuestionShowContainer} />
+            <AuthRoute exact path='#/api/questions' component={QuestionIndexContainer} />
+            <AuthRoute exact path='/api/questions/new' component={CreateQuestionFormContainer} />
+            <AuthRoute exact path='/api/questions/:questionId' component={EditQuestionFormContainer} />
+            <AuthRoute exact path='/api/questions/:questionId/edit' component={QuestionShowContainer} />
 
             
             <Route exact path="/signup-alt" component={ConnectorContainer} />

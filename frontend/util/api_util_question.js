@@ -8,7 +8,7 @@
 
 export const fetchQuestions = () => (
     $.ajax({
-        url: 'api/questions',
+        url: '#/api/questions',
         method: "GET"
     })
 );

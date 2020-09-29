@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // store.login = user => store.dispatch(login(user));
     // store.signup = user => store.dispatch(signup(user));
 
-    window.login = login;
-    window.logout = logout;
-    window.signup = signup;
+    // window.login = login;
+    // window.logout = logout;
+    // window.signup = signup;
     window.getState = store.getState;
-    window.dispatch = store.dispatch;
+    // window.dispatch = store.dispatch;
     // test end
 
     const root = document.getElementById('root');

@@ -4,6 +4,7 @@ import {Link, useLocation} from 'react-router-dom';
 const NavBar = ({currentUser, logout, testUser}) => {
     const test = { identifier: 'tester', password: 'password' };
     const location = useLocation();
+    // const activnav = 
     const hidenav = (location.pathname == '/signup' || location.pathname == '/login' || location.pathname == '/signup-alt') 
     const sessionButtons = () => (
         <>
@@ -14,7 +15,7 @@ const NavBar = ({currentUser, logout, testUser}) => {
     )
     const personalNavButtons = () => (
         <>
-        <Link className="activities-link" to="/questions">Activities</Link>
+        <Link className="activities-link" to="api/questions">Activities</Link>
         <button className="header-button" onClick={logout}>Log Out</button>
         </>
     )
