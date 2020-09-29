@@ -7,17 +7,23 @@ import QuestionIndexItem from './question_index_item';
 
 class QuestionIndex extends React.Component {
     componentDidMount() {
-        this.props.requestQuestions(this.props.questions);
+        // debugger
+        this.props.requestQuestions();
+        // debugger
     }
 
     render() {
-        debugger
+        // debugger
         return(
             <>
-                <ul>
-                    {this.props.questions.map(question => <QuestionIndexItem question={question} deleteQuestion={this.props.deleteQuestion} />)}
-                </ul>
-                <Link to="/questions/new">New Question</Link>
+                <button className="create-question" onClick={this.props.openModal}>Create</button>
+                <div className="main-page">
+                        {/* <Link to="/questions/new">New Question</Link> */}
+                        <ul className="questions-box">
+                            {this.props.questions.map(question => <QuestionIndexItem question={question} deleteQuestion={this.props.deleteQuestion} />)}
+                    
+                        </ul>
+                </div>
             </>
         )
     }

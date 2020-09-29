@@ -5,7 +5,7 @@ import EditQuestionForm from './edit_question_form';
 
 const mSTP = (state, ownProps) => {
     return {
-        question: state.questions[ownProps.match.params.questionId],
+        question: state.entities.questions[ownProps.match.params.questionId],
         formType: "Update Question"
     };
 };

@@ -11,6 +11,7 @@ class QuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     update(field) {
@@ -19,8 +20,8 @@ class QuestionForm extends React.Component {
     render() {
         return (
             <>
-            {/* <h1>HELLO THERE</h1> */}
-            <h1>Create A Question</h1>
+            <button onClick = {this.props.openModal}>Create</button>
+            <div onClick={this.props.closeModal} className="close-x">X</div>
             <form onSubmit="this.handleSubmit">
                 <label>
                     <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
@@ -38,6 +39,10 @@ class QuestionForm extends React.Component {
                     <input type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')}/>
                 </label>
             </form>
+            
+            
+            {/* <h1>HI CRHIS</h1> */}
+
             </>
         )
     }

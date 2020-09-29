@@ -1,1 +1,1 @@
-json.extract! question, :title, :kind, :response_limit, :allow_unregistered, :closed
+json.extract! question, :id, :title, :kind, :response_limit, :allow_unregistered, :closed

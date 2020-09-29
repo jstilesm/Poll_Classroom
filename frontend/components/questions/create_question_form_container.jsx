@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import { createQuestion } from '../../actions/question_actions';
 import QuestionForm from './question_form';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 
-const mSTP = state => {
+const mSTP = ({state, errors}) => {
     return {
+        errors: errors.session,
         question: {
             title: "",
             kind: "",
@@ -12,13 +14,15 @@ const mSTP = state => {
             closed: false,
             allow_unregistered: false
         },
-        formType: "Add Question"
     };
 };
 
 const mDTP = dispatch => {
     return {
-        createQuestion: question => dispatch(createQuestion(question))
+        processForm: question => dispatch(createQuestion(question)),
+        openModal: () => dispatch(openModal("Add Question")),
+        closeModal: () => dispatch(closeModal())
+        
     };
 };
 

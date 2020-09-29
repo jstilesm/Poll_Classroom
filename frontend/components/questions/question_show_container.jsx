@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { requestQuestion } from '../../actions/question_actions';
-import QuestionShow from './edit_question_form';
+import QuestionShow from './question_show';
 
 
 const mSTP = (state, ownProps) => {
+    // debugger
     return {
-        question: state.questions[ownProps.match.params.questionId],
+        question: state.entities.questions[ownProps.match.params.questionId],
     };
 };
 
