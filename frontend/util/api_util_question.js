@@ -37,7 +37,7 @@ export const updateQuestion = question => (
 
 export const deleteQuestion = (questionId) => (
     $.ajax({
-        url: `/api/questions${questionId}`,
+        url: `/api/questions/${questionId}`,
         method: "DELETE"
     })
 );

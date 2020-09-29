@@ -17,11 +17,12 @@ class QuestionIndex extends React.Component {
         return(
             <>
                 <button className="create-question" onClick={this.props.openModal}>Create</button>
+                
                 <div className="main-page">
                         {/* <Link to="/questions/new">New Question</Link> */}
                         <ul className="questions-box">
-                            {this.props.questions.map(question => <QuestionIndexItem question={question} deleteQuestion={this.props.deleteQuestion} />)}
-                    
+                            {this.props.questions.map(question => <QuestionIndexItem key={question.id} question={question} deleteQuestion={this.props.deleteQuestion} />)}
+    
                         </ul>
                 </div>
             </>

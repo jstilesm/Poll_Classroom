@@ -1,28 +1,45 @@
 import React from 'react';
+import { render } from 'react-dom';
 import {Link} from 'react-router-dom'
+import Dropdown from '../dropdown/dropdown'
 
-const QuestionIndexItem = ({question, deleteQuestion}) => {
+
+class QuestionIndexItem extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {status: this.props.question.closed};
+        this.update = this.update.bind(this)
+    }
     
-    return (
-        <> 
-            
-        <div className="question-item">
-            <h1>{question.title}</h1>
-            
-                <div className="drop-downbutton">
-                    <a className="dropdown-icon" href="#"><i class="fas fa-ellipsis-v"></i></a>
-                    <ul className="dropdown-menu">
-                        <li><Link to={`/questions/${question.id}/edit`}>Edit</Link></li>
-                        <li><a href="#">Duplicate</a></li>
-                        <button onClick={() => deleteQuestion(question.id)}>Delete</button>
-                        {/* <li class="divider"></li> */}
-                    </ul>
-                </div>
-            
-        </div>
+    update() {
+        // console.log(this.state.status)
+        this.setState({status: !this.state.status});
+    }
+    
+    render() {
+        let status;
+        if (this.state.status) {
+            status = "Deactivate";
+            } else {
+            status = "Activate";
+        }
         
-        </>
-    )
+        // debugger
+        return (
+            <>
+
+                <div className="question-item">
+                    {this.props.question.kind === "mult_response" ? <div className="mult_choice"></div> : <i className="text fas fa-align-left"></i>}
+                    <h1>{this.props.question.title}</h1>
+                    <a className="activated" onClick={this.update}>{status}</a>
+                    <Dropdown question={this.props.question} deleteQuestion={this.props.deleteQuestion} />
+
+
+                </div>
+
+            </> 
+        )
+    }
 }
 
 export default QuestionIndexItem;

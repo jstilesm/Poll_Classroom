@@ -12,8 +12,8 @@ Group.destroy_all
 
 tester = User.create({id: 0, username: 'tester', email: 'tester@aol.com' , first_name: 'test' ,last_name: 'er', password: 'password'})
 group = Group.create({id: 0, name: "Dummies", user_id: tester.id})
-question1 =  Question.create({title: 'title', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'text_responses'})
-question1 =  Question.create({title: 'Why does one eat food?', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'mult_responses'})
-question1 =  Question.create({title: 'What is the meaning of life?', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'text_responses'})
-question1 =  Question.create({title: '1 + 1 = ?', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'mult_responses'})
+question1 =  Question.create({title: 'title', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'text_response'})
+question1 =  Question.create({title: 'Why does one eat food?', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'mult_response'})
+question1 =  Question.create({title: 'What is the meaning of life?', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'text_response'})
+question1 =  Question.create({title: '1 + 1 = ?', closed: false, allow_unregistered: false, response_limit: 1, author_id: tester.id, group_id: group.id, kind: 'mult_response'})
 

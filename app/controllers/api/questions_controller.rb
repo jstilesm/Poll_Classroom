@@ -10,10 +10,11 @@ class Api::QuestionsController < ApplicationController
     def create
          @question = Question.new(question_params)
          @question.user = current_user
-         @question.group_id = params[:group_id]
-         
 
+         
+        # debugger
         if @question.save
+        # debugger
         render '/api/questions/show'
             #  '/api/groups/questions/show ?'
         else 
@@ -49,10 +50,11 @@ class Api::QuestionsController < ApplicationController
         if @question && @question.delete
             render '/api/questions/show'
         end
-    end
+end
 
     private
     def question_params
-        params.require(:question).permit(:title, :kind, :response_limit, :closed, :allow_unregistered)
+        params.require(:question).permit(:title, :group_id, :kind, :response_limit, :closed, :allow_unregistered)
     end
 end
+

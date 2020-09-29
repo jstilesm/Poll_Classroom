@@ -3,7 +3,7 @@ import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 import CreateQuestionFormContainer from '../questions/create_question_form_container';
 
-function Modal({modal, closeModal}) {
+function Modal({errors, modal, closeModal}) {
     if (!modal) {
         return null;
     } 
@@ -19,6 +19,9 @@ function Modal({modal, closeModal}) {
         <div className='modal-background' onClick={closeModal}>
             <div className="modal" onClick={e => e.stopPropagation()}>
                 {component}
+            </div>
+            <div>
+               {errors}
             </div>
         </div>
     );
