@@ -16,9 +16,9 @@ class EditQuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state);
-        if (this.props.errors.length === 0) {
+        if (!this.props.errors) {
             this.props.history.push('/questions');
-        }
+        } 
     }
 
     update(field) {
@@ -26,7 +26,7 @@ class EditQuestionForm extends React.Component {
     }
 
     render() {
-        const { action, question, formType} = this.props;
+        const { errors, question} = this.props;
         if (!question) return null;
         return (
             <div className="edit-page">
@@ -51,7 +51,13 @@ class EditQuestionForm extends React.Component {
                         <input type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')} />
                     </label>
                     <button className="save-button" type="submit">Save</button>
-                    <div>{this.props.errors}</div>
+                    <ul className="create-errors">
+                        {errors.map((error, i) => (
+                            <li className="question-error-items" key={`error-${i}`}>
+                                {error}
+                            </li>
+                        ))}
+                    </ul>
                 </form>
             </div>
         )
