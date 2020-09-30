@@ -1,4 +1,4 @@
-import { CLEAR_ERRORS, RECEIVE_QUESTION_ERRORS } from '../actions/session_actions';
+import { CLEAR_ERRORS, RECEIVE_QUESTION_ERRORS } from '../actions/question_actions';
 
 
 
