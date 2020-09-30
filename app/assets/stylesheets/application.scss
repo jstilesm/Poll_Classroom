@@ -49,11 +49,15 @@
     // display: flex;  
     justify-content: flex-end;    
     // flex-direction: column;
+    // padding-right: 0px;
+    // padding-top: 100px;
 }
 
 .user-dropdown-items {
-    background-color: white;
-    color: #0265A8
+    padding-top:20px;
+    // background-color: white;
+    // color: #0265A8;
+    // padding-top: 90px;
 }
 
 
@@ -332,6 +336,21 @@
     // display: flex;
     // justify-content: center;
     
+}
+
+.nav-button {
+    box-shadow:inset 0px 34px 0px -15px  white ;
+	background-color:white ;
+	border:1px solid white ;
+	// display:inline-block;
+	cursor:pointer;
+	color: #2665A9;
+	font-family: "Gill Sans";
+    font-size: 15px;
+    // margin: 15px;
+	// font-weight:bold;
+	// padding:9px 23px;
+	text-decoration:none;
 }
 
 // nav bar test user 

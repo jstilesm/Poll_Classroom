@@ -38,7 +38,7 @@ class UserDropdown extends React.Component {
                         <ul className="user-dropdown-items" onClick={e => console.log(e)}>
                             <li onClick={e => e.stopPropagation()}>
                                 <Link to='/'>
-                                    <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                                    <button className="nav-button" onClick={this.props.logout}>Log Out</button>
                                 </Link>
                             </li>
                             
