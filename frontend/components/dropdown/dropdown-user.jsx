@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-class ClickDropdown extends React.Component {
+class UserDropdown extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,27 +23,25 @@ class ClickDropdown extends React.Component {
     whenFocus(e) {
         e.preventDefault();
         if (e.type === 'focus') {
-            this.setState({ show: true});
+            this.setState({ show: true });
         } else {
-            this.setState({show: false});
+            this.setState({ show: false });
         }
     }
     render() {
+        // debugger
         return (
             <div>
-                <button className="threedots" onFocus={this.whenFocus} onBlur={this.whenBlur}>
-                    <i className="actions fas fa-ellipsis-v">Actions</i>
+                    <button className="userbar" onFocus={this.whenFocus} onBlur={this.whenBlur}>{this.props.user.username}
+                        <i className="userbar-cog" class="fas fa-cog"></i>
                     {this.state.show ? (
-                        <ul className="threedots" onClick={ e => console.log(e)}>
+                        <ul className="user-dropdown-items" onClick={e => console.log(e)}>
                             <li onClick={e => e.stopPropagation()}>
-                                <Link to={`/questions/${this.props.question.id}/edit`}>
-                                    <i class="fas fa-pencil-alt"></i>Edit
+                                <Link to='/'>
+                                    <button className="header-button" onClick={this.props.logout}>Log Out</button>
                                 </Link>
                             </li>
-                            <li className="deli" onClick={() => this.props.deleteQuestion(this.props.question.id)}>
-                                <i class="fa fa-trash" aria-hidden="true">
-                                    </i>Delete
-                            </li>
+                            
                         </ul>
                     ) : null}
                 </button>
@@ -52,5 +50,5 @@ class ClickDropdown extends React.Component {
     }
 }
 
-export default ClickDropdown;
+export default UserDropdown;
 

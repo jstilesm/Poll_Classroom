@@ -28,11 +28,11 @@ function Modal({errors, modal, closeModal}) {
     );
 }
 
-const mSTP = (state,errors) => {
+const mSTP = state => {
     // debugger
     return {
         modal: state.ui.modal,
-        errors: errors.question
+        // errors: state.errors.question
     }
 }
 

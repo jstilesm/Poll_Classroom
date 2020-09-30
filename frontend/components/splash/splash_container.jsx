@@ -14,6 +14,7 @@ const mSTP = ({ errors }) => {
 const mDTP = dispatch => {
     return {
         clearErrors: () => dispatch(clearErrors()),
+        
     };
 };
 

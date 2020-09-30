@@ -54,8 +54,45 @@
 }
 
 .activated {
+    
     cursor: pointer;
 }
+
+.activated-image {
+    background-image: image_url('activated.png');
+    background-size: cover;
+
+    height: 30px;   
+    width: 30px;
+    padding-right: 4px;
+    margin-top: -6px;
+}
+
+.activated-group {
+    display: flex;
+    justify-content: center;
+}
+
+.actions {
+    display: flex;
+}
+
+.deactivated-image {
+    background-image: image_url('deactivated.png');
+    background-size: cover;
+
+    height: 25px;   
+    width: 25px;
+    padding-right: 4px;
+    margin-top: -6px;
+}
+
+.question-title {
+    text-decoration: none;
+    color: black;
+}
+
+
 
 
 

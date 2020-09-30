@@ -5,8 +5,9 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mSTP = ({state, errors}) => {
+    // debugger
     return {
-        errors: errors.session,
+        errors: errors.question,
         question: {
             title: "",
             kind: "",
@@ -21,7 +22,8 @@ const mDTP = dispatch => {
     return {
         processForm: question => dispatch(createQuestion(question)),
         openModal: () => dispatch(openModal("Add Question")),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        clearErrors: () => dispatch(clearErrors())
         
     };
 };

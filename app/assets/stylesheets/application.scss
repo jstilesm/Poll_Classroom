@@ -38,6 +38,25 @@
 
 }
 
+.userbar {
+    color: white;
+    padding: 20px;
+    background-color: #0265A8;
+    // padding-right: 5px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    // display: flex;  
+    justify-content: flex-end;    
+    // flex-direction: column;
+}
+
+.user-dropdown-items {
+    background-color: white;
+    color: #0265A8
+}
+
+
 
 .main-paragraph {
     display: flex;
@@ -508,7 +527,7 @@ header {
 	font-size:15px;
 	// font-weight:bold;
     padding:9px 23px;
-    text-decorastion:none;
+    text-decoration: none;
     margin: 0px 10px;
     margin-top: 10px;
     width: 300px;
