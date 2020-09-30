@@ -28,12 +28,12 @@ class EditQuestionForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
+                    <input className="" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
                 </label>
                 <label>
                     <select value={this.state.kind} onChange={this.update('kind')}>
-                        <option name="mult_response">mult_response</option>
                         <option name="text_response">text_response</option>
+                        <option name="mult_response">mult_response</option>
                     </select>
                     {/* <input type="text" value={this.state.kind} placeholder="Kind" onChange={this.update('kind')}/> */}
                 </label>

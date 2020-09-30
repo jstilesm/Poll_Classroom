@@ -20,6 +20,7 @@
 	padding:9px 60px;
     text-decoration:none;
     // margin-right: 260px;
+    // margin-right: 260px;
     justify-content: flex-start;
 
 }
@@ -72,9 +73,12 @@
   position: absolute;
   background: lightgrey;
   top: 50%;
-
+  display:flex;
   left: 50%;
   transform: translate(-50%, -50%);
+//   height: 80%;
+//   width: 100%;
+
 }
 
 .close-x {
@@ -86,7 +90,7 @@
 	color:#ffffff;
 	font-family: "Gill Sans";
     font-size: 15px;
-    margin: 15px;
+    margin: -95px;
 	// font-weight:bold;
 	padding:12px 12px;
     text-decoration:none;
@@ -96,6 +100,7 @@
     align-items: center;
     width: 20px;
     position: absolute;
+    margin-top: -300px;
     
 }
 
