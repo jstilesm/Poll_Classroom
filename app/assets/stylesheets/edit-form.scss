@@ -1,0 +1,40 @@
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.edit-page {
+    display: flex;
+    height: 1000px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.title-label {
+    display: flex
+}
+
+.close-label {
+    display: flex;
+}
+
+.register-label {
+    display: flex;
+}
+
+.save-button {
+    // display: flex;
+    box-shadow: inset 0px 34px 0px -15px #2665A9;
+    background-color: #2665A9;
+    border: 1px solid #2665A9;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "Gill Sans";
+    font-size: 15px;
+    margin: 15px;
+    padding: 9px 60px;
+    text-decoration: none;
+    justify-content: flex-start;
+}

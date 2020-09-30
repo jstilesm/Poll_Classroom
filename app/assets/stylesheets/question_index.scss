@@ -159,6 +159,7 @@
     display: flex;  
     justify-content: flex-end;    
     flex-direction: column;
+    outline: none;
 
 }
 // .threedots:active {
@@ -169,8 +170,7 @@
     background-image: image_url('mult-choice.png');
     background-size: cover;
     height: 30px;   
-    width: 30px;
-    
+    width: 30px;   
 }
 
 .text {

@@ -15,6 +15,7 @@
 @import "./question_index.scss";
 @import "./reset.scss";
 @import "./signup-alt.scss";
+@import "./edit-form.scss";
 
 
 
@@ -40,7 +41,7 @@
 
 .userbar {
     color: white;
-    padding: 20px;
+    // padding: 20px;
     background-color: #0265A8;
     // padding-right: 5px;
     text-decoration: none;
@@ -49,12 +50,19 @@
     // display: flex;  
     justify-content: flex-end;    
     // flex-direction: column;
-    // padding-right: 0px;
-    // padding-top: 100px;
+    padding-right: 30px;
+    padding-top: 20px;
+    outline: none;
+    position: relative;
+    margin-left: 35px;
+    padding-right: 50px;
 }
 
 .user-dropdown-items {
-    padding-top:20px;
+    padding-top:5px;
+    position: absolute;
+    right: 45px;
+    
     // background-color: white;
     // color: #0265A8;
     // padding-top: 90px;
@@ -341,7 +349,7 @@
 .nav-button {
     box-shadow:inset 0px 34px 0px -15px  white ;
 	background-color:white ;
-	border:1px solid white ;
+	border:1px solid grey ;
 	// display:inline-block;
 	cursor:pointer;
 	color: #2665A9;
@@ -350,7 +358,11 @@
     // margin: 15px;
 	// font-weight:bold;
 	// padding:9px 23px;
-	text-decoration:none;
+    text-decoration:none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 // nav bar test user 

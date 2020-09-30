@@ -6,9 +6,9 @@ import Dropdown from '../dropdown/dropdown'
 
 class QuestionIndexItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {status: this.props.question.closed};
-        this.update = this.update.bind(this)
+        this.update = this.update.bind(this);
     }
     
     update() {

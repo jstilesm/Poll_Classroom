@@ -16,8 +16,8 @@ class EditQuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state);
-        if (this.props.errors.length > 0) {
-            this.props.history.push('/questions') 
+        if (this.props.errors.length === 0) {
+            this.props.history.push('/questions');
         }
     }
 
@@ -29,29 +29,31 @@ class EditQuestionForm extends React.Component {
         const { action, question, formType} = this.props;
         if (!question) return null;
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    <input className="" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
-                </label>
-                <label>
-                    <select value={this.state.kind} onChange={this.update('kind')}>
-                        <option name="text_response">text_response</option>
-                        <option name="mult_response">mult_response</option>
-                    </select>
-                    {/* <input type="text" value={this.state.kind} placeholder="Kind" onChange={this.update('kind')}/> */}
-                </label>
-                <label>Response_Limit
-                    <input type="number" value={this.state.response_limit} onChange={this.update('response_limit')} />
-                </label>
-                <label>Closed?
-                    <input type="checkbox" value={this.state.closed} name="closed?" onChange={this.update('closed')} />
-                </label>
-                <label>Allow_Unregistered?
-                    <input type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')} />
-                </label>
-                <button type="submit">Update</button>
-                <div>{this.props.errors}</div>
-            </form>
+            <div className="edit-page">
+                <form className="edit-form" onSubmit={this.handleSubmit}>
+                    <label className="title-label" >Title
+                        <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
+                    </label>
+                    {/* <label>
+                        <select value={this.state.kind} onChange={this.update('kind')}>
+                            <option name="text_response">text_response</option>
+                            <option name="mult_response">mult_response</option>
+                        </select>
+                       
+                    </label> */}
+                    <label className="response-label">Response_Limit
+                        <input type="number" value={this.state.response_limit} onChange={this.update('response_limit')} />
+                    </label>
+                    <label className="close-label">Closed?
+                        <input type="checkbox" value={this.state.closed} name="closed?" onChange={this.update('closed')} />
+                    </label>
+                    <label className="register-label">Allow_Unregistered?
+                        <input type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')} />
+                    </label>
+                    <button className="save-button" type="submit">Save</button>
+                    <div>{this.props.errors}</div>
+                </form>
+            </div>
         )
     }
 }
