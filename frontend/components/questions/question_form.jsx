@@ -11,6 +11,7 @@ class QuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state).then(this.props.closeModal);
+        this.props.history.push('/questions');
     }
 
     update(field) {
@@ -18,7 +19,7 @@ class QuestionForm extends React.Component {
     }
     render() {
         // debugger
-        // console.log(this.props.errors)
+        // debugger
         return (
             <>
             <button onClick = {this.handleSubmit}>Create</button>
