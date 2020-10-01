@@ -5,10 +5,20 @@ import {Link} from 'react-router-dom';
 class QuestionShow extends React.Component {
     componentDidMount() {
         // debugger
-        this.props.requestQuestion(this.props.match.params.questionId);
+        let number = this.props.match.params.questionId;
+        this.props.requestQuestion(number);
     }
 
     render() {
+        // debugger
+        let number = this.props.match.params.questionId;
+        // if (!isNaN(number)) {
+        //     // debugger
+        //     console.log(number);
+        // } else {
+        //     console.log("nowork");
+        // }
+        // debugger
         return (
 
             <div className="show-page">
@@ -24,9 +34,9 @@ class QuestionShow extends React.Component {
                 {/* <Link to="/">Link</Link> */}
                 <div className="white-box">
                     <div className="button-box">
-                        <button className="edit-button">Edit</button>
+                        <Link className="edit-button" to={`/questions/${number}/edit`}>Edit</Link>
                         <button className="activate-button">Activate</button>
-                        <button className="back-button">Back</button>
+                        <Link className="back-button" to="/questions/">Back</Link>
                     </div>
                 </div>
             </div>
