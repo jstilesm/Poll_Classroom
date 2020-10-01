@@ -2,8 +2,11 @@
 .main-index-page {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .create-question {
@@ -24,13 +27,85 @@
     justify-content: flex-start;
 
 }
+.import-question {
+    box-shadow:inset 0px 34px 0px -15px white ;
+	background-color: white ;
+	border:1px solid #2665A9 ;
+	// display:inline-block;
+	cursor:pointer;
+	color:#2665A9 ;
+	font-family: "Gill Sans";
+    font-size: 15px;
+    margin: 15px;
+	// font-weight:bold;
+	padding:9px 60px;
+    text-decoration:none;
+    // margin-right: 260px;
+    // margin-right: 260px;
+    justify-content: flex-start;
+    outline: none;
+
+}
+.activities-button {
+    font-style: "Gill Sans";
+    margin-top: 20px;
+    color: black;
+    display: flex;
+    // height: 15px;   
+    // width: 30px;
+    border: none;
+    outline: none;
+    background-color: white;
+    width: 172px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.activities-button:hover {
+    color: #3395D6;
+    background-color:#CDE3F5;
+    
+}
+.trash-button {
+    font-style: "Gill Sans";
+    margin-top: 20px;
+    color: black;
+    display: flex;
+    // height: 15px;   
+    // width: 30px;
+    border: none;
+    outline: none;
+    background-color:white;
+    width: 172px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.trash-button:hover {
+    color: #3395D6;
+   background-color:#CDE3F5;
+    
+}
+
+
+.greybar {
+    background-color: lightgrey;
+    width: 171px;
+    height: 2px;    
+    margin-left: 15px;
+}
+.toprightbuttons {
+    display:flex;
+    flex-direction: column;
+    width:200px;
+}
 
 .questions-box {
     display: inline-flex;
     flex-direction: column;
     width: 60%; 
     // padding-left: 400px;
-    padding-top: 200px;
+    // padding-top: 200px;
 
 }
 

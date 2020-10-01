@@ -13,12 +13,20 @@ class UserDropdown extends React.Component {
     }
     whenBlur(e) {
         e.preventDefault();
-        this.setState({show: false})
+        if (e.type !== 'focus') {
+            this.setState({ show: true })
+        } else {
+            this.setState({ show: false })
+        }
     }
 
     whenFocus(e) {
         e.preventDefault();
-        this.setState({show: true})
+        if (e.type === 'focus') {
+            this.setState({ show: true });
+        } else {
+            this.setState({ show: false });
+        }
     }
     render() {
         // debugger

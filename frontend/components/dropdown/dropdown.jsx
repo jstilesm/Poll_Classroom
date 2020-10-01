@@ -13,12 +13,20 @@ class ClickDropdown extends React.Component {
     }
     whenBlur(e) {
         e.preventDefault();
-       this.setState({show: false});
+        if (e.type !== 'focus') {
+            this.setState({ show: true });
+        } else {
+            this.setState({ show: false });
+        }
     }
 
     whenFocus(e) {
         e.preventDefault();
-        this.setState({show: true});
+        if (e.type === 'focus') {
+            this.setState({ show: true});
+        } else {
+            this.setState({show: false});
+        }
     }
     render() {
         return (
@@ -28,16 +36,15 @@ class ClickDropdown extends React.Component {
                     {this.state.show ? (
                         <ul onClick={ e => console.log(e)}>
                             <div className="options-box">
-                                <li className="delete-icon" onClick={() => this.props.deleteQuestion(this.props.question.id)}>
-                                    <i class="fa fa-trash" aria-hidden="true">
-                                    </i>Delete
-                                </li>
                                 <li className="edit-icon" onClick={e => e.stopPropagation()}>
                                     <Link className="edit-words" to={`/questions/${this.props.question.id}/edit`}>
                                         <i class="fas fa-pencil-alt"></i>Edit
                                     </Link>
                                 </li>
-                
+                                <li className="delete-icon" onClick={() => this.props.deleteQuestion(this.props.question.id)}>
+                                    <i class="fa fa-trash" aria-hidden="true">
+                                        </i>Delete
+                                </li>
                             </div>
                         </ul>
                     ) : null}
