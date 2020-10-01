@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_211949) do
+ActiveRecord::Schema.define(version: 2020_10_01_150057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_09_29_211949) do
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
@@ -25,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_09_29_211949) do
     t.string "title", null: false
     t.boolean "correct", default: false, null: false
     t.integer "question_options_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "registerable_id", null: false
     t.string "registerable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["question_options_id"], name: "index_mult_responses_on_question_options_id"
     t.index ["registerable_id"], name: "index_mult_responses_on_registerable_id"
   end
@@ -47,20 +49,20 @@ ActiveRecord::Schema.define(version: 2020_09_29_211949) do
     t.boolean "allow_unregistered", default: false, null: false
     t.integer "author_id", null: false
     t.string "kind", null: false
+    t.integer "group_id"
+    t.boolean "closed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "closed", default: false, null: false
-    t.integer "group_id"
     t.index ["author_id"], name: "index_questions_on_author_id"
     t.index ["group_id"], name: "index_questions_on_group_id"
   end
 
   create_table "text_responses", force: :cascade do |t|
     t.string "body", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "registerable_id", null: false
     t.string "registerable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["registerable_id"], name: "index_text_responses_on_registerable_id"
   end
 
@@ -84,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_211949) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["session_token"], name: "index_visitors_on_session_token"
+    t.index ["session_token"], name: "index_visitors_on_session_token", unique: true
   end
 
 end
