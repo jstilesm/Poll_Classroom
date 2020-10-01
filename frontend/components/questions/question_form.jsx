@@ -24,7 +24,9 @@ class QuestionForm extends React.Component {
         return (
             <>
             <button className='create-button' onClick = {this.handleSubmit}>Create</button>
-            <div onClick={this.props.closeModal} className="close-x">X</div>
+                <div className='x-background'>
+                    <div onClick={this.props.closeModal} className="close-x">X</div>
+                </div>
                 
             <form className="create-form" onSubmit={this.handleSubmit}>
                 <label>

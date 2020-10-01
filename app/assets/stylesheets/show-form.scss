@@ -1,0 +1,93 @@
+
+
+
+
+
+.show-page {
+    height: 1000px;
+    width: 100%;
+    display: flex;
+    // overflow: hidden;
+}
+
+
+.grey-box {
+    display: flex;
+    background-color: lightgrey;
+    width: 80%;
+    height: 100%;
+    // overflow: hidden;
+}
+
+.white-box {
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    // overflow: hidden;
+    display: flex;
+    // justify-content: space-around;
+    align-items: flex-end;
+}
+
+.edit-button {
+    box-shadow:inset 0px 34px 0px -15px #2665A9 ;
+	background-color:#2665A9 ;
+	border:1px solid #2665A9 ;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: "Gill Sans";
+    font-size: 15px;
+    margin: 15px;
+	// font-weight:bold;
+	// padding:9px 23px;
+    text-decoration:none;
+    width: 125px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.activate-button {
+    box-shadow:inset 0px 34px 0px -15px #ffffff ;
+	background-color:#ffffff ;
+	border:1px solid #ffffff ;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family: "Gill Sans";
+    font-size: 15px;
+    margin: 15px;
+	// font-weight:bold;
+	// padding:9px 23px;
+    text-decoration:none;
+    width: 125px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.back-button {
+    box-shadow:inset 0px 34px 0px -15px #ffffff ;
+	background-color:#ffffff ;
+	border:1px solid #ffffff ;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family: "Gill Sans";
+    font-size: 15px;
+    margin: 15px;
+	// font-weight:bold;
+	// padding:9px 23px;
+    text-decoration:none;
+    width: 125px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.button-box {
+    display: flex;
+    width: 100%;
+}

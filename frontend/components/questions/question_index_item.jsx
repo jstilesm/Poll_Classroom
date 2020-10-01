@@ -44,7 +44,7 @@ class QuestionIndexItem extends React.Component {
                     <div className="question-item">
                         {this.props.question.kind === "mult_response" ? <div className="mult_choice"></div> : <i className="text fas fa-align-left"></i>}
                         {/* <a>{this.props.question.title}</a> */}
-                        <Link className="question-title" to={`/questions/${this.props.question.id}/edit`}>{this.props.question.title}</Link>
+                        <Link className="question-title" to={`/questions/${this.props.question.id}`}>{this.props.question.title}</Link>
                         <div className='activated-group'>
                             <a className="activated-image" onClick={this.update}></a>
                             <a className="activated" onClick={this.update}>{status}</a>
