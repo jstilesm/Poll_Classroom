@@ -13,20 +13,12 @@ class ClickDropdown extends React.Component {
     }
     whenBlur(e) {
         e.preventDefault();
-        if (e.type !== 'focus') {
-            this.setState({ show: true })
-        } else {
-            this.setState({ show: false })
-        }
+       this.setState({show: false});
     }
 
     whenFocus(e) {
         e.preventDefault();
-        if (e.type === 'focus') {
-            this.setState({ show: true});
-        } else {
-            this.setState({show: false});
-        }
+        this.setState({show: true});
     }
     render() {
         return (
@@ -34,16 +26,19 @@ class ClickDropdown extends React.Component {
                 <button className="threedots" onFocus={this.whenFocus} onBlur={this.whenBlur}>
                     <i className="actions fas fa-ellipsis-v">Actions</i>
                     {this.state.show ? (
-                        <ul className="threedots" onClick={ e => console.log(e)}>
-                            <li onClick={e => e.stopPropagation()}>
-                                <Link to={`/questions/${this.props.question.id}/edit`}>
-                                    <i class="fas fa-pencil-alt"></i>Edit
-                                </Link>
-                            </li>
-                            <li className="deli" onClick={() => this.props.deleteQuestion(this.props.question.id)}>
-                                <i class="fa fa-trash" aria-hidden="true">
+                        <ul onClick={ e => console.log(e)}>
+                            <div className="options-box">
+                                <li className="delete-icon" onClick={() => this.props.deleteQuestion(this.props.question.id)}>
+                                    <i class="fa fa-trash" aria-hidden="true">
                                     </i>Delete
-                            </li>
+                                </li>
+                                <li className="edit-icon" onClick={e => e.stopPropagation()}>
+                                    <Link className="edit-words" to={`/questions/${this.props.question.id}/edit`}>
+                                        <i class="fas fa-pencil-alt"></i>Edit
+                                    </Link>
+                                </li>
+                
+                            </div>
                         </ul>
                     ) : null}
                 </button>

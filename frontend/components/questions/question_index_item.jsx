@@ -24,14 +24,21 @@ class QuestionIndexItem extends React.Component {
                 <>
 
                     <div className="question-item">
-                        {this.props.question.kind === "mult_response" ? <div className="mult_choice"></div> : <i className="text fas fa-align-left"></i>}
-                        <Link className="question-title" to={`/questions/${this.props.question.id}/edit`}>{this.props.question.title}</Link>
-                        <div className='activated-group'>
-                            <a className="deactivated-image" onClick={this.update}></a>
-                            <a className="activated" onClick={this.update}>{status}</a>
-                        </div>
-                        <Dropdown question={this.props.question} deleteQuestion={this.props.deleteQuestion} />
+                        <div className="index-leftside">
 
+                            {this.props.question.kind === "mult_response" ? <div className="mult_choice"></div> : <i className="text fas fa-align-left"></i>}
+                            <Link className="question-title" to={`/questions/${this.props.question.id}/edit`}>{this.props.question.title}</Link>
+                        </div>
+                        <div className="index-rightside">
+
+                            <div className='activated-group'>
+                                <a className="deactivated-image" onClick={this.update}></a>
+                                <a className="activated" onClick={this.update}>{status}</a>
+                            </div>
+                            <Dropdown question={this.props.question} deleteQuestion={this.props.deleteQuestion} />
+                        </div>
+
+                
 
                     </div>
 
@@ -42,14 +49,18 @@ class QuestionIndexItem extends React.Component {
         return (
             <>
                     <div className="question-item">
+                        <div className="index-leftside">
                         {this.props.question.kind === "mult_response" ? <div className="mult_choice"></div> : <i className="text fas fa-align-left"></i>}
                         {/* <a>{this.props.question.title}</a> */}
                         <Link className="question-title" to={`/questions/${this.props.question.id}`}>{this.props.question.title}</Link>
-                        <div className='activated-group'>
-                            <a className="activated-image" onClick={this.update}></a>
-                            <a className="activated" onClick={this.update}>{status}</a>
-                        </div>
-                        <Dropdown question={this.props.question} deleteQuestion={this.props.deleteQuestion} />
+                       </div>
+                       <div className="index-rightside">
+                            <div className='activated-group'>
+                                <a className="activated-image" onClick={this.update}></a>
+                                <a className="activated" onClick={this.update}>{status}</a>
+                            </div>
+                            <Dropdown question={this.props.question} deleteQuestion={this.props.deleteQuestion} />
+                       </div>
 
 
                     </div>

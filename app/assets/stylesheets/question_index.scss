@@ -1,5 +1,5 @@
 
-.main-page {
+.main-index-page {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     height: 100%;
@@ -28,9 +28,9 @@
 .questions-box {
     display: inline-flex;
     flex-direction: column;
-    width: 100%; 
-    padding-left: 200px;
-    padding-top: 30px;
+    width: 60%; 
+    // padding-left: 400px;
+    padding-top: 200px;
 
 }
 
@@ -43,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 18px;
-    width: 700px; 
+    width: 100%; 
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -89,6 +89,7 @@
 
 .question-title {
     text-decoration: none;
+    padding: 5px;
     color: black;
 }
 
@@ -158,4 +159,70 @@
      background-size: cover;
     height: 30px;   
     width: 30px;
+}
+
+
+.edit-icon {
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    background-color: white;
+}
+
+.delete-icon {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.edit-words {
+    text-decoration: none;
+    color: black;
+}
+
+.options-box {
+    padding-top: 5px;
+    width: 20px;
+    text-decoration: none;
+    // pointer-events: none;
+}
+
+.options-box:hover {
+    color: black;
+    // pointer-events: none;
+}
+
+.question-title:hover {
+    color:#3395D6;
+}
+
+.activated-group:hover {
+    color:#3395D6;
+}
+
+.dropdown-list:hover {
+    color:#3395D6;
+}
+
+.threedots:hover {
+    color:#3395D6;
+}
+
+.fa-align-left:before {
+    content: "\f036";
+    padding-left: 8px;
+
+}
+
+.index-leftside {
+    display: flex;
+    justify-content: space-between;
+}
+
+.index-rightside {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
 }

@@ -1,10 +1,11 @@
-// .edit-form {
-//     display: flex;
-//     flex-direction: column;
-//     height: 100%;
-//     // justify-content: space-around;
-//     padding: 100px
-// }
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    // justify-content: space-around;
+    padding: 100px;
+}
 
 // .edit-page {
 //     display: flex;
@@ -41,7 +42,7 @@
 // }
 
 
-.create-button {
+.edit-create-button {
     box-shadow:inset 0px 34px 0px -15px #2665A9 ;
 	background-color:#2665A9 ;
 	border:1px solid #2665A9 ;
@@ -78,7 +79,7 @@
 	// font-weight:bold;
 	// padding:9px 23px;
     text-decoration:none;
-    width: 33%;
+    width: 50%;
     // padding-top: 10px;
     // padding-left: 10px;
     // padding-right: 10px;
@@ -99,4 +100,17 @@
     display: flex;
     // justify-content: space-around;
     align-items: flex-end;
+}
+
+.edit-back-button:hover {
+    background-color: #EDEDED,
+}
+
+.edit-title-box {
+    display: flex;
+    width: 80%;
+    height: 50px;
+    outline: none;
+    border: none;
+    font-size: 18px;
 }

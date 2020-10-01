@@ -18,6 +18,7 @@
 @import "./edit-form.scss";
 @import "./create-form.scss";
 @import "./show-form.scss";
+@import "./index.scss";
 
 
 
@@ -37,7 +38,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 100%;
 
 }
 

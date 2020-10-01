@@ -42,9 +42,9 @@ class EditQuestionForm extends React.Component {
                 <p>{this.props.question.allow_unregistered}</p>
                 <p>{this.props.question.response_limit}</p> */}
                 <div className="grey-box">
-                    <form className="edit-form" onSubmit={this.handleSubmit}>
-                        <label className="title-label" >Title
-                        <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
+                    <form id="my-form" className="edit-form" onSubmit={this.handleSubmit}>
+                        <label className="title-label" >
+                        <input className="edit-title-box" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
                         </label>
                         {/* <label>
                         <select value={this.state.kind} onChange={this.update('kind')}>
@@ -53,7 +53,7 @@ class EditQuestionForm extends React.Component {
                         </select>
                        
                     </label> */}
-                        <label className="response-label">Response_Limit
+                        {/* <label className="response-label">Response_Limit
                         <input type="number" value={this.state.response_limit} onChange={this.update('response_limit')} />
                         </label>
                         <label className="close-label">Closed?
@@ -61,7 +61,7 @@ class EditQuestionForm extends React.Component {
                         </label>
                         <label className="register-label">Allow_Unregistered?
                         <input type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')} />
-                        </label>
+                        </label> */}
                         {/* <button className="save-button" type="submit">Save</button> */}
                         <ul className="create-errors">
                             {errors.map((error, i) => (
@@ -76,7 +76,7 @@ class EditQuestionForm extends React.Component {
                 {/* <Link to="/">Link</Link> */}
                 <div className="edit-white-box">
                     <div className="button-box">
-                        <button className="create-button">Create</button>
+                        <button  type="submit" form="my-form" className="edit-create-button">Create</button>
                         <Link className="edit-back-button" to={`/questions/${number}`}>Cancel</Link>
                     </div>
                 </div>
