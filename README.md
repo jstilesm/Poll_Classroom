@@ -114,7 +114,7 @@ def create
     end
 ```
 
-![](log-in-gif.gif)
+![](login-gif.gif)
 
 
 ### Future Directions:
