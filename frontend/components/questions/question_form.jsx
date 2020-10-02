@@ -35,7 +35,7 @@ class QuestionForm extends React.Component {
                         <div className="mult-choice-image"></div>
                         <div className='survey-choice-image'></div>
                     </div>
-                    <label>
+                    <label>Title
                         <input className="title-input input" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')} />
                     </label>
                     <label>Kind
@@ -50,10 +50,10 @@ class QuestionForm extends React.Component {
                     </label>
                     <div className="mult-choice-logo"></div>
                     <div className="survey-logo"></div>
-                    <label>Closed?
+                    <label className="closed-label">Closed?
                     <input className="closed-input" type="checkbox" value={this.state.closed} name="closed?" onChange={this.update('closed')} />
                     </label>
-                    <label>Allow_Unregistered?
+                    <label className="registered-label">Allow_Unregistered?
                     <input className="registered-input" type="checkbox" value={this.state.allow_unregistered} name="allow_unregistered?" onChange={this.update('allow_unregistered')} />
                     </label>
                     <ul className="create-errors">

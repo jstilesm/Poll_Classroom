@@ -77,14 +77,23 @@
 .closed-input {
     // display: flex;
     // width: 30x;
-    height: 30px;
+    // height: 30px;
+    border: none;
 
+}
+
+.registered-label {
+    display: flex;
+
+}
+.closed-label {
+    display: flex;
 }
 
 .registered-input {
     display: flex;
     // width: 30px;
-    height: 30px;
+    // height: 30px;
 }
 
 .close-x {
