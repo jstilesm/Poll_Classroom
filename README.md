@@ -19,7 +19,11 @@ Poll Classroom is a website that allows a user to create questions to share live
 
 #### SCSS for Styling
 
+<br />
 
+* * *
+
+<br />
 
 ### NAV Bar Design
 
@@ -77,6 +81,12 @@ const NavBar = ({currentUser, logout, testUser}) => {
 export default NavBar;
 ```
 
+<br />
+
+* * *
+
+<br />
+
 ### Backend App Search For Username/ Password Functionality.
 #### Below enables log in page to render password field if user has signed up.
 #### user.rb
@@ -115,6 +125,12 @@ def create
 ```
 ### Example of Functionality
 ![](login-gif.gif)
+
+<br />
+
+* * *
+
+<br />
 
 
 ### Future Directions:
