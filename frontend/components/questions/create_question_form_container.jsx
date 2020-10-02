@@ -21,8 +21,8 @@ const mSTP = ({state, errors}) => {
 const mDTP = dispatch => {
     return {
         processForm: question => dispatch(createQuestion(question)),
-        openModal: () => dispatch(openModal("Add Question")),
-        closeModal: () => dispatch(closeModal()),
+        // openModal: () => dispatch(openModal("Add Question")),
+        // closeModal: () => dispatch(closeModal()),
         clearErrors: () => dispatch(clearErrors())
         
     };

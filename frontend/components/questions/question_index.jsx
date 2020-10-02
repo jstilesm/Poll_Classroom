@@ -17,7 +17,7 @@ class QuestionIndex extends React.Component {
         return(
             <>
                 <div className="toprightbuttons">
-                    <button className="create-question" onClick={this.props.openModal}>Create</button>
+                    <Link className="create-question" to="/questions/new">Create</Link>
                     <button className="import-question">Import</button>
                     <div className="greybar"></div>
                     <button className="activities-button">Activities</button>

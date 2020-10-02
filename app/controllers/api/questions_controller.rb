@@ -47,10 +47,16 @@ class Api::QuestionsController < ApplicationController
     end
 
      def destroy
-        if @question && @question.delete
+        @question = current_user.questions.find_by(id: params[:id])
+        if @question.nil?
+            render json: "Question not found!", status: 422
+        elsif @question && @question.delete
             render '/api/questions/show'
+        else
+            render json: @question.errors.full_messages, status: 422
         end
-end
+    
+    end
 
     private
     def question_params

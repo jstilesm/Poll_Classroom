@@ -301,3 +301,13 @@
     width: 30%;
     justify-content: space-around;
 }
+
+.mult-choice-logo {
+background-image: image_url('mult-choice-logo.png');
+z-index: 999;
+}
+
+.survey-logo {
+    background-image: image_url('survey-logo.png');
+    z-index: 999;
+}   

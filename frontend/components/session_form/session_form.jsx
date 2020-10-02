@@ -29,6 +29,7 @@ class SessionForm extends React.Component {
     // }
 
     componentWillUnmount() {
+        // debugger
         this.props.clearErrors();
     }
 
@@ -48,7 +49,7 @@ class SessionForm extends React.Component {
                 if (resp === false) {
                     this.setState({ error_message: 'Account not Found'});
                 } else {
-                    this.setState({error_message: ''})
+                    this.setState({error_message: ''});
                 }
             });
             // debugger
@@ -57,11 +58,13 @@ class SessionForm extends React.Component {
     
             // this.setState({ userExists: true });
         } else {
-            this.setState({ userExists: false });
-            this.props.formFunction(this.state);    
+            // this.setState({ userExists: false });
+            this.props.formFunction(this.state)
+            .then(() => this.props.history.push('/questions'));  
 
         }
-        // .then(() => this.props.history.push('/questions'));
+        
+
     }
 
     errors() {
@@ -154,7 +157,7 @@ class SessionForm extends React.Component {
             
         )
     } else {
-            if (this.state.error_message.length > 0 || this.state.userExists) {
+            if ((this.state.error_message.length > 0 && this.state.userExists) || this.state.userExists) {
 
                 return (
                             <main className="login-page">
@@ -168,7 +171,7 @@ class SessionForm extends React.Component {
                                     </label>
                                     {this.renderPasswordField()}
                                     {this.errors()}
-                                    <button className="login-submit" type="submit">{this.props.formType}</button>
+                                <button className="login-submit" type="submit">{this.props.formType}</button>
                                     <div className="link-to-signup-container">
                                         <p className="link-to-signup">Need an account?</p><Link className="link-to-signup" to="/signup">Create one now</Link>
                                     </div>

@@ -24,7 +24,7 @@ const App = () => (
         <Modal />
         <Switch>
             <AuthRoute exact path='/questions' component={QuestionIndexContainer} />
-            {/* <Route exact path='/questions/new' component={CreateQuestionFormContainer} /> */}
+            <AuthRoute exact path='/questions/new' component={CreateQuestionFormContainer} />
             <AuthRoute path='/questions/:questionId/edit' component={EditQuestionFormContainer} />
             <AuthRoute path='/questions/:questionId' component={QuestionShowContainer} />
 
