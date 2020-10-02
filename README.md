@@ -113,7 +113,7 @@ def create
         end
     end
 ```
-
+### Example of Functionality
 ![](login-gif.gif)
 
 
