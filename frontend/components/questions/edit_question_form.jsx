@@ -76,7 +76,7 @@ class EditQuestionForm extends React.Component {
                 {/* <Link to="/">Link</Link> */}
                 <div className="edit-white-box">
                     <div className="button-box">
-                        <button type="submit" form="my-form" className="edit-create-button">Create</button>
+                        <button type="submit" form="my-form" className="edit-create-button">Save</button>
                         <Link className="edit-back-button" to={`/questions/${number}`}>Cancel</Link>
                     </div>
                 </div>
