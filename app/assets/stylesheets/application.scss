@@ -31,7 +31,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    // overflow: hidden;
+    overflow: hidden;
 }
 .main-page {
     display: flex;
@@ -151,6 +151,10 @@
     justify-content: space-around;
 }
 .blurb {
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+    }
     padding: 5px;
     font-family: 'Gill Sans';
     flex-wrap: flex;
@@ -211,9 +215,10 @@
 }
 
 .footer a {
-    display: flex;
+    display: contents;
     justify-content: flex-end;
     text-decoration: none;
+
 }
 .footer-image {
     width: 26%;
@@ -276,10 +281,22 @@
     display: flex; 
     align-items: center;
 }
-.github-logo {
-    width: 12%;
-    height: 85%;
+
+.logos {
+    width: 5%;
+    margin-left: 30px;
 }
+.github-logo {
+    width: 5%;
+    
+}
+
+.logo-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
  /* MAIN PAGE CSS */
 
 .wayne-icon {

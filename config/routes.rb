@@ -11,9 +11,11 @@ Rails.application.routes.draw do
       resources :visitors, only: [:create]
       resources :groups, only: [:index, :create]
     end
-    resources :groups, only: [:update, :destroy]
+    resources :groups, only: [:update, :destroy] do
+      resources :questions, only: [:create]
+    end
     
-    resources :questions, only: [:create, :index, :update, :show, :destroy] do
+    resources :questions, only: [:index, :update, :show, :destroy] do
       resources :mult_responses, only: [:create]
       resources :text_responses, only: [:create]
       resources :question_options, only: [:create] 
