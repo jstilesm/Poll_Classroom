@@ -17,7 +17,7 @@ class Splash extends React.Component {
                     <div className="splash-main">
 
                         <div className="main-paragraph">
-                            <h1 className="main-text">Host uninteractive remote class meetings, anywhere.</h1>
+                            <h1 className="main-text">Host interactive remote class meetings, anywhere.</h1>
                             <p className="main-content">Pretend to capture feedback, with a little lag, during nonexistent meetings.</p>
                         </div>
                         <div className="main-paragraph-image">
