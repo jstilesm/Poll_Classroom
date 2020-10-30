@@ -5,6 +5,7 @@ import LoginContainer from './session_form/login_form_container';
 import SplashContainer from './splash/splash_container';
 import NavContainer from './nav_bar/nav_bar_container';
 import ConnectorContainer from './connector/connector_container';
+import PollContainer from './poll/poll_container';
 // import GroupsContainer from './groups/group_container';
 import { Protected, AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
@@ -33,6 +34,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <AuthRoute path='/login' component={LoginContainer} />
             <AuthRoute path='/signup' component={SignupContainer} />
+            <Route exact path="/poll" component={PollContainer} />
             {/* <Protected path='/activities' component={GroupsContainer}/> */}
         </Switch>
         

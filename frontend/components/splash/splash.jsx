@@ -73,7 +73,7 @@ class Splash extends React.Component {
                         <a href="https://github.com/NStilesM/Poll_Classroom"><img className="github-logo" src="https://www.flaticon.com/svg/static/icons/svg/25/25231.svg" alt="" /></a>
                         <a href="https://www.linkedin.com/in/nicholas-mcdonnell-328569108/"><img className="logos" src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="" /></a>
                         <a href="https://angel.co/u/nicholas-mcdonnell-1"><img className="logos" src="https://img.icons8.com/ios/452/angelist.png" alt="" /></a>
-                
+        
                     </div>
                     {/* <a href="https://www.linkedin.com/in/nicholas-mcdonnell-328569108/"><img className="footer-image" src="https://www.nicepng.com/png/detail/18-183646_linkedin-social-outline-logotype-comments-transparent-background-linkedin.png" alt=""/></a> */}
                 </footer>

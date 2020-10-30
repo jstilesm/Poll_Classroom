@@ -19,567 +19,551 @@
 @import "./create-form.scss";
 @import "./show-form.scss";
 @import "./index.scss";
-
-
+@import "./poll.scss";
 
 // .body {
 //     font-family: sans-serif;
 // }
 //  Splash CSS
 .whole-page {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 .main-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 60%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
 }
 
 .create-errors {
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
-    color: red;
-    // background-color: #FDBEB9;
-    // color: darkred;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  color: red;
+  // background-color: #FDBEB9;
+  // color: darkred;
 }
 
 .question-error-items {
-    display: flex;
-    padding: 5px;
-    font-size: .9rem;
-    justify-content: space-around;
-    color: red;
-    background-color: #FDBEB9;
-    // margin: -5px 7px 0px 7px;
-    // width: 290px;
+  display: flex;
+  padding: 5px;
+  font-size: 0.9rem;
+  justify-content: space-around;
+  color: red;
+  background-color: #fdbeb9;
+  // margin: -5px 7px 0px 7px;
+  // width: 290px;
 }
 
-
-
 .userbar {
-    color: white;
-    // padding: 20px;
-    background-color: #0265A8;
-    // padding-right: 5px;
-    text-decoration: none;
-    border: none;
-    background: none;
-    // display: flex;  
-    justify-content: flex-end;    
-    // flex-direction: column;
-    padding-right: 30px;
-    padding-top: 20px;
-    outline: none;
-    position: relative;
-    margin-left: 35px;
-    padding-right: 50px;
-    z-index: 9999;
+  color: white;
+  // padding: 20px;
+  background-color: #0265a8;
+  // padding-right: 5px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  // display: flex;
+  justify-content: flex-end;
+  // flex-direction: column;
+  padding-right: 30px;
+  padding-top: 20px;
+  outline: none;
+  position: relative;
+  margin-left: 35px;
+  padding-right: 50px;
+  z-index: 9999;
 }
 
 .user-dropdown-items {
-    padding-top:5px;
-    position: absolute;
-    right: 45px;
-    
-    // background-color: white;
-    // color: #0265A8;
-    // padding-top: 90px;
+  padding-top: 5px;
+  position: absolute;
+  right: 45px;
+
+  // background-color: white;
+  // color: #0265A8;
+  // padding-top: 90px;
 }
 
-
-
 .main-paragraph {
-    display: flex;
-    flex-wrap: wrap;
-    width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
 }
 
 .main-paragraph-image {
-    display: flex;
+  display: flex;
 }
 
 .splash-main {
-    width: 202%;
-    background-color: #EFEFEF;
-    display: flex;
-    height: 700px;
-    align-items: center;
-    justify-content: space-evenly;
+  width: 202%;
+  background-color: #efefef;
+  display: flex;
+  height: 700px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .main-text {
-    font-weight: bold;
-    font-size: 40px;
-    font-family: 'Gill Sans';
-    padding-bottom: 20px;
-
+  font-weight: bold;
+  font-size: 40px;
+  font-family: "Gill Sans";
+  padding-bottom: 20px;
 }
 .subtext {
-    font-family: 'Gill Sans';
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
+  font-family: "Gill Sans";
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .main-content {
-    font-family: 'Gill Sans';
-    font-size: 30px;
+  font-family: "Gill Sans";
+  font-size: 30px;
 }
 .main-image {
-    width: 550px;
+  width: 550px;
 }
 
 .arrow {
-    align-items: flex-end;
-    background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
-    height: 62px;
-    position: absolute;
-    right: 0px;
-    width: 210px;
+  align-items: flex-end;
+  background-image: linear-gradient(
+    120deg,
+    #fff,
+    #fff 40px,
+    #2665a9 42px,
+    #2665a9
+  );
+  height: 62px;
+  position: absolute;
+  right: 0px;
+  width: 210px;
 }
 
 .learning-blurbs {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 .blurb {
-    h3 {
-        font-size: 16px;
-        font-weight: 600;
-    }
-    padding: 5px;
-    font-family: 'Gill Sans';
-    flex-wrap: flex;
-    font-size: 14px;
-    display: flex;
-    align-items:  left;
-    flex-direction: column;
-    justify-content: space-around;
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  padding: 5px;
+  font-family: "Gill Sans";
+  flex-wrap: flex;
+  font-size: 14px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .blurb-image {
-    display: flex;
-    height: 120px;
-    width: 120px;
-    justify-content: center;
-    padding-bottom: 20px;
-    
+  display: flex;
+  height: 120px;
+  width: 120px;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .footer {
-    background-color: #E7E7E7;
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    overflow: hidden;
+  background-color: #e7e7e7;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  overflow: hidden;
 }
 
-.footerlink-a{
-    text-decoration: none;
-    font-family: 'Gill Sans';
-    color: black;
-    font-size: 15px;
-    height: 50%;
-    display: flex;
-    justify-content: flex-end;
-    padding: 30px;
-    margin: 1px;
-    text-decoration: none;
-    font-weight: 600;
+.footerlink-a {
+  text-decoration: none;
+  font-family: "Gill Sans";
+  color: black;
+  font-size: 15px;
+  height: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  margin: 1px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .footerlinks {
-    text-decoration: none;
-    font-family: 'Gill Sans';
-    color: black;
-    font-size: 15px;
-    height: 50%;
-    display: flex;
-    padding: 10px;
-    margin: 20px;
-    font-weight: 600;
+  text-decoration: none;
+  font-family: "Gill Sans";
+  color: black;
+  font-size: 15px;
+  height: 50%;
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+  font-weight: 600;
 }
 
-.pipe-seperator{
-    color: grey;
-    font-size: 21px;
-    padding: 26px 10px;
+.pipe-seperator {
+  color: grey;
+  font-size: 21px;
+  padding: 26px 10px;
 }
 
 .footer a {
-    display: contents;
-    justify-content: flex-end;
-    text-decoration: none;
-
+  display: contents;
+  justify-content: flex-end;
+  text-decoration: none;
 }
 .footer-image {
-    width: 26%;
+  width: 26%;
 }
 
 .link-to-signup-container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 .link-to-signup {
-    font-family: 'Gill Sans';
-    font-size: 12px;
-    margin: 5px;
+  font-family: "Gill Sans";
+  font-size: 12px;
+  margin: 5px;
 }
 
-
 .signup-link-page {
-    box-shadow:inset 0px 34px 0px -15px #0265A8;
-	background-color:#0265A8;
-	border:1px solid #0265A8;
-	display:block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	// font-weight:bold;
-	padding:9px 13px;
-    text-decoration:none;
-    margin: 0px auto;
-    width: 120px;
-    text-align: center;
-    
-
+  box-shadow: inset 0px 34px 0px -15px #0265a8;
+  background-color: #0265a8;
+  border: 1px solid #0265a8;
+  display: block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  // font-weight:bold;
+  padding: 9px 13px;
+  text-decoration: none;
+  margin: 0px auto;
+  width: 120px;
+  text-align: center;
 }
 
 .get-started {
-    margin: 30px;
-    padding: 100px;
+  margin: 30px;
+  padding: 100px;
 }
 
 .engage-blurb {
-    display: flex;
-    font-family: 'Gill Sans';
-    align-items:  center;
-    flex-direction: column;
-    padding: 100px;
-    margin: 10px;
-    // justify-content: space-around;
+  display: flex;
+  font-family: "Gill Sans";
+  align-items: center;
+  flex-direction: column;
+  padding: 100px;
+  margin: 10px;
+  // justify-content: space-around;
 }
-
 
 .bottom-links {
-    font-family: 'Gill Sans';
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: "Gill Sans";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .github-link {
-    display: flex; 
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logos {
-    width: 5%;
-    margin-left: 30px;
+  width: 5%;
+  margin-left: 30px;
 }
 .github-logo {
-    width: 5%;
-    
+  width: 5%;
 }
 
 .logo-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
 }
 
- /* MAIN PAGE CSS */
+/* MAIN PAGE CSS */
 
 .wayne-icon {
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
 }
 .lexcorp-icon {
-    width: 10%;
-    height: auto;
+  width: 10%;
+  height: auto;
 }
 
 .icons {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 /* hyperlink container for the logo */
 
 .signup-page-container {
-    display: flex;
-    background-color: #EFEFEF;
-    width: 100%;
-    position: fixed; 
-    height: 100%;
+  display: flex;
+  background-color: #efefef;
+  width: 100%;
+  position: fixed;
+  height: 100%;
 }
 
 /* main logo to the page */
 
 .logo {
-    // font-family: 'Gill Sans';
-    // color: white;
-    height: 100%;
-    padding-left: 25px;
+  // font-family: 'Gill Sans';
+  // color: white;
+  height: 100%;
+  padding-left: 25px;
 
-    // align-self: start;
+  // align-self: start;
 }
 // Title of Main Page NOT USED
 .title {
-    font-family: 'Gill Sans';
-    color: white;
-    font-size: 40px;
-    // display: flex;
-    // // justify-content: start;
+  font-family: "Gill Sans";
+  color: white;
+  font-size: 40px;
+  // display: flex;
+  // // justify-content: start;
 }
 
 .splash-image {
-    display: flex;
-    align-items: center;
-    height: 350px;
-    // padding-left: 200px;
-    // padding-right: 200px;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    background-color: #EFEFEF;
-    // margin: 23px;
-    margin-top: 168px;
-    padding-left: 50px;
-    height: auto;
-    width: auto;
-    margin-left: 100px;
-
+  display: flex;
+  align-items: center;
+  height: 350px;
+  // padding-left: 200px;
+  // padding-right: 200px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: #efefef;
+  // margin: 23px;
+  margin-top: 168px;
+  padding-left: 50px;
+  height: auto;
+  width: auto;
+  margin-left: 100px;
 }
 .nav-bar {
-    height: 60px;
-    height: 60px;
-    top: 0px;
-    left: 0px;
-    // position: absolute;
-    width: 100%;
-    background: white;
+  height: 60px;
+  height: 60px;
+  top: 0px;
+  left: 0px;
+  // position: absolute;
+  width: 100%;
+  background: white;
 }
 
- /* nav for the nav bar, keeps its top right */
+/* nav for the nav bar, keeps its top right */
 
-
- /* nav bar username */
+/* nav bar username */
 .header-main {
-    position: relative;
-    right: 50px;
-    font-family: 'Gill Sans';
+  position: relative;
+  right: 50px;
+  font-family: "Gill Sans";
 }
 /* nav bar container */
 .topnav {
-    // align-items: flex-start;
-    display: flex;
-    justify-content: flex-start;
-    background-color:white;
-    height: 62px;
-    // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
-    background-position: 10000px;
-    // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
-    // display: flex;
-    // justify-content: center;
-    
+  // align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+  height: 62px;
+  // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
+  background-position: 10000px;
+  // background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
+  // display: flex;
+  // justify-content: center;
 }
 
 .nav-button {
-    box-shadow:inset 0px 34px 0px -15px  white ;
-	background-color:white ;
-	border:1px solid grey ;
-	// display:inline-block;
-	cursor:pointer;
-	color: #2665A9;
-	font-family: "Gill Sans";
-    font-size: 15px;
-    // margin: 15px;
-	// font-weight:bold;
-	// padding:9px 23px;
-    text-decoration:none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+  box-shadow: inset 0px 34px 0px -15px white;
+  background-color: white;
+  border: 1px solid grey;
+  // display:inline-block;
+  cursor: pointer;
+  color: #2665a9;
+  font-family: "Gill Sans";
+  font-size: 15px;
+  // margin: 15px;
+  // font-weight:bold;
+  // padding:9px 23px;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-// nav bar test user 
+// nav bar test user
 .test-user {
-    display: flex;
-    background-color: #2665A9 ;
-    color: white;
-    font-family: 'Gill Sans';
-    border-radius: 2px;
-    box-shadow:inset 0px 34px 0px -15px #2665A9;
-	background-color:#2665A9;
-    border:1px solid #2665A9;
-    outline: none;
+  display: flex;
+  background-color: #2665a9;
+  color: white;
+  font-family: "Gill Sans";
+  border-radius: 2px;
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  outline: none;
 
-    // flex-wrap: wrap;
-
-
+  // flex-wrap: wrap;
 }
 .errors-signup {
-    color: darkred;
-    list-style: none;
-    // padding: 2px;
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    flex-wrap: flex;
-    padding: 0px 4px;
-    margin-top: 10px; 
+  color: darkred;
+  list-style: none;
+  // padding: 2px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  flex-wrap: flex;
+  padding: 0px 4px;
+  margin-top: 10px;
 }
 
-.errors{
-    color: darkred;
-    list-style: none;
-    // padding: 2px;
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    flex-wrap: flex;
-    padding: 0px 4px;
-    margin-top: -5px; 
+.errors {
+  color: darkred;
+  list-style: none;
+  // padding: 2px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  flex-wrap: flex;
+  padding: 0px 4px;
+  margin-top: -5px;
 }
-
 
 .error-items {
-    padding: 5px;
-    font-size: .9rem;
-    justify-content: space-around;
-    background-color: #FDBEB9;
-    margin: -5px 7px 0px 7px;
-    width: 290px;
+  padding: 5px;
+  font-size: 0.9rem;
+  justify-content: space-around;
+  background-color: #fdbeb9;
+  margin: -5px 7px 0px 7px;
+  width: 290px;
 }
 
 /* Log out Button for User on Nav Bar */
 .header-button {
-    box-shadow:inset 0px 34px 0px -15px #2665A9 ;
-	background-color:#2665A9 ;
-	border:1px solid #2665A9 ;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family: "Gill Sans";
-    font-size: 15px;
-    margin: 15px;
-	// font-weight:bold;
-	// padding:9px 23px;
-    text-decoration:none;
-    outline: none;
-
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Gill Sans";
+  font-size: 15px;
+  margin: 15px;
+  // font-weight:bold;
+  // padding:9px 23px;
+  text-decoration: none;
+  outline: none;
 }
 
 /* link to the sign up on nav bar */
 .signup-link {
-    color: #2665A9;
-    font-family: 'Gill Sans';
-    position: relative;
-    font-size: 14px;
-    background-color: white;
-    text-decoration: none;
-    padding: 9px;
-    font-weight: 500;
+  color: #2665a9;
+  font-family: "Gill Sans";
+  position: relative;
+  font-size: 14px;
+  background-color: white;
+  text-decoration: none;
+  padding: 9px;
+  font-weight: 500;
 }
 
 .login-page {
-    display: flex;
-    background-color: green;
+  display: flex;
+  background-color: green;
 }
 
 /* link to the log in on nav bar */
 .login-link {
-    color:white;
-    font-family: 'Gill Sans';
-    position: relative;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    // top: 10px;
+  color: white;
+  font-family: "Gill Sans";
+  position: relative;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  // top: 10px;
 }
 header {
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 /*  div surrounding the buttons on the nav bar */
 .site-header-right {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // padding: 0px 0px;
-    padding-left: 50px;
-    background-color: #2665A9;
-    background-image: linear-gradient(120deg, #fff, #fff 40px, #2665A9 42px, #2665A9);
-    position: absolute;
-    height: 60px;
-    top: 0px;
-    right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // padding: 0px 0px;
+  padding-left: 50px;
+  background-color: #2665a9;
+  background-image: linear-gradient(
+    120deg,
+    #fff,
+    #fff 40px,
+    #2665a9 42px,
+    #2665a9
+  );
+  position: absolute;
+  height: 60px;
+  top: 0px;
+  right: 0px;
 }
 
 .site-header-right a {
-    margin: 0rem 2rem;
+  margin: 0rem 2rem;
 }
 
-
 .activities-link {
-    box-shadow:inset 0px 34px 0px -15px #ffffff ;
-	background-color:#ffffff ;
-	border:1px solid #ffffff ;
-	display:inline-block;
-	cursor:pointer;
-	color:#2665A9 ;
-	font-family: "Gill Sans";
-	font-size: 15px;
-	// font-weight:bold;
-	// padding:9px 23px;
-    text-decoration:none;
-    padding: 10px;
-
+  box-shadow: inset 0px 34px 0px -15px #ffffff;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #2665a9;
+  font-family: "Gill Sans";
+  font-size: 15px;
+  // font-weight:bold;
+  // padding:9px 23px;
+  text-decoration: none;
+  padding: 10px;
 }
 
 /*  nav bar header container */
 
 /* LOGIN PAGE CSS */
 
-
-
 /* Label for the log in Email or Username */
 
 .login-form-container {
-    display: flex;
-    justify-content: center;;
+  display: flex;
+  justify-content: center;
 }
 
 // box for the login info
 
 .login-form-box {
-    position: absolute;
-    left: 45%;
-    top: 20%;
-    /* margin: 0px; */
-    flex-direction: column;
+  position: absolute;
+  left: 45%;
+  top: 20%;
+  /* margin: 0px; */
+  flex-direction: column;
 }
 
 /*  Title   for the log in page */
 .login-title {
-    
-    font-family: 'Gill Sans';
-    font-size: 20px;
-    display: flex;
-    padding-left: 5px;
-    /* right: 85px; */
-    // justify-content: center;
-   
+  font-family: "Gill Sans";
+  font-size: 20px;
+  display: flex;
+  padding-left: 5px;
+  /* right: 85px; */
+  // justify-content: center;
 }
 /* Login Button */
 // .login-submit {
@@ -597,126 +581,121 @@ header {
 // }
 
 .login-submit {
-    
-	box-shadow:inset 0px 34px 0px -15px #A5332B;
-	background-color:#A5332B;
-	border:1px solid #A5332B;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	// font-weight:bold;
-    padding:9px 23px;
-    text-decoration: none;
-    margin: 0px 10px;
-    margin-top: 10px;
-    width: 300px;
-    outline: none;
+  box-shadow: inset 0px 34px 0px -15px #a5332b;
+  background-color: #a5332b;
+  border: 1px solid #a5332b;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  // font-weight:bold;
+  padding: 9px 23px;
+  text-decoration: none;
+  margin: 0px 10px;
+  margin-top: 10px;
+  width: 300px;
+  outline: none;
 }
 .login-submit:hover {
-    opacity: 1
+  opacity: 1;
 }
 
 .login-key {
-    display: flex;
-    justify-content: center; 
-    font-style: italic;
-    color: grey;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  color: grey;
 }
 
 /* login input */
 .login-email-input {
-    /* position: relative; */
-    /* left: 500px; */
-    width: 325px;
-    height: 30px;
-    margin: 10px;
+  /* position: relative; */
+  /* left: 500px; */
+  width: 325px;
+  height: 30px;
+  margin: 10px;
 }
-
 
 /* SIGN UP PAGE CSS */
 
 /* title to the sign up page */
 .signup-title {
-    font-family: 'Gill Sans';
-    color: white;
-    margin: 30px 20px;
-    font-size: 50px;
-    // width: 500px;
-    font-weight: 600;
-    text-align: center;
-    
+  font-family: "Gill Sans";
+  color: white;
+  margin: 30px 20px;
+  font-size: 50px;
+  // width: 500px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .signup-visual {
-    // display: flex;
-    // height: 100vh;
-    // width: 24.5%;
-    background-color: #EFEFEF;
-    flex-grow: 1;
+  // display: flex;
+  // height: 100vh;
+  // width: 24.5%;
+  background-color: #efefef;
+  flex-grow: 1;
 }
 
 /*  surrounding div for the sign up form */
 
 .signup-form-container {
-    background-color: #2665A9;
-    padding: 82px;
-    // margin: 100px 100px;
-    // min-width: 400px;
-    // max-width: 450px;
-    // height: auto;
-    // width: 35%;
-    flex-grow: 1;
-    justify-content: center;
-    // margin: 10px;
+  background-color: #2665a9;
+  padding: 82px;
+  // margin: 100px 100px;
+  // min-width: 400px;
+  // max-width: 450px;
+  // height: auto;
+  // width: 35%;
+  flex-grow: 1;
+  justify-content: center;
+  // margin: 10px;
 }
 
 /* box around the form */
 .form-box {
-    background-color:white;
-    width: 350px;
-    // display: flex;  
-    flex-wrap: wrap;
-    // margin: 54px;
-    padding-right: 10px;
-    padding-top: 25px;
-    padding-bottom: 20px;
-    justify-content: center;
-    border-radius: 3px;
-    padding-left: 35px;
-    margin: 0px auto;
-    // height: 400px;
+  background-color: white;
+  width: 350px;
+  // display: flex;
+  flex-wrap: wrap;
+  // margin: 54px;
+  padding-right: 10px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  justify-content: center;
+  border-radius: 3px;
+  padding-left: 35px;
+  margin: 0px auto;
+  // height: 400px;
 }
-
 
 /* Sign up button */
 .signup-submit {
-    
-    font-size: 17px;
-    margin: 10px 10px;
-    width: 300px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
+  font-size: 17px;
+  margin: 10px 10px;
+  width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .blue-button {
-    box-shadow:inset 0px 34px 0px -15px #2665A9;
-    background-color:#2665A9;
-	border:1px solid #2665A9;
-	display:inline-block;
-    cursor:pointer;
-    color: white;
-    border-radius: 3px;
-    margin-top: 20px;
-    
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  border-radius: 3px;
+  margin-top: 20px;
 }
 
-
-
 /* Labels for the Sign up inputs */
-.email, .password, .firstname, .lastname, .username {
-    color: grey;
+.email,
+.password,
+.firstname,
+.lastname,
+.username {
+  color: grey;
 }
 
 /* Email label moved over to match others */
@@ -725,16 +704,13 @@ header {
     left: 24px;
 } */
 /* text box's for input values */
-.form-box input, .login-form-box input{
-    width: 290px;
-    height: 30px;
-    margin: 10px;
-    padding-left: 5px;
-    margin-top: 15px;
+.form-box input,
+.login-form-box input {
+  width: 290px;
+  height: 30px;
+  margin: 10px;
+  padding-left: 5px;
+  margin-top: 15px;
 
-
-
-    // font-style: italic;
-
+  // font-style: italic;
 }
-

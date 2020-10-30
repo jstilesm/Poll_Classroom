@@ -26,7 +26,7 @@ class ConnectorBar extends React.Component {
                 <div className="box-two">
                     <div className="box-two-content">
                         <h2 className="alt-header2">Participate in a presentation</h2>
-                        <Link className="button-two" to="/">I'm a participant</Link>
+                        <Link className="button-two" to="/poll">I'm a participant</Link>
                     </div>
                 </div>
             </div>

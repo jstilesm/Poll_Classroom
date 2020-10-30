@@ -6,7 +6,8 @@ const NavBar = ({currentUser, logout, testUser}) => {
     const test = { identifier: 'tester', password: 'password' };
     const location = useLocation();
     // const activnav = 
-    const hidenav = (location.pathname == '/signup' || location.pathname == '/login' || location.pathname == '/signup-alt') 
+    const hidenav = (location.pathname == '/signup' || location.pathname == '/login' || location.pathname == '/signup-alt');
+    const nonav = (location.pathname == '/poll');
     const questions = (location.pathname == '/questions');
     const sessionButtons = () => (
         <>
@@ -35,6 +36,7 @@ const NavBar = ({currentUser, logout, testUser}) => {
         }
         if (hidenav) return;
         return currentUser ? personalNavButtons() : sessionButtons()
+        
     }
     const personalNav = () => (
         <header className="nav-bar">
@@ -44,7 +46,24 @@ const NavBar = ({currentUser, logout, testUser}) => {
             </div>
         </header>
     )
-    return personalNav()
+    const pollNav = () => (
+        <header className="poll-nav-bar">
+            <div className="poll-items">
+                <a className="poll-logo" href="/"><img className="poll-mini-logo" src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA" /><p className= "poll-home">Home</p></a>
+                <a className="poll-logo" href="/"><img className="poll-mini-logo" src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA" /><p className= "poll-home">History</p></a>
+                <a className="poll-logo" href="/"><img className="poll-mini-logo" src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA" /><p className= "poll-home">Registration</p></a>
+                <a className="poll-logo" href="/"><img className="poll-mini-logo" src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA" /><p className= "poll-home">Log in</p></a>
+                
+            </div>
+            
+        </header>
+    )
+    if (!nonav) {
+        return personalNav()
+    } else {
+        return pollNav();
+    }
+    
 };
 
 
