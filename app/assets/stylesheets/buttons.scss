@@ -15,6 +15,26 @@
 
 // M, Wb
 // Test user button on main page
+
+.button {
+  cursor: pointer;
+  font-family: $font;
+  outline: none;
+  text-decoration: none;
+}
+.button-blue {
+  background-color: #2665a9;
+  color: white;
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  border-radius: 2px;
+}
+
+.flexed {
+  display: flex;
+}
+
 .test-user {
   display: flex;
   background-color: #2665a9;
@@ -36,9 +56,8 @@
   display: block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
+  font-family: $font;
   font-size: $nav-button-link;
-
   padding: 9px 13px;
   text-decoration: none;
   margin: 0px auto;

@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
     def create
         @user = User.find_by_username_or_email(login_params[:identifier])
         # debugger
-        if @user.nil?
+        if @user == nil
             render json: ['Account not found'], status: 401
     
         elsif @user.is_password?(login_params[:password])
@@ -15,7 +15,6 @@ class Api::SessionsController < ApplicationController
             render json: ['Password is incorrect'], status: 401
         end
     end
-
 
     def destroy
         # debugger

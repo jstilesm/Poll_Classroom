@@ -48,13 +48,13 @@ class User < ApplicationRecord
 
     def self.find_by_username_or_email(identifier)   
         # debugger
-        User.where(email: identifier).or(User.where(username: identifier))
+        User.where(email: identifier).or(User.where(username: identifier)).first
     end
 
     def self.find_by_credentials(identifier, password) 
         user = User.find_by_username_or_email(identifier)
         # puts user
-        return nil if user.nil?
+        return nil if user == nil
 
         user.is_password?(password) ? user : nil
     end
