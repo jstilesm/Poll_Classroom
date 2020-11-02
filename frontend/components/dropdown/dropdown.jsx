@@ -38,11 +38,11 @@ class ClickDropdown extends React.Component {
                             <div className="options-box">
                                 <li className="edit-icon" onClick={e => e.stopPropagation()}>
                                     <Link className="edit-words" to={`/questions/${this.props.question.id}/edit`}>
-                                        <i class="fas fa-pencil-alt"></i>Edit
+                                        <i className="fas fa-pencil-alt"></i>Edit
                                     </Link>
                                 </li>
                                 <li className="delete-icon" onClick={() => this.props.deleteQuestion(this.props.question.id)}>
-                                    <i class="fa fa-trash" aria-hidden="true">
+                                    <i className="fa fa-trash" aria-hidden="true">
                                         </i>Delete
                                 </li>
                             </div>

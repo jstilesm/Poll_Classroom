@@ -47,7 +47,8 @@ class User < ApplicationRecord
     end
 
     def self.find_by_username_or_email(identifier)   
-        User.where(username: identifier).or(User.where(email: identifier)).first
+        # debugger
+        User.where(email: identifier).or(User.where(username: identifier))
     end
 
     def self.find_by_credentials(identifier, password) 

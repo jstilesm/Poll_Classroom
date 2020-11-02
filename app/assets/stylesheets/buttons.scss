@@ -1,0 +1,328 @@
+@import "./fonts.scss";
+
+/*    Sizes
+    -Large wide (Lw)
+    -Medium (M)
+    -Small (S) */
+
+/* Colors
+    -Blue with white letters (Bw)
+    -White with blue letters (Wb)
+    -White with black letters (Wbl)
+    -Red with white letters (Rw)
+    -Green with white letters(Gw)
+*/
+
+// M, Wb
+// Test user button on main page
+.test-user {
+  display: flex;
+  background-color: #2665a9;
+  color: white;
+  font-family: $font;
+  border-radius: 2px;
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  outline: none;
+}
+
+// M, Bw
+// Signup button on main page
+.signup-link-page {
+  box-shadow: inset 0px 34px 0px -15px #0265a8;
+  background-color: #0265a8;
+  border: 1px solid #0265a8;
+  display: block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: $nav-button-link;
+
+  padding: 9px 13px;
+  text-decoration: none;
+  margin: 0px auto;
+  width: 120px;
+  text-align: center;
+}
+
+// Links
+// M, Wb
+// Signup button
+.signup-link {
+  color: #2665a9;
+  font-family: $font;
+  position: relative;
+  font-size: $nav-button-link;
+  background-color: white;
+  text-decoration: none;
+  padding: 9px;
+  font-weight: 500;
+}
+
+// M, Bw
+// Login Button
+.login-link {
+  color: white;
+  font-family: $font;
+  position: relative;
+  text-decoration: none;
+  font-size: $nav-button-link;
+  font-weight: 400;
+}
+
+// M, Wb
+// Activities button on main page
+.activities-link {
+  box-shadow: inset 0px 34px 0px -15px #ffffff;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #2665a9;
+  font-family: $font;
+  font-size: $nav-button-link;
+
+  text-decoration: none;
+  padding: 10px;
+}
+
+// I'm a presenter button
+.button-one {
+  color: #025d9d;
+  background-color: white;
+  width: 120px;
+  padding: 10px;
+  font-size: $main-button-link;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+// I'm a participant button
+.button-two {
+  background-color: #025d9d;
+  color: white;
+  font-size: $main-button-link;
+  width: 150px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+/* Sign up button */
+.signup-submit {
+  font-size: $main-button-link;
+  margin: 10px 10px;
+  width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.blue-button {
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+// Login button
+.login-submit {
+  box-shadow: inset 0px 34px 0px -15px #a5332b;
+  background-color: #a5332b;
+  border: 1px solid #a5332b;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: $nav-button-link;
+  padding: 9px 23px;
+  text-decoration: none;
+  margin: 0px 10px;
+  margin-top: 10px;
+  width: 300px;
+  outline: none;
+}
+.login-submit:hover {
+  opacity: 1;
+}
+// Create question button
+.create-question {
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 15px;
+  padding: 9px 60px;
+  text-decoration: none;
+  justify-content: flex-start;
+}
+
+.activities-button {
+  font-style: $font;
+  margin-top: 20px;
+  color: black;
+  display: flex;
+  border: none;
+  outline: none;
+  background-color: white;
+  width: 172px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.activities-button:hover {
+  color: #3395d6;
+  background-color: #cde3f5;
+}
+.trash-button {
+  font-style: $font;
+  margin-top: 20px;
+  color: black;
+  display: flex;
+  border: none;
+  outline: none;
+  background-color: white;
+  width: 172px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.trash-button:hover {
+  color: #3395d6;
+  background-color: #cde3f5;
+}
+
+// Import Question button
+.import-question {
+  box-shadow: inset 0px 34px 0px -15px white;
+  background-color: white;
+  border: 1px solid #2665a9;
+  cursor: pointer;
+  color: #2665a9;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 15px;
+  padding: 9px 60px;
+  text-decoration: none;
+  justify-content: flex-start;
+  outline: none;
+}
+
+.edit-button {
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  display: flex;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 0px;
+  text-decoration: none;
+  width: 33%;
+  height: 50px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.activate-button {
+  background-color: #ffffff;
+  border: none;
+  border-top: 1px solid lightgrey;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 0px;
+  text-decoration: none;
+  width: 33%;
+  height: 50px;
+  outline: none;
+}
+
+.back-button {
+  background-color: #ffffff;
+  border: none;
+  border-top: 1px solid lightgrey;
+  display: flex;
+  cursor: pointer;
+  color: black;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 0px;
+  text-decoration: none;
+  width: 33%;
+  height: 50px;
+  padding: 0px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-create-button {
+  box-shadow: inset 0px 34px 0px -15px #2665a9;
+  background-color: #2665a9;
+  border: 1px solid #2665a9;
+  display: flex;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 0px;
+  text-decoration: none;
+  width: 50%;
+  height: 50px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-back-button {
+  background-color: #ffffff;
+  border: none;
+  border-top: 1px solid lightgrey;
+  display: flex;
+  cursor: pointer;
+  color: black;
+  font-family: $font;
+  font-size: $nav-button-link;
+  margin: 0px;
+  text-decoration: none;
+  width: 50%;
+  height: 50px;
+  padding: 0px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+}
+.edit-back-button:hover {
+  background-color: #ededed;
+}
+
+// nav log-out button
+.nav-button {
+  box-shadow: inset 0px 34px 0px -15px white;
+  background-color: white;
+  border: 1px solid grey;
+  cursor: pointer;
+  color: #2665a9;
+  font-family: $font;
+  font-size: $nav-button-link;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}

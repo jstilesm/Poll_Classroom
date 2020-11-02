@@ -1,0 +1,34 @@
+/* Key
+-Large Bold (LB)
+-sublargeBold (sLB)
+-paraHeader (pH)
+-subparaHeader (spH)
+-headersmall (Hs)
+-dropdownslmall(Ds)
+-inputtext(6)
+*/
+
+// LB
+$bold: bold;
+$bold-light: 600;
+$subheader-bold: 650;
+// sizes
+
+$Large: 40px;
+$subLarge: 30px;
+
+$paraHeader: 16px;
+$subparaHeader: 14px;
+$entry-field-header: 20px;
+$error-messages: 0.9rem;
+
+$nav-button-link: 15px;
+$main-button-link: 18px;
+// $headersmall:
+// $dropdownsmall:
+// $inputtext:
+
+// Font
+// Main
+$font: "Gill Sans";
+$alt-font: "Arial";

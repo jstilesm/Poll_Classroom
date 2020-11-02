@@ -33,7 +33,7 @@ class UserDropdown extends React.Component {
         return (
             <div>
                     <button className="userbar" onFocus={this.whenFocus} onBlur={this.whenBlur}>{this.props.user.username}
-                        <i className="userbar-cog" class="fas fa-cog"></i>
+                        <i className="userbar-cog" className="fas fa-cog"></i>
                     {this.state.show ? (
                         <ul className="user-dropdown-items" onClick={e => console.log(e)}>
                             <li onClick={e => e.stopPropagation()}>

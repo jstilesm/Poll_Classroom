@@ -1,176 +1,93 @@
+@import "./fonts.scss";
+@import "./buttons.scss";
 
 .main-index-page {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
-
-.create-question {
-    box-shadow:inset 0px 34px 0px -15px #2665A9 ;
-	background-color:#2665A9 ;
-	border:1px solid #2665A9 ;
-	// display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family: "Gill Sans";
-    font-size: 15px;
-    margin: 15px;
-	// font-weight:bold;
-	padding:9px 60px;
-    text-decoration:none;
-    // margin-right: 260px;
-    // margin-right: 260px;
-    justify-content: flex-start;
-
-}
-.import-question {
-    box-shadow:inset 0px 34px 0px -15px white ;
-	background-color: white ;
-	border:1px solid #2665A9 ;
-	// display:inline-block;
-	cursor:pointer;
-	color:#2665A9 ;
-	font-family: "Gill Sans";
-    font-size: 15px;
-    margin: 15px;
-	// font-weight:bold;
-	padding:9px 60px;
-    text-decoration:none;
-    // margin-right: 260px;
-    // margin-right: 260px;
-    justify-content: flex-start;
-    outline: none;
-
-}
-.activities-button {
-    font-style: "Gill Sans";
-    margin-top: 20px;
-    color: black;
-    display: flex;
-    // height: 15px;   
-    // width: 30px;
-    border: none;
-    outline: none;
-    background-color: white;
-    width: 172px;
-    margin-left: 15px;
-    font-weight: bold;
-}
-
-.activities-button:hover {
-    color: #3395D6;
-    background-color:#CDE3F5;
-    
-}
-.trash-button {
-    font-style: "Gill Sans";
-    margin-top: 20px;
-    color: black;
-    display: flex;
-    // height: 15px;   
-    // width: 30px;
-    border: none;
-    outline: none;
-    background-color:white;
-    width: 172px;
-    margin-left: 15px;
-    font-weight: bold;
-}
-
-.trash-button:hover {
-    color: #3395D6;
-   background-color:#CDE3F5;
-    
-}
-
 
 .greybar {
-    background-color: lightgrey;
-    width: 171px;
-    height: 2px;    
-    margin-left: 15px;
+  background-color: lightgrey;
+  width: 171px;
+  height: 2px;
+  margin-left: 15px;
 }
 .toprightbuttons {
-    display:flex;
-    flex-direction: column;
-    width:200px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
 
 .questions-box {
-    display: inline-flex;
-    flex-direction: column;
-    width: 60%; 
-    // padding-left: 400px;
-    // padding-top: 200px;
-
+  display: inline-flex;
+  flex-direction: column;
+  width: 60%;
+  // padding-left: 400px;
+  // padding-top: 200px;
 }
 
 .threeDots {
-    width: 10%;
-    height: 10%;
-}   
+  width: 10%;
+  height: 10%;
+}
 
 .question-item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-    width: 100%; 
-    padding-top: 10px;
-    padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: $main-button-link;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .activated {
-    
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .activated-image {
-    background-image: image_url('activated.png');
-    background-size: cover;
+  background-image: image_url("activated.png");
+  background-size: cover;
 
-    height: 30px;   
-    width: 30px;
-    padding-right: 4px;
-    margin-top: -6px;
+  height: 30px;
+  width: 30px;
+  padding-right: 4px;
+  margin-top: -6px;
 }
 
 .activated-group {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .actions {
-    display: flex;
+  display: flex;
 }
 
 .deactivated-image {
-    background-image: image_url('deactivated.png');
-    background-size: cover;
+  background-image: image_url("deactivated.png");
+  background-size: cover;
 
-    height: 25px;   
-    width: 25px;
-    padding-right: 4px;
-    margin-top: -6px;
+  height: 25px;
+  width: 25px;
+  padding-right: 4px;
+  margin-top: -6px;
 }
 
 .question-title {
-    text-decoration: none;
-    padding: 5px;
-    color: black;
+  text-decoration: none;
+  padding: 5px;
+  color: black;
 }
-
-
-
-
 
 .modal-background {
   position: fixed;
@@ -182,132 +99,125 @@
   left: 0;
   background: lightgrey;
   z-index: 10;
-
 }
 
 .modal {
   position: absolute;
   background: lightgrey;
   top: 50%;
-  display:flex;
+  display: flex;
   left: 50%;
   transform: translate(-50%, -50%);
-//   height: 80%;
-//   width: 100%;
-
+  //   height: 80%;
+  //   width: 100%;
 }
 
-
-
 .delete-button {
-    text-decoration: none;
-    border: none;
-    // background-color: magenta;
+  text-decoration: none;
+  border: none;
+  // background-color: magenta;
 }
 
 .duplicate {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .threedots {
-    text-decoration: none;
-    border: none;
-    background: none;
-    display: flex;  
-    justify-content: flex-end;    
-    flex-direction: column;
-    outline: none;
-
+  text-decoration: none;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  outline: none;
 }
 // .threedots:active {
 //     display: none;
 // }
 
 .mult_choice {
-    background-image: image_url('mult-choice.png');
-    background-size: cover;
-    height: 30px;   
-    width: 30px;   
+  background-image: image_url("mult-choice.png");
+  background-size: cover;
+  height: 30px;
+  width: 30px;
 }
 
 .text {
-     background-size: cover;
-    height: 30px;   
-    width: 30px;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
 }
 
-
 .edit-icon {
-    position: relative;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    background-color: white;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  background-color: white;
 }
 
 .delete-icon {
-    position: relative;
-    text-decoration: none;
-    color: black;
-    background-color: white;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  background-color: white;
 }
 
 .edit-words {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .options-box {
-    padding-top: 5px;
-    width: 20px;
-    text-decoration: none;
-    // pointer-events: none;
+  padding-top: 5px;
+  width: 20px;
+  text-decoration: none;
+  // pointer-events: none;
 }
 
 .options-box:hover {
-    color: black;
-    // pointer-events: none;
+  color: black;
+  // pointer-events: none;
 }
 
 .question-title:hover {
-    color:#3395D6;
+  color: #3395d6;
 }
 
 .activated-group:hover {
-    color:#3395D6;
+  color: #3395d6;
 }
 
 .dropdown-list:hover {
-    color:#3395D6;
+  color: #3395d6;
 }
 
 .threedots:hover {
-    color:#3395D6;
+  color: #3395d6;
 }
 
 .fa-align-left:before {
-    content: "\f036";
-    padding-left: 8px;
-
+  content: "\f036";
+  padding-left: 8px;
 }
 
 .index-leftside {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .index-rightside {
-    display: flex;
-    width: 30%;
-    justify-content: space-around;
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
 }
 
 .mult-choice-logo {
-background-image: image_url('mult-choice-logo.png');
-z-index: 999;
+  background-image: image_url("mult-choice-logo.png");
+  z-index: 999;
 }
 
 .survey-logo {
-    background-image: image_url('survey-logo.png');
-    z-index: 999;
-}   
+  background-image: image_url("survey-logo.png");
+  z-index: 999;
+}

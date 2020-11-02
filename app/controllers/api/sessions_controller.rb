@@ -7,6 +7,7 @@ class Api::SessionsController < ApplicationController
         # debugger
         if @user.nil?
             render json: ['Account not found'], status: 401
+    
         elsif @user.is_password?(login_params[:password])
             login(@user)    
             render "api/users/show"

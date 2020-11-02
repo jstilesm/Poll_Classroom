@@ -1,10 +1,12 @@
+@import "./fonts.scss";
+@import "./buttons.scss";
 .edit-form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    // justify-content: space-around;
-    padding: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  // justify-content: space-around;
+  padding: 100px;
 }
 
 // .edit-page {
@@ -26,91 +28,21 @@
 //     display: flex;
 // }
 
-// .save-button {
-//     // display: flex;
-//     box-shadow: inset 0px 34px 0px -15px #2665A9;
-//     background-color: #2665A9;
-//     border: 1px solid #2665A9;
-//     cursor: pointer;
-//     color: #ffffff;
-//     font-family: "Gill Sans";
-//     font-size: 15px;
-//     margin: 15px;
-//     padding: 9px 60px;
-//     text-decoration: none;
-//     justify-content: flex-start;
-// }
-
-
-.edit-create-button {
-    box-shadow:inset 0px 34px 0px -15px #2665A9 ;
-	background-color:#2665A9 ;
-	border:1px solid #2665A9 ;
-	display:flex;
-	cursor:pointer;
-	color:#ffffff;
-	font-family: "Gill Sans";
-    font-size: 15px;
-    margin: 0px;
-	// font-weight:bold;
-	// padding:9px 23px;
-    text-decoration:none;
-    width: 50%;
-    height: 50px;
-    // padding-top: 10px;
-    // padding-left: 10px;
-    // padding-right: 10px;
-    outline: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.edit-back-button {
-    // box-shadow:inset 0px 34px 0px -15px #ffffff ;
-    background-color:#ffffff ;
-    border: none;
-	border-top: 1px solid lightgrey ;
-	display: flex;
-	cursor:pointer;
-	color:black;
-	font-family: "Gill Sans";
-    font-size: 15px;
-    margin: 0px;
-	// font-weight:bold;
-	// padding:9px 23px;
-    text-decoration:none;
-    width: 50%;
-    // padding-top: 10px;
-    // padding-left: 10px;
-    // padding-right: 10px;
-    height: 50px;
-    padding: 0px;
-    // border: 0px;
-    outline: none;
-    justify-content: center;
-    align-items: center;
-    
-}
-
 .edit-white-box {
-    width: 20%;
-    height: 100%;
-    background-color: white;
-    // overflow: hidden;
-    display: flex;
-    // justify-content: space-around;
-    align-items: flex-end;
-}
-
-.edit-back-button:hover {
-    background-color: #EDEDED,
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  // overflow: hidden;
+  display: flex;
+  // justify-content: space-around;
+  align-items: flex-end;
 }
 
 .edit-title-box {
-    display: flex;
-    width: 80%;
-    height: 50px;
-    outline: none;
-    border: none;
-    font-size: 18px;
+  display: flex;
+  width: 80%;
+  height: 50px;
+  outline: none;
+  border: none;
+  font-size: $main-button-link;
 }

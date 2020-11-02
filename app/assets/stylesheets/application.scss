@@ -20,6 +20,8 @@
 @import "./show-form.scss";
 @import "./index.scss";
 @import "./poll.scss";
+@import "./buttons.scss";
+@import "./fonts.scss";
 
 // .body {
 //     font-family: sans-serif;
@@ -52,7 +54,7 @@
 .question-error-items {
   display: flex;
   padding: 5px;
-  font-size: 0.9rem;
+  font-size: $error-messages;
   justify-content: space-around;
   color: red;
   background-color: #fdbeb9;
@@ -109,22 +111,23 @@
   justify-content: space-evenly;
 }
 .main-text {
-  font-weight: bold;
-  font-size: 40px;
-  font-family: "Gill Sans";
+  font-weight: $bold;
+  font-size: $Large;
+  font-family: $font;
+  font-size: $Large;
   padding-bottom: 20px;
 }
 .subtext {
-  font-family: "Gill Sans";
-  font-size: 14px;
+  font-family: $font;
+  font-size: $subparaHeader;
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
 }
 
 .main-content {
-  font-family: "Gill Sans";
-  font-size: 30px;
+  font-family: $font;
+  font-size: $subLarge;
 }
 .main-image {
   width: 550px;
@@ -151,13 +154,13 @@
 }
 .blurb {
   h3 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: $paraHeader;
+    font-weight: $bold-light;
   }
   padding: 5px;
-  font-family: "Gill Sans";
+  font-family: $font;
   flex-wrap: flex;
-  font-size: 14px;
+  font-size: $subparaHeader;
   display: flex;
   align-items: left;
   flex-direction: column;
@@ -182,9 +185,9 @@
 
 .footerlink-a {
   text-decoration: none;
-  font-family: "Gill Sans";
+  font-family: $font;
   color: black;
-  font-size: 15px;
+  font-size: $subLarge;
   height: 50%;
   display: flex;
   justify-content: flex-end;
@@ -196,9 +199,9 @@
 
 .footerlinks {
   text-decoration: none;
-  font-family: "Gill Sans";
+  font-family: $font;
   color: black;
-  font-size: 15px;
+  font-size: $subLarge;
   height: 50%;
   display: flex;
   padding: 10px;
@@ -227,26 +230,9 @@
   padding: 10px;
 }
 .link-to-signup {
-  font-family: "Gill Sans";
-  font-size: 12px;
+  font-family: $font;
+  font-size: $nav-button-link;
   margin: 5px;
-}
-
-.signup-link-page {
-  box-shadow: inset 0px 34px 0px -15px #0265a8;
-  background-color: #0265a8;
-  border: 1px solid #0265a8;
-  display: block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  // font-weight:bold;
-  padding: 9px 13px;
-  text-decoration: none;
-  margin: 0px auto;
-  width: 120px;
-  text-align: center;
 }
 
 .get-started {
@@ -256,7 +242,7 @@
 
 .engage-blurb {
   display: flex;
-  font-family: "Gill Sans";
+  font-family: $font;
   align-items: center;
   flex-direction: column;
   padding: 100px;
@@ -265,7 +251,7 @@
 }
 
 .bottom-links {
-  font-family: "Gill Sans";
+  font-family: $font;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,9 +312,9 @@
 }
 // Title of Main Page NOT USED
 .title {
-  font-family: "Gill Sans";
+  font-family: $font;
   color: white;
-  font-size: 40px;
+  font-size: $Large;
   // display: flex;
   // // justify-content: start;
 }
@@ -365,7 +351,7 @@
 .header-main {
   position: relative;
   right: 50px;
-  font-family: "Gill Sans";
+  font-family: $font;
 }
 /* nav bar container */
 .topnav {
@@ -381,39 +367,8 @@
   // justify-content: center;
 }
 
-.nav-button {
-  box-shadow: inset 0px 34px 0px -15px white;
-  background-color: white;
-  border: 1px solid grey;
-  // display:inline-block;
-  cursor: pointer;
-  color: #2665a9;
-  font-family: "Gill Sans";
-  font-size: 15px;
-  // margin: 15px;
-  // font-weight:bold;
-  // padding:9px 23px;
-  text-decoration: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
 // nav bar test user
-.test-user {
-  display: flex;
-  background-color: #2665a9;
-  color: white;
-  font-family: "Gill Sans";
-  border-radius: 2px;
-  box-shadow: inset 0px 34px 0px -15px #2665a9;
-  background-color: #2665a9;
-  border: 1px solid #2665a9;
-  outline: none;
 
-  // flex-wrap: wrap;
-}
 .errors-signup {
   color: darkred;
   list-style: none;
@@ -440,7 +395,7 @@
 
 .error-items {
   padding: 5px;
-  font-size: 0.9rem;
+  font-size: $error-messages;
   justify-content: space-around;
   background-color: #fdbeb9;
   margin: -5px 7px 0px 7px;
@@ -455,8 +410,8 @@
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: "Gill Sans";
-  font-size: 15px;
+  font-family: $font;
+  font-size: $nav-button-link;
   margin: 15px;
   // font-weight:bold;
   // padding:9px 23px;
@@ -464,35 +419,9 @@
   outline: none;
 }
 
-/* link to the sign up on nav bar */
-.signup-link {
-  color: #2665a9;
-  font-family: "Gill Sans";
-  position: relative;
-  font-size: 14px;
-  background-color: white;
-  text-decoration: none;
-  padding: 9px;
-  font-weight: 500;
-}
-
 .login-page {
   display: flex;
   background-color: green;
-}
-
-/* link to the log in on nav bar */
-.login-link {
-  color: white;
-  font-family: "Gill Sans";
-  position: relative;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  // top: 10px;
-}
-header {
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 /*  div surrounding the buttons on the nav bar */
@@ -520,21 +449,6 @@ header {
   margin: 0rem 2rem;
 }
 
-.activities-link {
-  box-shadow: inset 0px 34px 0px -15px #ffffff;
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
-  display: inline-block;
-  cursor: pointer;
-  color: #2665a9;
-  font-family: "Gill Sans";
-  font-size: 15px;
-  // font-weight:bold;
-  // padding:9px 23px;
-  text-decoration: none;
-  padding: 10px;
-}
-
 /*  nav bar header container */
 
 /* LOGIN PAGE CSS */
@@ -558,47 +472,12 @@ header {
 
 /*  Title   for the log in page */
 .login-title {
-  font-family: "Gill Sans";
-  font-size: 20px;
+  font-family: $font;
+  font-size: $entry-field-header;
   display: flex;
   padding-left: 5px;
   /* right: 85px; */
   // justify-content: center;
-}
-/* Login Button */
-// .login-submit {
-//     position: relative;
-//     top: 40%;
-//     // position: relative;
-//     // right: 500px;
-//     background-color: #96372F;
-//     background-size: 300px 100px;
-//     color: white;
-//     font-size: 20px;
-//     padding: 10px 125px;
-//     margin: 10px 10px;
-//     font-family: 'Gill Sans'
-// }
-
-.login-submit {
-  box-shadow: inset 0px 34px 0px -15px #a5332b;
-  background-color: #a5332b;
-  border: 1px solid #a5332b;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  // font-weight:bold;
-  padding: 9px 23px;
-  text-decoration: none;
-  margin: 0px 10px;
-  margin-top: 10px;
-  width: 300px;
-  outline: none;
-}
-.login-submit:hover {
-  opacity: 1;
 }
 
 .login-key {
@@ -621,7 +500,7 @@ header {
 
 /* title to the sign up page */
 .signup-title {
-  font-family: "Gill Sans";
+  font-family: $font;
   color: white;
   margin: 30px 20px;
   font-size: 50px;
@@ -668,25 +547,6 @@ header {
   padding-left: 35px;
   margin: 0px auto;
   // height: 400px;
-}
-
-/* Sign up button */
-.signup-submit {
-  font-size: 17px;
-  margin: 10px 10px;
-  width: 300px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.blue-button {
-  box-shadow: inset 0px 34px 0px -15px #2665a9;
-  background-color: #2665a9;
-  border: 1px solid #2665a9;
-  display: inline-block;
-  cursor: pointer;
-  color: white;
-  border-radius: 3px;
-  margin-top: 20px;
 }
 
 /* Labels for the Sign up inputs */
