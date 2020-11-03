@@ -11,7 +11,8 @@ const NavBar = ({ currentUser, logout, testUser }) => {
     location.pathname == "/signup" ||
     location.pathname == "/login" ||
     location.pathname == "/signup-alt";
-  const nonav = location.pathname == "/poll";
+  const nonav =
+    location.pathname == "/poll" || location.pathname == "/username";
   const questions = location.pathname == "/questions";
 
   const sessionButtons = () => (
@@ -75,13 +76,7 @@ const NavBar = ({ currentUser, logout, testUser }) => {
           />
           <p className="poll-home">Home</p>
         </a>
-        <a className="poll-logo" href="/">
-          <img
-            className="poll-mini-logo"
-            src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA"
-          />
-          <p className="poll-home">History</p>
-        </a>
+
         <a className="poll-logo" href="/">
           <img
             className="poll-mini-logo"

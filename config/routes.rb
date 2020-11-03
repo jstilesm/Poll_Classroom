@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
+  
   root "static_pages#root"
   
   namespace :api, defaults: {format: :json} do
@@ -20,9 +21,9 @@ Rails.application.routes.draw do
       resources :text_responses, only: [:create]
       resources :question_options, only: [:create] 
     end
-    resources :mult_responses, only: [:update, :show, :destroy]
+    resources :mult_responses, only: [:index, :update, :show, :destroy]
     resources :text_responses, only: [:update, :show, :destroy]
-    resources :question_options, only: [:update, :show, :destroy]
+    resources :question_options, only: [:index, :update, :show, :destroy]
     resource :session, only: [:create, :destroy]
     resources :visitors, only: [:update, :destroy]
 

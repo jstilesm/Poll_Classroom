@@ -10,7 +10,6 @@
 #
 class QuestionOptions < ApplicationRecord
 
-
     belongs_to :question,
         primary_key: :id,
         foreign_key: :question_id,
