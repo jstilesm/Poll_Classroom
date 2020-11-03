@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Dropdown from "../dropdown/dropdown-user";
+import Button from "../buttons/button";
 
 const NavBar = ({ currentUser, logout, testUser }) => {
   const test = { identifier: "tester", password: "password" };
@@ -13,52 +14,15 @@ const NavBar = ({ currentUser, logout, testUser }) => {
   const nonav = location.pathname == "/poll";
   const questions = location.pathname == "/questions";
 
-  const Button = (props) => {
-    let className = "button ";
-    if (props.blue) {
-      className += "button-blue ";
-    }
-    if (props.white) {
-      className += "button-white ";
-    }
-    if (props.whiteSpecial) {
-      className += "button-white-special ";
-    }
-    if (props.fullWidth) {
-      className += "button-full-width ";
-    }
-    if (props.Medium) {
-      className += "button-medium";
-    }
-    if (props.Small) {
-      className += "button-small";
-    }
-    if (props.flexed) {
-      className += "flexed";
-    }
-    if (props.to !== undefined) {
-      return (
-        <Link className={className} {...props}>
-          {props.children}
-        </Link>
-      );
-    }
-    return (
-      <button className={className} {...props}>
-        {props.children}
-      </button>
-    );
-  };
-
   const sessionButtons = () => (
     <>
       <Button blue={true} flexed={true} onClick={() => testUser(test)}>
-        Test
+        Test User
       </Button>
-      <Button className="signup-link" to="/signup-alt">
+      <Button white={true} to="/signup-alt">
         Sign Up
       </Button>
-      <Button className="login-link" to="/login">
+      <Button blue={true} to="/login">
         Log In
       </Button>
     </>
@@ -67,12 +31,12 @@ const NavBar = ({ currentUser, logout, testUser }) => {
 
   const personalNavButtons = () => (
     <>
-      <Link className="activities-link" to="/questions">
+      <Button white={true} to="/questions">
         Activities
-      </Link>
-      <button className="header-button" onClick={logout}>
+      </Button>
+      <Button blue={true} marginRight={true} onClick={logout}>
         Log Out
-      </button>
+      </Button>
     </>
   );
 
