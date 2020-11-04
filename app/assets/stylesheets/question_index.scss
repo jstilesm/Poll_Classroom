@@ -29,6 +29,10 @@
   width: 60%;
   // padding-left: 400px;
   // padding-top: 200px;
+  h1 {
+    background-color: lightgray;
+    padding: 5px;
+  }
 }
 
 .threeDots {
@@ -43,6 +47,15 @@
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.question-item-green {
+  display: flex;
+  justify-content: space-between;
+  font-size: $main-button-link;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #cce7cc;
 }
 
 .dropdown {

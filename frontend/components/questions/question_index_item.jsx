@@ -24,7 +24,7 @@ class QuestionIndexItem extends React.Component {
       status = "Deactivate";
       return (
         <>
-          <div className="question-item">
+          <div className="question-item-green">
             <div className="index-leftside">
               {this.props.question.kind === "mult_response" ? (
                 <div className="mult_choice"></div>
