@@ -13,6 +13,6 @@ json.questions(@group.questions) do |question|
   json.closed question.closed
   json.allow_unregistered question.allow_unregistered
   json.question_options do
-    json.array! question.question_options, :label
+    json.array! question.question_options, :id, :label
   end
 end

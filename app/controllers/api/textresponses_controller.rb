@@ -1,15 +1,13 @@
 class Api::TextResponsesController < ApplicationController
 
     def create
-    end
-
-    def update
-    end
-    
-    def show
-    end
-
-    def destroy
+        @text_responses = TextResponse.new(text_responsess_params)
+        if @text_responses.save
+            render '/api/text_responses/show'
+        else
+            render json: @text_responses.errors.full_messages, status: 422
+        end
+        
     end
 
     private

@@ -1,0 +1,31 @@
+@import "./fonts.scss";
+
+.poll-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.poll-question {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.question-header {
+  color: white;
+  display: flex;
+  font-weight: bold;
+  font-style: "Gill Sans";
+  margin-bottom: 2px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.text-area {
+  width: 800px;
+  height: 40px;
+}

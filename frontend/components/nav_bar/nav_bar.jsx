@@ -12,7 +12,7 @@ const NavBar = ({ currentUser, logout, testUser }) => {
     location.pathname == "/login" ||
     location.pathname == "/signup-alt";
   let nonav;
-  if (window.location.href.indexOf("/poll") != -1) {
+  if (window.location.href.indexOf("/poll/") != -1) {
     nonav = true;
   } else {
     nonav = false;

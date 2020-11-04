@@ -24,6 +24,9 @@ const Button = (props) => {
   if (props.large) {
     className += "button-large ";
   }
+  if (props.extraLarge) {
+    className += "button-extra-large ";
+  }
   if (props.flexed) {
     className += "flexed ";
   }

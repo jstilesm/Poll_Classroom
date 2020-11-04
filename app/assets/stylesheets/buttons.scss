@@ -39,6 +39,11 @@ $red: #a5332b;
   font-family: $font;
   outline: none;
   text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.375rem, 0.75rem;
+  line-height: 1.5;
 }
 .button-blue {
   background-color: $blue;
@@ -91,6 +96,16 @@ $red: #a5332b;
   font-family: $font;
   font-size: $nav-button-link;
 }
+.button-whitegrey-large {
+  background-color: #ffffff;
+  border: none;
+  border-top: 1px solid lightgrey;
+  cursor: pointer;
+  color: black;
+  font-family: $font;
+  font-size: $nav-button-link;
+  width: 500px;
+}
 
 .flexed {
   display: flex;
@@ -125,6 +140,16 @@ $red: #a5332b;
   width: 300px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.button-extra-large {
+  font-size: $main-button-link;
+  margin: 10px 10px;
+  width: 800px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
 }
 
 .nav {

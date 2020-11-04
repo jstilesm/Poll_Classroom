@@ -10,8 +10,9 @@ class Username extends React.Component {
       value: "",
     };
     // this.handleSubmit = thi,.handleSubmit.bind(this);
-    this.renderTextBoxes = this.renderTextBoxes.bind(this);
-    this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
+
+    this.renderGroup = this.renderGroup.bind(this);
+    this.renderQuestionBody = this.renderQuestionBody.bind(this);
   }
   componentDidMount() {
     // debugger
@@ -24,27 +25,45 @@ class Username extends React.Component {
   //     this.props.history.push(`/poll/${this.state.value}`);
   //   }
 
-  renderTextBoxes() {
-    // this.props.polls.group.questions
+  buttonClick(e, question, question_option) {
+    e.preventDefault();
+    // console.log(question, question_option);
   }
 
-  renderQuestionOptions() {
-    let title = this.props.group;
+  renderQuestionBody(question) {
+    console.log(question.closed);
+    if (question.kind === "mult_response" && question.closed === false) {
+      return question.question_options.map((question_option) => (
+        <div className="buttons">
+          <Button
+            whiteGrey={true}
+            extraLarge={true}
+            value={question_option.label}
+            onClick={(e) => this.buttonClick(e, question, question_option)}
+          >
+            {question_option.label}
+          </Button>
+        </div>
+      ));
+    } else {
+      return <textarea className="text-area"></textarea>;
+    }
+  }
 
-    if (title != undefined) {
-      console.log(title["questions"][1]["question_options"]);
-      let questions = title["questions"];
-
-      // let questions = title["questions"];
-      // return (
-      //   <ul className="question-options">
-      //     {questions.map((question, i) => (
-      //       <li className="question-options" key={`question-${i}`}>
-      //         {question}
-      //       </li>
-      //     ))}
-      //   </ul>
-      // );
+  renderGroup() {
+    let group = this.props.group;
+    if (group != undefined) {
+      let questions = group.questions;
+      return (
+        <div className="poll-group">
+          {questions.map((question, i) => (
+            <div className="poll-question">
+              <label className="question-header">{question.title}</label>
+              {this.renderQuestionBody(question)}
+            </div>
+          ))}
+        </div>
+      );
     }
   }
 
@@ -54,9 +73,8 @@ class Username extends React.Component {
     return (
       <div className="poll-page">
         <div className="answers"></div>
-        {JSON.stringify(this.props.group)}
-        {this.renderTextBoxes()}
-        {this.renderQuestionOptions()}
+        {/* {JSON.stringify(this.props.group)} */}
+        {this.renderGroup()}
       </div>
     );
 
