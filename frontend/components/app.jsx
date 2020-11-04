@@ -16,6 +16,7 @@ import CreateQuestionFormContainer from "./questions/create_question_form_contai
 import EditQuestionFormContainer from "./questions/edit_question_form_container";
 import QuestionShowContainer from "./questions/question_show_container";
 
+import UsernameContainer from "./username/username_container";
 import AnswerContainer from "./answers/answers_container";
 
 const App = () => (
@@ -39,13 +40,22 @@ const App = () => (
         path="/questions/:questionId"
         component={QuestionShowContainer}
       />
-
       <Route exact path="/signup-alt" component={ConnectorContainer} />
       <Route exact path="/" component={SplashContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
       <Route exact path="/poll" component={PollContainer} />
-      <Route exact path="/username" component={AnswerContainer} />
+      <Route
+        exact
+        path="/poll/:username/:group_id"
+        component={AnswerContainer}
+      />
+      <Route
+        exact
+        path="/poll/:username/:group_id/username"
+        component={UsernameContainer}
+      />
+      {/* /poll /poll/tester/9/username /poll/tester/9 */}
       {/* <Protected path='/activities' component={GroupsContainer}/> */}
     </Switch>
   </>

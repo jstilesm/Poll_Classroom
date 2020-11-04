@@ -7,6 +7,7 @@ class PollShow extends React.Component {
     super(props);
     this.state = {
       error_message: "",
+      value: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,6 +20,7 @@ class PollShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.history.push(`/poll/${this.state.value}/username`);
   }
 
   errors() {}
@@ -38,12 +40,13 @@ class PollShow extends React.Component {
             <input
               className="link-input"
               type="text"
-              //   value="/"
-              placeholder="PollClass.com/"
+              value={this.state.value}
+              placeholder=""
+              onChange={(e) => this.setState({ value: e.target.value })}
             />
           </label>
           {this.errors()}
-          <Button blue={true} large={true} to="username">
+          <Button blue={true} large={true}>
             Join
           </Button>
         </form>

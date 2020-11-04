@@ -5,12 +5,29 @@ import QuestionIndexItem from "./question_index_item";
 import Button from "../buttons/button";
 
 class QuestionIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderGroup = this.renderGroup.bind(this);
+  }
   componentDidMount() {
     // debugger
-    this.props.requestQuestions();
+    this.props.requestGroups();
     // debugger
   }
-
+  renderGroup(group) {
+    return (
+      <>
+        <h1>{group.name}</h1>
+        {group.questions.map((question) => (
+          <QuestionIndexItem
+            key={question.id}
+            question={question}
+            deleteQuestion={this.props.deleteQuestion}
+          />
+        ))}
+      </>
+    );
+  }
   render() {
     // debugger
     return (
@@ -29,13 +46,7 @@ class QuestionIndex extends React.Component {
         <div className="main-index-page">
           {/* <Link to="/questions/new">New Question</Link> */}
           <ul className="questions-box">
-            {this.props.questions.map((question) => (
-              <QuestionIndexItem
-                key={question.id}
-                question={question}
-                deleteQuestion={this.props.deleteQuestion}
-              />
-            ))}
+            {this.props.groups.map(this.renderGroup)}
           </ul>
         </div>
       </>

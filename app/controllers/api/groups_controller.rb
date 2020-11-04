@@ -3,10 +3,14 @@ class Api::GroupsController < ApplicationController
 
     def index
         @groups = current_user.groups
+        # @groups = User.all.first.groups
         # debugger
         render 'api/groups/index'
     end
 
+    def show
+        @group = Group.find_by(id: params[:id])
+    end
     def create
         @group = Question.new(group_params)
         #  debugger
@@ -20,7 +24,6 @@ class Api::GroupsController < ApplicationController
             render json: @group.errors.full_messages, status: 422
         end 
     end
-
 
 
     def update

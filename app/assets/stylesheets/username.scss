@@ -1,10 +1,10 @@
-.answer-page {
+.username-page {
   background-color: black;
   width: 100%;
   height: 1000px;
 }
 
-.answer-form-box {
+.username-form-box {
   color: white;
   display: flex;
   flex-direction: column;
@@ -16,11 +16,11 @@
   left: 50%;
 }
 
-.answer-paragraph-title {
+.username-paragraph-title {
   font-style: $font;
   font-weight: 600;
 }
-.answer-paragraph {
+.username-paragraph {
   font-style: $font;
 }
 
@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-.answer-title {
+.username-title {
   margin-bottom: 20px;
 }
 .link {

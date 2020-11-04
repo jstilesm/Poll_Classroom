@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import PollShow from "./poll_show";
+import { login, clearErrors } from "../../actions/session_actions";
 
 const mSTP = (state, ownProps) => {
   // debugger

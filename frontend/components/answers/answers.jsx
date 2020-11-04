@@ -2,47 +2,40 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../buttons/button";
 
-class Answers extends React.Component {
+class Username extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      show: false,
+      value: "",
+    };
+    // this.handleSubmit = thi,.handleSubmit.bind(this);
   }
-  //   componentDidMount() {
-  //     // debugger
-  //     this.props.requestQuestion(questionId);
-  //     // debugger
-  //   }
+  componentDidMount() {
+    // debugger
 
+    this.props.requestGroup(this.props.match.params.group_id);
+    // debugger
+  }
+  //   handleSubmit(e) {
+  //     e.preventDefault();
+  //     this.props.history.push(`/poll/${this.state.value}`);
+  //   }
   render() {
+    console.log(this.props);
     return (
-      <div className="answer-page">
-        <form onSubmit={this.handleSubmit} className="answer-form-box">
-          <h1 className="answer-title">Welcome to My Presentation</h1>
-          <p className="answer-paragraph-title"> Introduce yourself</p>
-          <p className="answer-paragraph">
-            Enter the screen name you would like to appear alongside your
-            responses.
-          </p>
-          <label className="link">
-            <input
-              className="link-input"
-              type="text"
-              //   value="/"
-              placeholder="Name"
-            />
-          </label>
-          <Button blue={true} large={true} to="username">
-            Continue
-          </Button>
-          <p className="skip">Skip</p>
-          <p className="subtext">
-            Using a screen name allows the presenter and other participants to
-            attach your screen name to your responses. You can change your
-            screen name at any time.
-          </p>
-        </form>
+      <div className="answers-page">
+        <h1>Hello</h1>
+
+        {JSON.stringify(this.props.group)}
       </div>
     );
+
+    // <div>{this.props.question}</div>
+    // <p>{this.props.question_options}</p>
+
+    //
   }
 }
 
-export default Answers;
+export default Username;
