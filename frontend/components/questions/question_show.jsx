@@ -10,6 +10,7 @@ class QuestionShow extends React.Component {
   }
 
   render() {
+    console.log(this.props.question);
     // debugger
     let number = this.props.match.params.questionId;
     // if (!isNaN(number)) {

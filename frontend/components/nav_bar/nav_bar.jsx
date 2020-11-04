@@ -11,8 +11,14 @@ const NavBar = ({ currentUser, logout, testUser }) => {
     location.pathname == "/signup" ||
     location.pathname == "/login" ||
     location.pathname == "/signup-alt";
-  const nonav =
-    location.pathname == "/poll" || location.pathname == "/username";
+  let nonav;
+  if (window.location.href.indexOf("/poll") != -1) {
+    nonav = true;
+  } else {
+    nonav = false;
+  }
+
+  location.pathname == "/poll" || location.pathname == "/username";
   const questions = location.pathname == "/questions";
 
   const sessionButtons = () => (
@@ -78,17 +84,12 @@ const NavBar = ({ currentUser, logout, testUser }) => {
         </a>
 
         <a className="poll-logo" href="/">
-          <img
-            className="poll-mini-logo"
-            src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA"
-          />
+          <span className="fas fa-user-plus"></span>
           <p className="poll-home">Registration</p>
         </a>
+
         <a className="poll-logo" href="/">
-          <img
-            className="poll-mini-logo"
-            src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA"
-          />
+          <span className="fas fa-user-circle"></span>
           <p className="poll-home">Log in</p>
         </a>
       </div>

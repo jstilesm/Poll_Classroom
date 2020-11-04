@@ -24,7 +24,7 @@ class Username extends React.Component {
   render() {
     const { username } = this.props.match.params;
     return (
-      <div className="username-page">
+      <div className="poll-page">
         <form onSubmit={this.handleSubmit} className="username-form-box">
           <h1 className="username-title">
             Welcome to {username}'s Presentation

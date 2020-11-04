@@ -26,9 +26,10 @@ class EditQuestionForm extends React.Component {
   }
 
   render() {
-    let number = this.props.question.id;
-    const { errors, question } = this.props;
     if (!question) return null;
+    const { errors, question } = this.props;
+
+    let number = this.props.question.id;
     return (
       // <div className="edit-page">
 

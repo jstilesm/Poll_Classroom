@@ -10,6 +10,8 @@ class Username extends React.Component {
       value: "",
     };
     // this.handleSubmit = thi,.handleSubmit.bind(this);
+    this.renderTextBoxes = this.renderTextBoxes.bind(this);
+    this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
   }
   componentDidMount() {
     // debugger
@@ -21,13 +23,40 @@ class Username extends React.Component {
   //     e.preventDefault();
   //     this.props.history.push(`/poll/${this.state.value}`);
   //   }
-  render() {
-    console.log(this.props);
-    return (
-      <div className="answers-page">
-        <h1>Hello</h1>
 
+  renderTextBoxes() {
+    // this.props.polls.group.questions
+  }
+
+  renderQuestionOptions() {
+    let title = this.props.group;
+
+    if (title != undefined) {
+      console.log(title["questions"][1]["question_options"]);
+      let questions = title["questions"];
+
+      // let questions = title["questions"];
+      // return (
+      //   <ul className="question-options">
+      //     {questions.map((question, i) => (
+      //       <li className="question-options" key={`question-${i}`}>
+      //         {question}
+      //       </li>
+      //     ))}
+      //   </ul>
+      // );
+    }
+  }
+
+  render() {
+    console.log(this.props.group);
+
+    return (
+      <div className="poll-page">
+        <div className="answers"></div>
         {JSON.stringify(this.props.group)}
+        {this.renderTextBoxes()}
+        {this.renderQuestionOptions()}
       </div>
     );
 
