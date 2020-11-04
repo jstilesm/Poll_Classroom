@@ -29,6 +29,16 @@
 //     font-family: sans-serif;
 // }
 //  Splash CSS
+
+.logo-form {
+  background-image: image_url("poll_everywhere.png");
+  // background-position-y: center;
+  background-size: cover;
+  position: absolute;
+  width: 300px;
+  z-index: inherit;
+  height: 60px;
+}
 .whole-page {
   display: flex;
   justify-content: center;

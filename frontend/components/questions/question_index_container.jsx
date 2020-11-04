@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import QuestionIndex from "./question_index";
-import { deleteQuestion } from "../../actions/question_actions";
+import { deleteQuestion, updateQuestion } from "../../actions/question_actions";
 import { requestGroups } from "../../actions/group_actions";
 import { openModal } from "../../actions/modal_actions";
+import { update } from "../../util/api_util_session";
 
 const mSTP = (state) => {
   // debugger
@@ -14,6 +15,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
   return {
     requestGroups: () => dispatch(requestGroups()),
+    updateQuestion: (question) => dispatch(updateQuestion(question)),
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
     openModal: () => dispatch(openModal("Add Question")),
   };

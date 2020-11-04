@@ -3,14 +3,44 @@ import { Link } from "react-router-dom";
 import Button from "../buttons/button";
 
 class QuestionShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // this.state = { status: this.props.question.closed };
+    this.activated = this.activated.bind(this);
+  }
   componentDidMount() {
     // debugger
     let number = this.props.match.params.questionId;
     this.props.requestQuestion(number);
   }
 
+  update() {
+    this.setState({ status: !this.state.status });
+  }
+
+  activated(e) {
+    if (
+      (this.props.question != undefined && this.props.question.closed) == true
+    ) {
+      return (
+        <Button whiteGrey={true} oneThird={true} onClick={(e) => this.onClick}>
+          Activate
+        </Button>
+      );
+    } else {
+      return (
+        <Button whiteGrey={true} oneThird={true}>
+          Deactivate
+        </Button>
+      );
+    }
+  }
   render() {
-    console.log(this.props.question);
+    if (this.props.question != undefined) {
+      console.log(this.props.question.closed);
+    }
+
     // debugger
     let number = this.props.match.params.questionId;
     // if (!isNaN(number)) {
@@ -39,9 +69,7 @@ class QuestionShow extends React.Component {
             >
               Edit
             </Button>
-            <Button whiteGrey={true} oneThird={true}>
-              Activate
-            </Button>
+            {this.activated()}
             <Button whiteGrey={true} oneThird={true} to="/questions/">
               Back
             </Button>

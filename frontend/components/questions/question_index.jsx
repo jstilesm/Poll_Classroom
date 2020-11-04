@@ -23,6 +23,7 @@ class QuestionIndex extends React.Component {
             key={question.id}
             question={question}
             deleteQuestion={this.props.deleteQuestion}
+            updateQuestion={this.props.updateQuestion}
           />
         ))}
       </>

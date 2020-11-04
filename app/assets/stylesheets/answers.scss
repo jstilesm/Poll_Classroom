@@ -15,17 +15,14 @@
   color: white;
   display: flex;
   font-weight: bold;
-  font-style: "Gill Sans";
+  font-style: $font;
   margin-bottom: 2px;
   text-decoration: none;
   padding: 5px;
 }
 
-.buttons {
-  display: flex;
-}
-
 .text-area {
   width: 800px;
   height: 40px;
+  font-style: $font;
 }

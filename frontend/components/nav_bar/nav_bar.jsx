@@ -19,7 +19,12 @@ const NavBar = ({ currentUser, logout, testUser }) => {
   }
 
   location.pathname == "/poll" || location.pathname == "/username";
-  const questions = location.pathname == "/questions";
+  let questions;
+  if (window.location.href.indexOf("questions") > -1) {
+    questions = true;
+  } else {
+    questions = false;
+  }
 
   const sessionButtons = () => (
     <>
@@ -62,13 +67,7 @@ const NavBar = ({ currentUser, logout, testUser }) => {
   };
   const personalNav = () => (
     <header className="nav-bar">
-      <a className="logo-form" href="/">
-        <img
-          className="logo"
-          src="https://davhizrhxzcu1.cloudfront.net/assets/media_kit/logo_blue-0a5ceed1257be54ad73861d21767f5c202bcf72d9b15e437d308655a24250702.png"
-          alt=""
-        />
-      </a>
+      <a className="logo-form" href="/"></a>
       <div className="site-header-right">{buttons()}</div>
     </header>
   );
