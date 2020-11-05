@@ -33,7 +33,7 @@ class Username extends React.Component {
   }
 
   renderQuestionBody(question) {
-    console.log(question.closed);
+    // console.log(question.closed);
     if (question.kind === "mult_response" && question.closed === false) {
       return question.question_options.map((question_option) => (
         <div className="buttons">
@@ -47,6 +47,8 @@ class Username extends React.Component {
           </Button>
         </div>
       ));
+    } else if (question.closed === true) {
+      return null;
     } else {
       return <textarea className="text-area"></textarea>;
     }
@@ -56,9 +58,16 @@ class Username extends React.Component {
     let group = this.props.group;
     if (group != undefined) {
       let questions = group.questions;
+      let array = [];
+      for (let j = 0; j < questions.length; j++) {
+        if (questions[j].closed === false) {
+          array.push(questions[j]);
+        }
+      }
+      console.log(array);
       return (
         <div className="poll-group">
-          {questions.map((question, i) => (
+          {array.map((question, i) => (
             <div className="poll-question">
               <label className="question-header">{question.title}</label>
               {this.renderQuestionBody(question)}
@@ -70,7 +79,7 @@ class Username extends React.Component {
   }
 
   render() {
-    console.log(this.props.group);
+    // console.log(this.props.group);
 
     return (
       <div className="poll-page">
