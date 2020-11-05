@@ -6,19 +6,21 @@ import Button from "../buttons/button";
 class EditQuestionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.question;
+    this.state = {};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  // componentDidMount() {
-  //     this.props.requestQuestion(this.props.match.params.questionId);
-  // }
+  componentDidMount() {
+    this.props.requestQuestion(this.props.match.params.questionId).then((e) => {
+      this.setState(e.question);
+    });
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
-    if (!this.props.errors) {
+    // console.log(e);
+    this.props.action(this.state).then(() => {
       this.props.history.push("/questions");
-    }
+    });
   }
 
   update(field) {
@@ -26,10 +28,12 @@ class EditQuestionForm extends React.Component {
   }
 
   render() {
-    if (!question) return null;
     const { errors, question } = this.props;
+    // console.log(question);
+    if (!question) return null;
 
-    let number = this.props.question.id;
+    let number = question.id;
+
     return (
       // <div className="edit-page">
 
@@ -43,7 +47,8 @@ class EditQuestionForm extends React.Component {
                 <p>{this.props.question.allow_unregistered}</p>
                 <p>{this.props.question.response_limit}</p> */}
         <div className="grey-box">
-          <form id="my-form" className="edit-form" onSubmit={this.handleSubmit}>
+          <form id="my-form" className="edit-form">
+            <h1>Title</h1>
             <label className="title-label">
               <input
                 className="edit-title-box"
@@ -82,7 +87,7 @@ class EditQuestionForm extends React.Component {
         {/* <Link to="/">Link</Link> */}
         <div className="edit-white-box">
           <div className="button-box">
-            <Button blue={true} oneHalf={true}>
+            <Button blue={true} oneHalf={true} onClick={this.handleSubmit}>
               Save
             </Button>
             <Button whiteGrey={true} oneHalf={true} to={`/questions/${number}`}>

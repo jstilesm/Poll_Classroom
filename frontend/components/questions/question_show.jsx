@@ -6,7 +6,7 @@ class QuestionShow extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = { status: this.props.question.closed };
+    // this.state = { status: this.props.question };
     this.activated = this.activated.bind(this);
   }
   componentDidMount() {
@@ -37,12 +37,38 @@ class QuestionShow extends React.Component {
     }
   }
   render() {
+    let number = this.props.match.params.questionId;
+    // console.log(this.props.mult_response);
     if (this.props.question != undefined) {
-      console.log(this.props.question.closed);
+      return (
+        <div className="show-page">
+          {/* <h1>Title</h1>
+                <h1>{this.props.question.title}</h1>
+                <h3>{this.props.question.kind}</h3>
+                <p>{this.props.question.closed}</p>
+                <p>{this.props.question.allow_unregistered}</p>
+                <p>{this.props.question.response_limit}</p> */}
+          <div className="grey-box">{this.props.question.title}</div>
+          {/* <Link to="/">Link</Link> */}
+          <div className="white-box">
+            <div className="button-box">
+              <Button
+                blue={true}
+                oneThird={true}
+                to={`/questions/${number}/edit`}
+              >
+                Edit
+              </Button>
+              {this.activated()}
+              <Button whiteGrey={true} oneThird={true} to="/questions/">
+                Back
+              </Button>
+            </div>
+          </div>
+        </div>
+      );
     }
 
-    // debugger
-    let number = this.props.match.params.questionId;
     // if (!isNaN(number)) {
     //     // debugger
     //     console.log(number);
@@ -50,6 +76,7 @@ class QuestionShow extends React.Component {
     //     console.log("nowork");
     // }
     // debugger
+
     return (
       <div className="show-page">
         {/* <h1>Title</h1>

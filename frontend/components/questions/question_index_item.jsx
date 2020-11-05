@@ -1,93 +1,66 @@
 import React from "react";
-import { render } from "react-dom";
 import { Link } from "react-router-dom";
 import Dropdown from "../dropdown/dropdown";
 
 class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { status: this.props.question.closed };
-    this.update = this.update.bind(this);
+    this.state = { closed: this.props.question.closed };
+    this.toggleActive = this.toggleActive.bind(this);
   }
 
-  update() {
-    console.log(!this.state.status);
-
-    this.setState({ status: !this.state.status });
-    console.log(this.state);
+  toggleActive() {
+    this.props.question.closed = !this.state.closed;
+    // we chain a promise here because it's better for the user to see the change in
+    // the ui once we get it back from the server.
+    this.props.updateQuestion(this.props.question).then(() => {
+      this.setState({ closed: !this.state.closed });
+    });
   }
 
   render() {
-    console.log(this.props.question);
-    let status;
-    if (!this.state.status) {
-      status = "Deactivate";
-      return (
-        <>
-          <div className="question-item-green">
-            <div className="index-leftside">
-              {this.props.question.kind === "mult_response" ? (
-                <div className="mult_choice"></div>
-              ) : (
+    return (
+      <>
+        <div
+          className={
+            this.state.closed ? "question-item" : "question-item-green"
+          }
+        >
+          <div className="index-leftside">
+            {this.props.question.kind === "mult_response" ? (
+              <div className="mult_choice"></div>
+            ) : (
+              <div className="mult_choices">
                 <i className="text fas fa-align-left"></i>
-              )}
-              <Link
-                className="question-title"
-                to={`/questions/${this.props.question.id}/edit`}
-              >
-                {this.props.question.title}
-              </Link>
-            </div>
-            <div className="index-rightside">
-              <div className="activated-group">
-                <a className="deactivated-image" onClick={this.update}></a>
-                <a className="activated" onClick={this.update}>
-                  {status}
-                </a>
               </div>
-              <Dropdown
-                question={this.props.question}
-                deleteQuestion={this.props.deleteQuestion}
-              />
-            </div>
+            )}
+            <Link
+              className="question-title"
+              to={`/questions/${this.props.question.id}`}
+            >
+              {this.props.question.title}
+            </Link>
           </div>
-        </>
-      );
-    } else {
-      status = "Activate";
-      return (
-        <>
-          <div className="question-item">
-            <div className="index-leftside">
-              {this.props.question.kind === "mult_response" ? (
-                <div className="mult_choice"></div>
-              ) : (
-                <i className="text fas fa-align-left"></i>
-              )}
-              {/* <a>{this.props.question.title}</a> */}
-              <Link
-                className="question-title"
-                to={`/questions/${this.props.question.id}`}
-              >
-                {this.props.question.title}
-              </Link>
+          <div className="index-rightside">
+            <div className="activated-group">
+              <a
+                className={
+                  this.state.closed ? "activated-image" : "deactivated-image"
+                }
+                onClick={this.toggleActive}
+              ></a>
+              <a className="activated" onClick={this.toggleActive}>
+                {this.state.closed ? "Activate" : "Deactivate"}
+              </a>
             </div>
-            <div className="index-rightside">
-              <div className="activated-group">
-                <a className="activated-image" onClick={this.update}></a>
-                <a className="activated" onClick={this.update}>
-                  {status}
-                </a>
-              </div>
-              <Dropdown
-                question={this.props.question}
-                deleteQuestion={this.props.deleteQuestion}
-              />
-            </div>
+            <Dropdown
+              question={this.props.question}
+              deleteQuestion={this.props.deleteQuestion}
+            />
           </div>
-        </>
-      );
-    }
+        </div>
+      </>
+    );
   }
 }
 

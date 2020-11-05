@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { createMultresponse } from "../../actions/mult_response_actions";
 import Button from "../buttons/button";
 
 class Username extends React.Component {
@@ -27,7 +28,8 @@ class Username extends React.Component {
 
   buttonClick(e, question, question_option) {
     e.preventDefault();
-    // console.log(question, question_option);
+
+    createMultresponse({ question_options_id: question_option.id });
   }
 
   renderQuestionBody(question) {

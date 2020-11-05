@@ -15,6 +15,6 @@ class Api::MultresponsesController < ApplicationController
     private
 
     def mult_responses_params
-        params.require(:mult_responses).permit(:question_options_id)
+        params.require(:mult_response).permit(:question_options_id)
     end
 end

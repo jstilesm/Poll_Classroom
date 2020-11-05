@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 import QuestionIndex from "./question_index";
-import { deleteQuestion, updateQuestion } from "../../actions/question_actions";
+import {
+  deleteQuestion,
+  updateQuestion,
+  requestQuestion,
+} from "../../actions/question_actions";
 import { requestGroups } from "../../actions/group_actions";
 import { openModal } from "../../actions/modal_actions";
 import { update } from "../../util/api_util_session";
@@ -17,6 +21,7 @@ const mDTP = (dispatch) => {
     requestGroups: () => dispatch(requestGroups()),
     updateQuestion: (question) => dispatch(updateQuestion(question)),
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
+    requestQuestion: (question) => dispatch(requestQuestion(question)),
     openModal: () => dispatch(openModal("Add Question")),
   };
 };
