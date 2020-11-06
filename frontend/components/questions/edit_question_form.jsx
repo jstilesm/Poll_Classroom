@@ -16,7 +16,6 @@ class EditQuestionForm extends React.Component {
     this.props.requestQuestion(this.props.match.params.questionId).then((e) => {
       this.setState({ question: e.question });
     });
-    // console.log(this.props);
   }
 
   handleSubmit(e) {
