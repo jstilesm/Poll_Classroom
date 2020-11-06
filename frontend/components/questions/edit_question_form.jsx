@@ -8,31 +8,89 @@ class EditQuestionForm extends React.Component {
     super(props);
     this.state = {};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
+    this.updateQuestionOption = this.updateQuestionOption.bind(this);
+    this.renderQuestion = this.renderQuestion.bind(this);
   }
   componentDidMount() {
     this.props.requestQuestion(this.props.match.params.questionId).then((e) => {
-      this.setState(e.question);
+      this.setState({ question: e.question });
     });
+    // console.log(this.props);
   }
 
   handleSubmit(e) {
+    // all the values we need are in this.state
+    // first, we submit an update to the question itself, we'll need api.updateQuestion
+    // then we submit an update for all question_options. we'll need api.updateQuestionOption
+    // ???
+    // profit!
+
     e.preventDefault();
-    // console.log(e);
-    this.props.action(this.state).then(() => {
-      this.props.history.push("/questions");
+    const question = { ...this.state.question };
+    question.question_options = [];
+    const question_options = this.state.question.question_options;
+    let array = [];
+
+    for (let i = 0; i < question_options.length; i++) {
+      array.push(this.props.updateQuestionoption(question_options[i]));
+    }
+    array.push(this.props.updateQuestion(question));
+
+    $.when(...array).then(() => {
+      this.props.history.push(`/questions/${question.id}`);
     });
   }
 
   update(field) {
-    return (e) => this.setState({ [field]: e.currentTarget.value });
+    return (e) => {
+      this.setState({
+        question: { ...this.state.question, [field]: e.currentTarget.value },
+      });
+    };
+  }
+
+  updateQuestionOption(idx, field) {
+    return (e) => {
+      let question = this.state.question;
+      question.question_options[idx][field] = e.currentTarget.value;
+      this.setState({ question });
+    };
+  }
+
+  renderQuestionOptions(question) {
+    if (question.kind === "mult_response") {
+      return question.question_options.map((question_option, idx) => (
+        <div className="options-show">
+          <label>
+            <input
+              className="question-options-box"
+              type="text"
+              placeholder="Hello"
+              value={question_option.label}
+              onChange={this.updateQuestionOption(idx, "label")}
+            />
+          </label>
+        </div>
+      ));
+    }
+  }
+
+  renderQuestion() {
+    let question = this.state.question;
+    if (question !== undefined) {
+      return (
+        <div className="poll-question">
+          {this.renderQuestionOptions(question)}
+        </div>
+      );
+    }
   }
 
   render() {
-    const { errors, question } = this.props;
-    // console.log(question);
+    const { errors } = this.props;
+    const question = this.state.question;
     if (!question) return null;
-
-    let number = question.id;
 
     return (
       // <div className="edit-page">
@@ -53,11 +111,12 @@ class EditQuestionForm extends React.Component {
               <input
                 className="edit-title-box"
                 type="text"
-                value={this.state.title}
+                value={question.title}
                 placeholder="Title"
                 onChange={this.update("title")}
               />
             </label>
+            {this.renderQuestion()}
             {/* <label>
                         <select value={this.state.kind} onChange={this.update('kind')}>
                             <option name="text_response">text_response</option>
@@ -90,7 +149,11 @@ class EditQuestionForm extends React.Component {
             <Button blue={true} oneHalf={true} onClick={this.handleSubmit}>
               Save
             </Button>
-            <Button whiteGrey={true} oneHalf={true} to={`/questions/${number}`}>
+            <Button
+              whiteGrey={true}
+              oneHalf={true}
+              to={`/questions/${question.id}`}
+            >
               Cancel
             </Button>
           </div>

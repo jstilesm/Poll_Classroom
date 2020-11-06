@@ -7,8 +7,8 @@ const mSTP = (state, ownProps) => {
   // debugger
   return {
     question: state.entities.questions[ownProps.match.params.questionId],
-    mult_response:
-      state.entities.multresponse[ownProps.match.params.mult_responseId],
+    question_options:
+      state.entities.questionoption[ownProps.match.params.question_optionId],
   };
 };
 

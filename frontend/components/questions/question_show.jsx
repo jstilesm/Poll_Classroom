@@ -30,7 +30,7 @@ class QuestionShow extends React.Component {
       );
     } else {
       return (
-        <Button whiteGrey={true} oneThird={true}>
+        <Button whiteGrey={true} oneThird={true} onClick={(e) => this.onClick}>
           Deactivate
         </Button>
       );
@@ -38,7 +38,7 @@ class QuestionShow extends React.Component {
   }
   render() {
     let number = this.props.match.params.questionId;
-    // console.log(this.props.mult_response);
+    console.log(this.props.question_options);
     if (this.props.question != undefined) {
       return (
         <div className="show-page">

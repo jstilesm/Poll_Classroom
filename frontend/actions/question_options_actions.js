@@ -28,3 +28,9 @@ export const requestQuestionoption = (question_optionId) => (dispatch) => {
     question_optionId
   ).then((question_option) => dispatch(receiveQuestionoption(question_option)));
 };
+
+export const updateQuestionoption = (question_option) => (dispatch) => {
+  return APIUtil.updateQuestionoption(question_option).then((question_option) =>
+    dispatch(receiveQuestionoption(question_option))
+  );
+};
