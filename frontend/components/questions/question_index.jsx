@@ -15,6 +15,7 @@ class QuestionIndex extends React.Component {
     // debugger
   }
   renderGroup(group) {
+    console.log(this.props);
     return (
       <>
         <h1>{group.name}</h1>

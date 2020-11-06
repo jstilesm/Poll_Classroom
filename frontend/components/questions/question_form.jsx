@@ -51,8 +51,8 @@ class QuestionForm extends React.Component {
               value={this.state.kind}
               onChange={this.update("kind")}
             >
-              <option name="Multiple Choice">mult_response</option>
-              <option name="Survey">text_response</option>
+              <option name="Multiple Choice">Mult_Response</option>
+              <option name="Survey">Survey</option>
             </select>
             {/* <input type="text" value={this.state.kind} placeholder="Kind" onChange={this.update('kind')}/> */}
           </label>

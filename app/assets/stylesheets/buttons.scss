@@ -75,6 +75,10 @@ $red: #a5332b;
   font-family: $font;
   cursor: pointer;
   text-decoration: none;
+  opacity: 0.9;
+}
+.button-white:hover {
+  opacity: 1;
 }
 
 .button-red {
@@ -189,6 +193,10 @@ $red: #a5332b;
   padding-bottom: 15px;
   justify-content: center;
   align-items: center;
+  border: 1px solid lightgray;
+}
+.button-whitegrey:hover {
+  background-color: lightgray;
 }
 
 .button-white-special {

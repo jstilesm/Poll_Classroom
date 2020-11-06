@@ -92,6 +92,10 @@
   margin-left: 35px;
   padding-right: 50px;
   z-index: 9999;
+  opacity: 0.8;
+}
+.userbar:hover {
+  opacity: 1;
 }
 
 .user-dropdown-items {
@@ -103,7 +107,9 @@
   // color: #0265A8;
   // padding-top: 90px;
 }
-
+.blurb-subtext {
+  margin-top: 5px;
+}
 .main-paragraph {
   display: flex;
   flex-wrap: wrap;

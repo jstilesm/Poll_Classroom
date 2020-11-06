@@ -39,7 +39,7 @@ class Splash extends React.Component {
                 alt=""
               />
               <h3>Actionable team insights</h3>
-              <p>
+              <p className="blurb-subtext">
                 Visualize employee feedback in real time with a variety of
                 activities — then measure engagement, follow up on feedback, and
                 uncover next steps.
@@ -52,7 +52,7 @@ class Splash extends React.Component {
                 alt=""
               />
               <h3>Engaging distance learning</h3>
-              <p>
+              <p className="blurb-subtext">
                 Use Poll Everywhere activities to take attendance, give quizzes,
                 and gauge understanding whether your students are near or far.
               </p>
@@ -64,7 +64,7 @@ class Splash extends React.Component {
                 alt=""
               />
               <h3>Apps that work where you do</h3>
-              <p>
+              <p className="blurb-subtext">
                 Download the Poll Everywhere app for PowerPoint, Keynote, or
                 Google Slides and add polls to your existing presentation decks
                 in just a few clicks.

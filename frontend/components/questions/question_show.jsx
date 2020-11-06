@@ -5,11 +5,13 @@ import Button from "../buttons/button";
 class QuestionShow extends React.Component {
   constructor(props) {
     super(props);
-
+    // console.log(this.props.question);
+    this.state = { closed: "" };
     // this.state = { status: this.props.question };
     this.activated = this.activated.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);
+    this.toggleActive = this.toggleActive.bind(this);
   }
   componentDidMount() {
     // debugger
@@ -29,7 +31,18 @@ class QuestionShow extends React.Component {
     }
   }
 
+  toggleActive() {
+    // console.log(this.state);
+    // console.log(this.props.question.closed);
+
+    this.props.question.closed = !this.props.question.closed;
+    this.props.updateQuestion(this.props.question).then(() => {
+      this.setState({ closed: !this.props.question.closed });
+    });
+  }
+
   renderQuestion() {
+    // console.log(this.props.question);
     let question = this.props.question;
     if (question !== undefined) {
       return (
@@ -45,13 +58,13 @@ class QuestionShow extends React.Component {
       (this.props.question != undefined && this.props.question.closed) == true
     ) {
       return (
-        <Button whiteGrey={true} oneThird={true} onClick={(e) => this.onClick}>
+        <Button whiteGrey={true} oneThird={true} onClick={this.toggleActive}>
           Activate
         </Button>
       );
     } else {
       return (
-        <Button whiteGrey={true} oneThird={true} onClick={(e) => this.onClick}>
+        <Button whiteGrey={true} oneThird={true} onClick={this.toggleActive}>
           Deactivate
         </Button>
       );
@@ -61,6 +74,8 @@ class QuestionShow extends React.Component {
     let number = this.props.match.params.questionId;
     const question = this.props.question;
     if (this.props.question != undefined) {
+      // this.setState({ closed: this.props.question.closed });
+      // console.log(this.state);
       return (
         <div className="show-page">
           {/* <h1>Title</h1>

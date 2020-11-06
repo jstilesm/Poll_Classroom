@@ -5,11 +5,13 @@ import Dropdown from "../dropdown/dropdown";
 class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = { closed: this.props.question.closed };
     this.toggleActive = this.toggleActive.bind(this);
   }
 
   toggleActive() {
+    // console.log(this.props);
     this.props.question.closed = !this.state.closed;
     // we chain a promise here because it's better for the user to see the change in
     // the ui once we get it back from the server.

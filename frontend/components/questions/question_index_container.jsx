@@ -9,7 +9,7 @@ import { requestGroups } from "../../actions/group_actions";
 import { openModal } from "../../actions/modal_actions";
 import { update } from "../../util/api_util_session";
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
   // debugger
   return {
     groups: Object.values(state.entities.groups),
