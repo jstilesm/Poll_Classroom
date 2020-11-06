@@ -40,9 +40,28 @@
 
 .edit-title-box {
   display: flex;
-  width: 80%;
+  width: 110%;
   height: 50px;
   outline: none;
   border: none;
   font-size: $main-button-link;
+  margin-left: -70px;
+}
+
+.edit-header {
+  margin-left: -70px;
+  color: darkgray;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.question-options-box {
+  display: flex;
+  width: 110%;
+  height: 50px;
+  outline: none;
+  border: none;
+  font-size: $main-button-link;
+  margin-left: -70px;
+  margin-top: 15px;
 }

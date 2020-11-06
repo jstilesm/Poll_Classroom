@@ -57,6 +57,10 @@ $red: #a5332b;
   font-family: $font;
   cursor: pointer;
   text-decoration: none;
+  opacity: 0.9;
+}
+.button-blue:hover {
+  opacity: 1;
 }
 
 .button-white {
@@ -85,6 +89,10 @@ $red: #a5332b;
   font-family: $font;
   cursor: pointer;
   text-decoration: none;
+  opacity: 0.9;
+}
+.button-red:hover {
+  opacity: 1;
 }
 
 .button-whitegrey {
@@ -186,7 +194,7 @@ $red: #a5332b;
 .button-white-special {
   background-color: white;
   color: $blue;
-  box-shadow: inset 0px 34px 0px -15px white;
+  // box-shadow: inset 0px 34px 0px -15px white;
   background-color: white;
   border: 1px solid $blue;
   font-size: $nav-button-link;
@@ -195,9 +203,14 @@ $red: #a5332b;
   font-family: $font;
   cursor: pointer;
   text-decoration: none;
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 .button-white-special:hover {
-  background-color: #ededed;
+  background-color: #cde3f5;
+  background-size: cover;
+  background-position-y: center;
 }
 
 // Create question button

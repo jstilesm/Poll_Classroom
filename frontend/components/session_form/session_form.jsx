@@ -231,9 +231,9 @@ class SessionForm extends React.Component {
               </label>
               {this.errors()}
 
-              <button className="login-submit" type="submit">
+              <Button large={true} red={true} type="submit">
                 Next
-              </button>
+              </Button>
               <div className="link-to-signup-container">
                 <p className="link-to-signup">Need an account?</p>
                 <Link className="link-to-signup" to="/signup">

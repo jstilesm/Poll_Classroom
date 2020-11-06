@@ -8,6 +8,8 @@ class QuestionShow extends React.Component {
 
     // this.state = { status: this.props.question };
     this.activated = this.activated.bind(this);
+    this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
+    this.renderQuestion = this.renderQuestion.bind(this);
   }
   componentDidMount() {
     // debugger
@@ -17,6 +19,25 @@ class QuestionShow extends React.Component {
 
   update() {
     this.setState({ status: !this.state.status });
+  }
+
+  renderQuestionOptions(question) {
+    if (question.kind === "mult_response") {
+      return question.question_options.map((question_option, idx) => (
+        <div className="options-show-page">{question_option.label}</div>
+      ));
+    }
+  }
+
+  renderQuestion() {
+    let question = this.props.question;
+    if (question !== undefined) {
+      return (
+        <div className="poll-question">
+          {this.renderQuestionOptions(question)}
+        </div>
+      );
+    }
   }
 
   activated(e) {
@@ -38,7 +59,7 @@ class QuestionShow extends React.Component {
   }
   render() {
     let number = this.props.match.params.questionId;
-    console.log(this.props.question_options);
+    const question = this.props.question;
     if (this.props.question != undefined) {
       return (
         <div className="show-page">
@@ -48,7 +69,19 @@ class QuestionShow extends React.Component {
                 <p>{this.props.question.closed}</p>
                 <p>{this.props.question.allow_unregistered}</p>
                 <p>{this.props.question.response_limit}</p> */}
-          <div className="grey-box">{this.props.question.title}</div>
+          <div className="white-small-box">
+            <div className="edit-box">
+              <div className="top-grey">Respond at</div>
+              <div className="white-show-box">
+                <div className="show-page-title">
+                  {this.props.question.title}
+                </div>
+                <div>{this.renderQuestion()}</div>
+              </div>
+              <div className="bottom-logo"></div>
+            </div>
+          </div>
+
           {/* <Link to="/">Link</Link> */}
           <div className="white-box">
             <div className="button-box">

@@ -27,6 +27,7 @@ class EditQuestionForm extends React.Component {
 
     e.preventDefault();
     const question = { ...this.state.question };
+    console.log(question);
     question.question_options = [];
     const question_options = this.state.question.question_options;
     let array = [];
@@ -60,7 +61,7 @@ class EditQuestionForm extends React.Component {
   renderQuestionOptions(question) {
     if (question.kind === "mult_response") {
       return question.question_options.map((question_option, idx) => (
-        <div className="options-show">
+        <div className="options-edit-page">
           <label>
             <input
               className="question-options-box"
@@ -105,7 +106,7 @@ class EditQuestionForm extends React.Component {
                 <p>{this.props.question.response_limit}</p> */}
         <div className="grey-box">
           <form id="my-form" className="edit-form">
-            <h1>Title</h1>
+            <h1 className="edit-header">Title</h1>
             <label className="title-label">
               <input
                 className="edit-title-box"
@@ -115,6 +116,7 @@ class EditQuestionForm extends React.Component {
                 onChange={this.update("title")}
               />
             </label>
+            <h2 className="edit-header">Question Options</h2>
             {this.renderQuestion()}
             {/* <label>
                         <select value={this.state.kind} onChange={this.update('kind')}>

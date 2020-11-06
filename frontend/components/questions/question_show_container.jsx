@@ -7,8 +7,6 @@ const mSTP = (state, ownProps) => {
   // debugger
   return {
     question: state.entities.questions[ownProps.match.params.questionId],
-    question_options:
-      state.entities.questionoption[ownProps.match.params.question_optionId],
   };
 };
 
