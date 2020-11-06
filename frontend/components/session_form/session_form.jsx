@@ -45,7 +45,8 @@ class SessionForm extends React.Component {
     if (!this.state.userExists && this.props.formType === "Log in") {
       checkUser(this.state.identifier).then((resp) => {
         this.setState({ userExists: resp });
-        if (resp === false) {
+        console.log(resp);
+        if (resp === false || resp === undefined) {
           this.setState({ error_message: "Account not Found" });
         } else {
           this.setState({ error_message: "" });

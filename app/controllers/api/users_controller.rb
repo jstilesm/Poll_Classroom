@@ -28,14 +28,19 @@ class Api::UsersController < ApplicationController
     end
 
     def exists
-        identifier = params.require(:identifier) 
-        # debugger
-        @user = User.find_by_username_or_email(identifier)
-        if @user
-            render json: true
+        if params.has_value?("")
+            render json: false
         else
+            identifier = params.require(:identifier) 
+            @user = User.find_by_username_or_email(identifier)
+            if @user
+            render json: true
+            else
             render json: false
         end
+        end
+        # debugger
+        
     end
 
     private
