@@ -6,18 +6,13 @@ class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { closed: this.props.question.closed };
     this.toggleActive = this.toggleActive.bind(this);
   }
 
   toggleActive() {
     // console.log(this.props);
-    this.props.question.closed = !this.state.closed;
-    // we chain a promise here because it's better for the user to see the change in
-    // the ui once we get it back from the server.
-    this.props.updateQuestion(this.props.question).then(() => {
-      this.setState({ closed: !this.state.closed });
-    });
+    this.props.question.closed = !this.props.question.closed;
+    this.props.updateQuestion(this.props.question);
   }
 
   render() {
@@ -25,7 +20,7 @@ class QuestionIndexItem extends React.Component {
       <>
         <div
           className={
-            this.state.closed ? "question-item" : "question-item-green"
+            this.props.question.closed ? "question-item" : "question-item-green"
           }
         >
           <div className="index-leftside">
@@ -47,12 +42,14 @@ class QuestionIndexItem extends React.Component {
             <div className="activated-group">
               <a
                 className={
-                  this.state.closed ? "activated-image" : "deactivated-image"
+                  this.props.question.closed
+                    ? "activated-image"
+                    : "deactivated-image"
                 }
                 onClick={this.toggleActive}
               ></a>
               <a className="activated" onClick={this.toggleActive}>
-                {this.state.closed ? "Activate" : "Deactivate"}
+                {this.props.question.closed ? "Activate" : "Deactivate"}
               </a>
             </div>
             <Dropdown
