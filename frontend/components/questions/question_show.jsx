@@ -25,7 +25,7 @@ class QuestionShow extends React.Component {
 
   renderQuestionOptions(question) {
     if (question.kind === "mult_response") {
-      return question.question_options.map((question_option, idx) => (
+      return question.question_options.map((question_option) => (
         <div className="options-show-page">{question_option.label}</div>
       ));
     }
@@ -33,7 +33,7 @@ class QuestionShow extends React.Component {
 
   toggleActive() {
     // console.log(this.state);
-    // console.log(this.props.question.closed);
+    console.log(this.props.question);
 
     this.props.question.closed = !this.props.question.closed;
     this.props.updateQuestion(this.props.question).then(() => {

@@ -11,6 +11,7 @@ class EditQuestionForm extends React.Component {
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.updateQuestionOption = this.updateQuestionOption.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);
+    // console.log(this.props);
   }
   componentDidMount() {
     this.props.requestQuestion(this.props.match.params.questionId).then((e) => {
@@ -27,7 +28,7 @@ class EditQuestionForm extends React.Component {
 
     e.preventDefault();
     const question = { ...this.state.question };
-    console.log(question);
+    // console.log(question);
     question.question_options = [];
     const question_options = this.state.question.question_options;
     let array = [];

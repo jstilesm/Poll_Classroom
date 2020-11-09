@@ -36,7 +36,9 @@
 }
 
 .create-button-container {
-  text-align: right;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
 }
 
 .create-form .input {
@@ -52,6 +54,7 @@
   left: 0px;
   margin-top: 60px;
   bottom: 0px;
+  font-family: $font;
 }
 
 .title-input {

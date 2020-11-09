@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 import QuestionIndexItem from "./question_index_item";
 import Button from "../buttons/button";

@@ -8,15 +8,13 @@ class Api::QuestionsController < ApplicationController
     end
     
     def create
-         @question = Question.new(question_params)
-         @question.user = current_user
-
+        @question = Question.new(question_params)
+        @question.user = current_user
+        @question.group_id = params[:group_id]
+        
          
-        # debugger
         if @question.save
-        # debugger
-        render '/api/questions/show'
-            #  '/api/groups/questions/show ?'
+            render '/api/questions/show'
         else 
             render json: @question.errors.full_messages, status: 422
         end 
@@ -39,7 +37,7 @@ class Api::QuestionsController < ApplicationController
         if @question.nil?
             render json: "Question not found!", status: 422
         elsif @question.update(question_params)
-            render '/api/questions/show'
+        render '/api/questions/show'
         else
             render json: @question.errors.full_messages, status: 422
         end
@@ -60,7 +58,7 @@ class Api::QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :group_id, :kind, :response_limit, :closed, :allow_unregistered)
+        params.require(:question).permit(:title, :group_id, :kind, :response_limit, :closed, :allow_unregistered, question_options: [:label])
     end
 end
 

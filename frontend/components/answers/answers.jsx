@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { createMultresponse } from "../../actions/mult_response_actions";
 import Button from "../buttons/button";
 

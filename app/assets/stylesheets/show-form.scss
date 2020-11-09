@@ -65,19 +65,50 @@
 .mult-choice-image {
   background-image: image_url("mult-choice-logo.png");
   background-size: cover;
-  width: 121px;
+  width: 135px;
   height: 137px;
   margin-bottom: 20px;
   padding-bottom: 20px;
+}
+.grey-mult-choice-image {
+  background-image: image_url("grey-mult-choice-logo.png");
+  background-size: cover;
+  width: 135px;
+  height: 137px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-top: 1px;
+}
+.grey-mult-choice-image:hover {
+  opacity: 0.6;
+}
+
+.creation-subtext {
+  font-style: $font;
+  margin-bottom: 10px;
 }
 
 .survey-choice-image {
   background-image: image_url("survey-logo.png");
   background-size: cover;
-  width: 121px;
+  width: 135px;
   height: 137px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 19px;
+  padding-bottom: 21px;
+  margin-top: 1px;
+}
+.grey-survey-choice-image {
+  background-image: image_url("grey-survey-logo.png");
+  background-size: cover;
+  width: 135px;
+  height: 137px;
+  margin-bottom: 19px;
+  padding-bottom: 19px;
+  margin-top: 1px;
+}
+
+.grey-survey-choice-image:hover {
+  opacity: 0.6;
 }
 
 .click-images {

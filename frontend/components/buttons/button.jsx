@@ -51,6 +51,9 @@ const Button = (props) => {
   if (props.listButton) {
     className += "word-list-button ";
   }
+  if (props.widePadding) {
+    className += "wide-padding ";
+  }
 
   if (props.to !== undefined) {
     return (

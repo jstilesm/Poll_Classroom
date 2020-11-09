@@ -1,19 +1,20 @@
 import { connect } from "react-redux";
 import { createQuestion } from "../../actions/question_actions";
 import QuestionForm from "./question_form";
-import { openModal, closeModal } from "../../actions/modal_actions";
 import { clearErrors } from "../../actions/session_actions";
 
-const mSTP = ({ state, errors }) => {
+const mSTP = ({ state, errors, ownProps }) => {
   // debugger
   return {
     errors: errors.question,
     question: {
       title: "",
-      kind: "",
+      kind: "mult_response",
       response_limit: 1,
       closed: false,
       allow_unregistered: false,
+      question_options: [{ label: "" }, { label: "" }],
+      group_id: 0,
     },
   };
 };
@@ -21,8 +22,6 @@ const mSTP = ({ state, errors }) => {
 const mDTP = (dispatch) => {
   return {
     processForm: (question) => dispatch(createQuestion(question)),
-    // openModal: () => dispatch(openModal("Add Question")),
-    // closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors()),
   };
 };
