@@ -36,6 +36,9 @@ class PollShow extends React.Component {
         <div className="grey-logo"></div>
         <form onSubmit={this.handleSubmit} className="form-box-black">
           <h1 className="join-title">Join Presentation</h1>
+          <p className="join-subtitle">
+            Type "tester/1" To view the tester's questions
+          </p>
           <label className="link">
             <input
               className="link-input"

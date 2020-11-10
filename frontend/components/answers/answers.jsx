@@ -9,6 +9,7 @@ class Username extends React.Component {
       show: false,
       value: "",
       question_choices: {},
+      textarea_content: {},
     };
 
     this.renderGroup = this.renderGroup.bind(this);
@@ -53,7 +54,31 @@ class Username extends React.Component {
     } else if (question.closed === true) {
       return null;
     } else {
-      return <textarea className="text-area"></textarea>;
+      let value = this.state.textarea_content[question.id];
+      let buttonShouldBeBlue = value !== undefined && value !== "";
+      return (
+        <>
+          <textarea
+            placeholder="Enter a response"
+            className="text-area"
+            value={value}
+            onChange={(e) => {
+              this.state.textarea_content[question.id] = e.currentTarget.value;
+              this.setState({ textarea_content: this.state.textarea_content });
+            }}
+          ></textarea>
+          <div className="text-submit">
+            <Button
+              whiteGrey={!buttonShouldBeBlue}
+              blue={buttonShouldBeBlue}
+              extraLarge={true}
+              centered={true}
+            >
+              Submit
+            </Button>
+          </div>
+        </>
+      );
     }
   }
 

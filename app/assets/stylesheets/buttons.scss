@@ -143,6 +143,7 @@ $red: #a5332b;
 .centered {
   display: block;
   text-align: center;
+  justify-content: center;
   margin: 0px auto;
 }
 
@@ -230,17 +231,17 @@ $red: #a5332b;
 .word-list-button {
   font-style: $font;
   margin-top: 20px;
-  color: black;
+  color: $blue;
   display: flex;
   border: none;
   outline: none;
   background-color: white;
   width: 172px;
   margin-left: 15px;
-  font-weight: bold;
 }
 //note: How to do on hover with button setup
 .word-list-button:hover {
-  color: #3395d6;
+  color: $blue;
+  font-weight: bold;
   background-color: #cde3f5;
 }

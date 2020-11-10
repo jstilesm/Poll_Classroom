@@ -134,3 +134,16 @@
   height: 44px;
   // z-index: 1;
 }
+
+.create-question-error-items {
+  display: flex;
+  padding: 5px;
+  font-size: 0.9rem;
+
+  color: #7e2e28;
+  font-weight: bold;
+  background-color: #fdbeb9;
+  margin-top: -10px;
+  width: 694px;
+  margin-left: -10px;
+}

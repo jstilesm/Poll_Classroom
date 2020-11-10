@@ -8,10 +8,6 @@ class QuestionForm extends React.Component {
     this.state = this.props.question;
     this.state.kind = "mult_response";
 
-    console.log(this.state);
-    // this.state.question.kind = "mult_response";
-
-    console.log(this.state);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
     this.renderQuestionForm = this.renderQuestionForm.bind(this);
@@ -26,10 +22,11 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
-    this.props
-      .processForm(this.state)
-      .then(this.props.history.push("/questions"));
+    // console.log(this.state);
+    console.log(this.props.errors);
+    this.props.processForm(this.state).then(() => {
+      this.props.history.push("/questions");
+    });
   }
 
   update(field) {
@@ -133,16 +130,16 @@ class QuestionForm extends React.Component {
             onChange={this.update("title")}
           />
         </label>
-
-        {this.renderQuestionOptions(options)}
-
         <ul className="create-errors">
           {this.props.errors.map((error, i) => (
-            <li className="question-error-items" key={`error-${i}`}>
+            <li className="create-question-error-items" key={`error-${i}`}>
               {error}
             </li>
           ))}
         </ul>
+
+        {this.renderQuestionOptions(options)}
+
         <div className="create-button-container">
           <Button whiteSpecial={true} marginRight={true}>
             Add another activity
@@ -155,7 +152,7 @@ class QuestionForm extends React.Component {
     );
   }
   render() {
-    // console.log(this.props.errors);
+    console.log(this.state);
 
     return (
       <div className="question-form-container">

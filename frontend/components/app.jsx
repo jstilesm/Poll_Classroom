@@ -43,7 +43,7 @@ const App = () => (
       <Route exact path="/signup-alt" component={ConnectorContainer} />
       <Route exact path="/" component={SplashContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
-      <AuthRoute path="/signup" component={SignupContainer} />
+      <Route exact path="/signup" component={SignupContainer} />
       <Route exact path="/poll" component={PollContainer} />
       <Route
         exact

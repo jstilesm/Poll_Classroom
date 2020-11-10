@@ -16,6 +16,7 @@ export const fetchQuestion = (questionId) =>
     method: "GET",
   });
 export const createQuestion = (question) => {
+  question = Object.assign({}, question);
   question.question_options_attributes = question.question_options;
   delete question.question_options;
   return $.ajax({

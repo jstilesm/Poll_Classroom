@@ -185,12 +185,23 @@
   justify-content: space-around;
 }
 
+.question-container-collapsible.hide {
+  height: 0px;
+  overflow: hidden;
+}
 .blurb-image {
   display: flex;
   height: 120px;
   width: 120px;
   justify-content: center;
   padding-bottom: 20px;
+}
+
+.arrow-collapsible {
+  content: " \02C5";
+}
+.arrow-collapsible.down {
+  content: "\2805";
 }
 
 .footer {
