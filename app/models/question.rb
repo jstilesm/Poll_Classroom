@@ -29,6 +29,7 @@ class Question < ApplicationRecord
         optional: true
 
     has_many :question_options,
+        inverse_of: :question, 
         primary_key: :id,
         foreign_key: :question_id,
         class_name: :QuestionOptions 

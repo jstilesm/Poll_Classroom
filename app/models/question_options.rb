@@ -12,6 +12,7 @@ class QuestionOptions < ApplicationRecord
 
     belongs_to :question,
         primary_key: :id,
+        inverse_of: :question_options,
         foreign_key: :question_id,
         class_name: :Question
 

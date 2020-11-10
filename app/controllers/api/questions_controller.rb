@@ -12,7 +12,6 @@ class Api::QuestionsController < ApplicationController
         @question.user = current_user
         @question.group_id = params[:group_id]
         
-         
         if @question.save
             render '/api/questions/show'
         else 
@@ -58,7 +57,10 @@ class Api::QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :group_id, :kind, :response_limit, :closed, :allow_unregistered, question_options: [:label])
+        params.require(:question).permit(
+            :title, :group_id, :kind, :response_limit, 
+            :closed, :allow_unregistered, 
+            question_options_attributes: [:label])
     end
 end
 

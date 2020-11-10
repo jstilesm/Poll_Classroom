@@ -5,7 +5,6 @@ import Dropdown from "../dropdown/dropdown";
 class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggleActive = this.toggleActive.bind(this);
   }
 

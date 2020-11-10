@@ -9,7 +9,7 @@ class Api::QuestionOptionsController < ApplicationController
         end
     end
 
-    def update
+    def update 
         @question_option = QuestionOptions.find_by(id: params[:id])
         if @question_option.nil? || @question_option.question.user != current_user
             render json: "Question not found!", status: 422
