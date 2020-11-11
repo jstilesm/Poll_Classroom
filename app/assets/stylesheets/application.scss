@@ -185,9 +185,22 @@
   justify-content: space-around;
 }
 
-.question-container-collapsible.hide {
-  height: 0px;
-  overflow: hidden;
+.group-dropdown {
+  .arrow-collapsible {
+    margin-right: 5px;
+  }
+  .arrow-collapsible::before {
+    content: "\2228";
+  }
+  &.hide-items {
+    .group-dropdown-question {
+      height: 0px;
+      overflow: hidden;
+    }
+    .arrow-collapsible::before {
+      content: ">";
+    }
+  }
 }
 .blurb-image {
   display: flex;
@@ -195,13 +208,6 @@
   width: 120px;
   justify-content: center;
   padding-bottom: 20px;
-}
-
-.arrow-collapsible {
-  content: " \02C5";
-}
-.arrow-collapsible.down {
-  content: "\2805";
 }
 
 .footer {

@@ -23,9 +23,9 @@ class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // console.log(this.state);
-    console.log(this.props.errors);
-    this.props.processForm(this.state).then(() => {
-      this.props.history.push("/questions");
+    // console.log(this.props.errors);
+    this.props.processForm(this.state).then((e) => {
+      this.props.history.push(`/questions/${e.question.id}`);
     });
   }
 

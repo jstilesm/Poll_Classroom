@@ -29,21 +29,21 @@ class QuestionIndex extends React.Component {
   }
 
   renderGroup(group) {
-    let className = "question-container-collapsible";
-    let arrow = "arrow-collapsible";
+    let hideClass = "";
     if (this.state.hidden) {
-      className += " hide";
-      arrow += " down";
+      hideClass = " hide-items";
     }
     return (
-      <>
+      <div className={"group-dropdown" + hideClass}>
         <h1 className="group-title" onClick={(e) => this.update(e)}>
           <div>
-            <div className={arrow}></div>
-            <div>{group.name}</div>
+            <div>
+              <span className="arrow-collapsible"></span>
+              {group.name}
+            </div>
           </div>
         </h1>
-        <div className={className}>
+        <div className="group-dropdown-question">
           {group.questions.map((question) => (
             <QuestionIndexItem
               key={question.id}
@@ -54,7 +54,7 @@ class QuestionIndex extends React.Component {
             />
           ))}
         </div>
-      </>
+      </div>
     );
   }
   render() {
