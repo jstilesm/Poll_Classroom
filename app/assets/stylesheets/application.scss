@@ -378,6 +378,7 @@
   // position: absolute;
   width: 100%;
   background: white;
+  border-bottom: 1px solid lightgray;
 }
 
 /* nav for the nav bar, keeps its top right */
@@ -608,4 +609,28 @@
   margin-top: 15px;
 
   // font-style: italic;
+}
+
+.show-header {
+  background-color: #e6f2fa;
+  width: 80%;
+  height: 40px;
+  margin-left: 200px;
+  margin-top: -195px;
+  margin-bottom: 200px;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-family: $font;
+}
+
+.show-title {
+  width: 100%;
+  height: 40px;
+  margin-left: 180px;
+  margin-top: -195px;
+  margin-bottom: 200px;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-family: $font;
+  font-weight: 600;
 }

@@ -7,25 +7,40 @@ class ShowQuestion extends React.Component {
   constructor(props) {
     super(props);
     // console.log(this.props.question);
-    this.state = { closed: "" };
+    this.state = { closed: "", text_answers: {}, question_choices: {} };
 
     // this.state = { status: this.props.question };
     this.activated = this.activated.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);
     this.toggleActive = this.toggleActive.bind(this);
-
+    let that = this;
     this.subscription = window.App.cable.subscriptions.create(
       { channel: "ResponseChannel", groupId: this.props.question.group_id },
       {
         received: (broadcast) => {
-          console.log(JSON.parse(broadcast.data));
+          // console.log(JSON.parse(broadcast.data));
+
+          if (this.props.question.kind === "text_response") {
+            const text_answers = this.state.text_answers;
+            text_answers[this.props.question.id] = JSON.parse(
+              broadcast.data
+            ).body;
+            that.setState({ text_answers });
+          } else {
+            const question_choices = this.state.question_choices;
+            question_choices[this.props.question.id] = JSON.parse(
+              broadcast.data
+            ).question_options_id;
+            that.setState({ question_choices });
+          }
 
           // let question_option_choice = JSON.parse(broadcast.data)
           //   .question_options_id;
           // let question_choice = JSON.parse(broadcast.data).question_id;
 
           // {id: 4, body: null, question_options_id: 29, question_id: 44}
+          // {id: 93, body: "asd", question_options_id: null, question_id: 3}
         },
       }
     );
@@ -54,11 +69,21 @@ class ShowQuestion extends React.Component {
   }
 
   renderQuestion() {
+    let number = this.props.question.id;
+    let data;
     // console.log(this.props.question);
+    Object.keys(this.state.text_answers).forEach(function (object_id) {
+      if (number === object_id) {
+        console.log("hi");
+        data = this.state.text_answers[object_id];
+      }
+    });
+    console.log(data);
     let question = this.props.question;
     return (
       <div className="poll-question">
         {this.renderQuestionOptions(question)}
+        {data}
       </div>
     );
   }
@@ -97,6 +122,7 @@ class ShowQuestion extends React.Component {
             <div className="white-show-box">
               <div className="show-page-title">{this.props.question.title}</div>
               <div>{this.renderQuestion()}</div>
+              <div>{data}</div>
             </div>
             <div className="bottom-logo"></div>
           </div>

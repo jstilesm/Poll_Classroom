@@ -1,5 +1,5 @@
 .group-title {
-  background-color: #dddddd;
+  background-color: #efefef;
   color: black;
   cursor: pointer;
   padding: 18px;
@@ -13,6 +13,9 @@
 }
 
 .group-activities {
-  display: inline-block;
-  margin-left: 495px;
+  margin-left: 1000px;
+}
+
+.group-header {
+  display: flex;
 }

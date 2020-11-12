@@ -12,6 +12,7 @@ import { update } from "../../util/api_util_session";
 const mSTP = (state, ownProps) => {
   // debugger
   return {
+    currentUser: state.entities.users[state.session.id],
     groups: Object.values(state.entities.groups),
   };
 };

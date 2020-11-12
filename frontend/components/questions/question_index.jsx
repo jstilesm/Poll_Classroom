@@ -34,34 +34,35 @@ class QuestionIndex extends React.Component {
       hideClass = " hide-items";
     }
     return (
-      <div className={"group-dropdown" + hideClass}>
-        <h1 className="group-title" onClick={(e) => this.update(e)}>
-          <div>
+      <div>
+        <div className={"group-dropdown" + hideClass}>
+          <h1 className="group-title" onClick={(e) => this.update(e)}>
             <div>
-              <span className="arrow-collapsible"></span>
-              {group.name}
-              <div className="group-activities">
-                {group.questions.length} activities
+              <div className="group-header">
+                <span className="arrow-collapsible"></span>
+                {group.name}
+                <div className="group-activities">
+                  {group.questions.length} activities
+                </div>
               </div>
             </div>
+          </h1>
+          <div className="group-dropdown-question">
+            {group.questions.map((question) => (
+              <QuestionIndexItem
+                key={question.id}
+                question={question}
+                deleteQuestion={this.props.deleteQuestion}
+                updateQuestion={this.props.updateQuestion}
+                requestQuestion={this.props.requestQuestion}
+              />
+            ))}
           </div>
-        </h1>
-        <div className="group-dropdown-question">
-          {group.questions.map((question) => (
-            <QuestionIndexItem
-              key={question.id}
-              question={question}
-              deleteQuestion={this.props.deleteQuestion}
-              updateQuestion={this.props.updateQuestion}
-              requestQuestion={this.props.requestQuestion}
-            />
-          ))}
         </div>
       </div>
     );
   }
   render() {
-    // debugger
     return (
       <>
         <div className="toprightbuttons">
@@ -75,6 +76,12 @@ class QuestionIndex extends React.Component {
           <Button listButton={true}>Activities</Button>
           <Button listButton={true}>Trash</Button>
         </div>
+        <div className="show-header">
+          Your current plan allows you to post as much as you want. So there is
+          no need to upgrade.
+        </div>
+        <div className="show-title">Activated and pinned activities</div>
+
         <div className="main-index-page">
           {/* <Link to="/questions/new">New Question</Link> */}
           <ul className="questions-box">
