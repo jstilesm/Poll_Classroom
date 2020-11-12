@@ -24,12 +24,10 @@
 @import "./fonts.scss";
 @import "./username.scss";
 @import "./answers.scss";
-
-// .body {
+@import "./poll-signup.scss"; // .body {
 //     font-family: sans-serif;
 // }
 //  Splash CSS
-
 .logo-form {
   background-image: image_url("poll_everywhere.png");
   // background-position-y: center;
@@ -334,6 +332,13 @@
   position: fixed;
   height: 100%;
 }
+.poll-signup-page-container {
+  display: flex;
+  background-color: #efefef;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+}
 
 /* main logo to the page */
 
@@ -458,6 +463,9 @@
 .login-page {
   display: flex;
   background-color: green;
+}
+.poll-login-page {
+  display: flex;
 }
 
 /*  div surrounding the buttons on the nav bar */

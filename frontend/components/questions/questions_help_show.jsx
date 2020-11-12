@@ -70,20 +70,19 @@ class ShowQuestion extends React.Component {
 
   renderQuestion() {
     let number = this.props.question.id;
-    let data;
-    // console.log(this.props.question);
-    Object.keys(this.state.text_answers).forEach(function (object_id) {
-      if (number === object_id) {
-        console.log("hi");
-        data = this.state.text_answers[object_id];
-      }
-    });
-    console.log(data);
+    // let data;
+    // // console.log(this.props.question);
+    // Object.keys(this.state.text_answers).forEach(function (object_id) {
+    //   if (number === object_id) {
+    //     console.log("hi");
+    //     data = this.state.text_answers[object_id];
+    //   }
+    // });
+    // console.log(data);
     let question = this.props.question;
     return (
       <div className="poll-question">
         {this.renderQuestionOptions(question)}
-        {data}
       </div>
     );
   }
@@ -122,7 +121,7 @@ class ShowQuestion extends React.Component {
             <div className="white-show-box">
               <div className="show-page-title">{this.props.question.title}</div>
               <div>{this.renderQuestion()}</div>
-              <div>{data}</div>
+              <div></div>
             </div>
             <div className="bottom-logo"></div>
           </div>

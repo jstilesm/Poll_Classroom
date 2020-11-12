@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../buttons/button";
-
 import { checkUser } from "../../util/api_util_session";
 
-class SessionForm extends React.Component {
+class PollSignup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -125,9 +124,12 @@ class SessionForm extends React.Component {
     if (this.props.formType === "sign up") {
       // debugger
       return (
-        <main className="poll-signup-page-container">
-          <div className="signup-form-container">
-            <h2 className="signup-title">Presenter {this.props.formType}</h2>
+        <main className="">
+          <div className="poll-signup-background">
+            <img
+              className="PollEverywhere-blacklogo"
+              src="https://davhizrhxzcu1.cloudfront.net/assets/media_kit/logo_white-b3ae877b0dff730405738e5ad768060f7d6d56b89a75f397012ca915f5472364.png"
+            ></img>
             <form onSubmit={this.handleSubmit} className="form-box">
               <label className="firstname">
                 <input
@@ -174,12 +176,6 @@ class SessionForm extends React.Component {
               </Button>
             </form>
           </div>
-          <div className="signup-visual">
-            <img
-              className="splash-image"
-              src="https://meded.ucsf.edu/sites/meded.ucsf.edu/files/inline-images/poll-illustration_2.png"
-            />
-          </div>
         </main>
       );
     } else {
@@ -188,64 +184,69 @@ class SessionForm extends React.Component {
         this.state.userExists
       ) {
         return (
-          <main className="poll-login-page">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-              <h2 className="login-title">{this.props.formType}</h2>
+          <main className="">
+            <div className="poll-signup-background">
+              <form onSubmit={this.handleSubmit} className="login-form-box">
+                <h2 className="login-title">{this.props.formType}</h2>
 
-              <label className="email">
-                <input
-                  className="email-input"
-                  type="text"
-                  value={this.state.identifier}
-                  placeholder="Email or Username"
-                  onChange={this.update("identifier")}
-                />
-              </label>
-              {this.renderPasswordField()}
-              {this.errors()}
-              <Button red={true} large={true} type="submit">
-                {this.props.formType}
-              </Button>
-              <div className="link-to-signup-container">
-                <p className="link-to-signup">Need an account?</p>
-                <Link className="link-to-signup" to="/signup">
-                  Create one now
-                </Link>
-              </div>
-            </form>
+                <label className="email">
+                  <input
+                    className="email-input"
+                    type="text"
+                    value={this.state.identifier}
+                    placeholder="Email or Username"
+                    onChange={this.update("identifier")}
+                  />
+                </label>
+                {this.renderPasswordField()}
+                {this.errors()}
+                <Button red={true} large={true} type="submit">
+                  {this.props.formType}
+                </Button>
+                <div className="link-to-signup-container">
+                  <p className="link-to-signup">Need an account?</p>
+                  <Link className="link-to-signup" to="/signup">
+                    Create one now
+                  </Link>
+                </div>
+              </form>
+            </div>
           </main>
         );
       } else {
         return (
           <div className="login-form">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-              <h2 className="login-title">{this.props.formType}</h2>
+            <div className="poll-signup-background">
+              <form onSubmit={this.handleSubmit} className="login-form-box">
+                <h2 className="login-title">{this.props.formType}</h2>
 
-              <label className="email">
-                <input
-                  className="email-input"
-                  type="text"
-                  value={this.state.identifier}
-                  placeholder="Email or username"
-                  onChange={this.update("identifier")}
-                />
-              </label>
-              {this.errors()}
+                <label className="email">
+                  <input
+                    className="email-input"
+                    type="text"
+                    value={this.state.identifier}
+                    placeholder="Email or username"
+                    onChange={this.update("identifier")}
+                  />
+                </label>
+                {this.errors()}
 
-              <Button large={true} red={true} type="submit">
-                Next
-              </Button>
-              <div className="link-to-signup-container">
-                <p className="link-to-signup">Need an account?</p>
-                <Link className="link-to-signup" to="/signup">
-                  Create one now
-                </Link>
-              </div>
-            </form>
+                <Button large={true} red={true} type="submit">
+                  Next
+                </Button>
+                <div className="link-to-signup-container">
+                  <p className="link-to-signup">Need an account?</p>
+                  <Link className="link-to-signup" to="/signup">
+                    Create one now
+                  </Link>
+                </div>
+              </form>
+            </div>
           </div>
         );
       }
     }
   }
 }
-export default SessionForm;
+
+export default PollSignup;

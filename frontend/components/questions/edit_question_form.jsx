@@ -67,7 +67,7 @@ class EditQuestionForm extends React.Component {
             <input
               className="question-options-box"
               type="text"
-              placeholder="Hello"
+              placeholder="Text"
               value={question_option.label}
               onChange={this.updateQuestionOption(idx, "label")}
             />
