@@ -7,10 +7,21 @@ module ApplicationCable
     end
 
     private
+
     def find_verified_user
       # hack to get session to load
       request.session["load"] = true
-      if verified_user = User.find_by(session_token: request.session[:session_token])
+      # debugger
+      session = request.session
+
+      verified_user = nil
+      if session[:session_token]
+        verified_user = User.find_by(session_token: session[:session_token])
+      else
+        verified_user = Visitor.find_by(session_token: session[:visitor_session_token])
+      end
+
+      if verified_user 
         verified_user
       else
         reject_unauthorized_connection

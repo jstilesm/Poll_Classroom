@@ -11,15 +11,12 @@ class Username extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  //   componentDidMount() {
-  //     // debugger
-  //     this.props.requestQuestion(questionId);
-  //     // debugger
-  //   }
   handleSubmit(e) {
     e.preventDefault();
     const { username, group_id } = this.props.match.params;
-    this.props.history.push(`/poll/${username}/${group_id}`);
+    this.props.visitorLogin({ username: this.state.name }).then(() => {
+      this.props.history.push(`/poll/${username}/${group_id}`);
+    });
   }
   render() {
     const { username } = this.props.match.params;

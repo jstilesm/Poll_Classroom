@@ -12,19 +12,14 @@
 #  question_options_id :integer          not null
 #
 class MultResponse < ApplicationRecord
-    validates :title, presence: true
-    validates :correct, inclusion: {in: [true, false]}
+  validates :title, presence: true
+  validates :correct, inclusion: { in: [true, false] }
 
+  belongs_to :question_options,
+             primary_key: :id,
+             foreign_key: :question_options_id,
+             class_name: :QuestionOptions
 
-    belongs_to :question_options,
-        primary_key: :id,
-        foreign_key: :question_options_id,
-        class_name: :QuestionOptions
-
-    belongs_to :question
-
-    belongs_to :user, polymorphic: true
-    belongs_to :visitor, polymorphic: true
-
+  belongs_to :question
+ belongs_to :registerable, polymorphic: true
 end
-    

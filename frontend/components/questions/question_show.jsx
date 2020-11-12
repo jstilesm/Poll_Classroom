@@ -12,6 +12,15 @@ class QuestionShow extends React.Component {
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);
     this.toggleActive = this.toggleActive.bind(this);
+
+    this.subscription = window.App.cable.subscriptions.create(
+      { channel: "ResponseChannel", groupId: 1 },
+      {
+        received: (broadcast) => {
+          console.log(JSON.parse(broadcast.data));
+        },
+      }
+    );
   }
   componentDidMount() {
     // debugger

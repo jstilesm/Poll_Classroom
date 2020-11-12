@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_161336) do
+ActiveRecord::Schema.define(version: 2020_11_11_230756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_11_02_161336) do
 
   create_table "mult_responses", force: :cascade do |t|
     t.string "title", null: false
-    t.boolean "correct", default: false, null: false
     t.integer "question_options_id", null: false
     t.integer "registerable_id", null: false
     t.string "registerable_type", null: false
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_161336) do
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "correct", default: false, null: false
     t.index ["question_id"], name: "index_question_options_on_question_id"
   end
 
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 2020_11_02_161336) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_questions_on_author_id"
     t.index ["group_id"], name: "index_questions_on_group_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.string "body"
+    t.integer "question_options_id"
+    t.integer "question_id", null: false
+    t.integer "registerable_id", null: false
+    t.string "registerable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_responses_on_question_id"
+    t.index ["question_options_id"], name: "index_responses_on_question_options_id"
+    t.index ["registerable_id"], name: "index_responses_on_registerable_id"
   end
 
   create_table "text_responses", force: :cascade do |t|
@@ -80,11 +93,10 @@ ActiveRecord::Schema.define(version: 2020_11_02_161336) do
   end
 
   create_table "visitors", force: :cascade do |t|
-    t.string "visitor_username", null: false
-    t.string "password_digest", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
     t.index ["session_token"], name: "index_visitors_on_session_token", unique: true
   end
 

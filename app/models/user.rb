@@ -13,70 +13,65 @@
 #  updated_at      :datetime         not null
 #
 
-
 class User < ApplicationRecord
-    validates :session_token, :email, presence: true, uniqueness: true
-    validates :password_digest, presence: { message: "Password can't blank"}
-    validates :password, length: {minimum: 6, allow_nil: true}
-    validates :first_name, :last_name, presence: {message: "can't be blank"}
+  validates :session_token, :email, presence: true, uniqueness: true
+  validates :password_digest, presence: { message: "Password can't blank" }
+  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :first_name, :last_name, presence: { message: "can't be blank" }
 
-    after_initialize :ensure_session_token
+  after_initialize :ensure_session_token
 
-    attr_reader :password
+  attr_reader :password
 
+  has_many :questions,
+           primary_key: :id,
+           foreign_key: :author_id,
+           class_name: :Question
 
-    has_many :questions,
-        primary_key: :id,
-        foreign_key: :author_id,
-        class_name: :Question
+  has_many :groups,
+           primary_key: :id,
+           foreign_key: :user_id,
+           class_name: :Group
 
-    has_many :groups,
-        primary_key: :id,
-        foreign_key: :user_id,
-        class_name: :Group
+  has_many :responses, as: :registerable
 
+  # fig_vaper
 
-    has_many :mult_responses, as: :registerable
-    has_many :text_responses, as: :registerable
+  def self.generate_session_token
+    SecureRandom::urlsafe_base64(16)
+  end
 
+  def self.find_by_username_or_email(identifier)
+    # debugger
+    User.where(email: identifier).or(User.where(username: identifier)).first
+  end
 
-    #fig_vaper
+  def self.find_by_credentials(identifier, password)
+    user = User.find_by_username_or_email(identifier)
+    # puts user
+    return nil if user == nil
 
-    def self.generate_session_token
-        SecureRandom::urlsafe_base64(16)
-    end
+    user.is_password?(password) ? user : nil
+  end
 
-    def self.find_by_username_or_email(identifier)   
-        # debugger
-        User.where(email: identifier).or(User.where(username: identifier)).first
-    end
+  def reset_session_token!
+    self.session_token = User.generate_session_token
+    self.save!
+    self.session_token
+  end
 
-    def self.find_by_credentials(identifier, password) 
-        user = User.find_by_username_or_email(identifier)
-        # puts user
-        return nil if user == nil
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
 
-        user.is_password?(password) ? user : nil
-    end
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
 
-    def reset_session_token!
-        self.session_token = User.generate_session_token
-        self.save!
-        self.session_token
-    end
+  private
 
-    def password=(password) 
-        @password = password
-        self.password_digest = BCrypt::Password.create(password)
-    end
-
-    def is_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
-    end
-
-    private 
-
-    def ensure_session_token
-        self.session_token ||= User.generate_session_token
-    end
+  def ensure_session_token
+    self.session_token ||= User.generate_session_token
+  end
 end

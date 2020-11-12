@@ -40,6 +40,9 @@ class QuestionIndex extends React.Component {
             <div>
               <span className="arrow-collapsible"></span>
               {group.name}
+              <div className="group-activities">
+                {group.questions.length} activities
+              </div>
             </div>
           </div>
         </h1>

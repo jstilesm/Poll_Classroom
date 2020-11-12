@@ -1,6 +1,3 @@
-
-
-
 json.extract! @group, :name, :id
 
 # json.questionIds @question.question_ids

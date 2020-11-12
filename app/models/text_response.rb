@@ -10,16 +10,12 @@
 #  updated_at        :datetime         not null
 #
 class TextResponse < ApplicationRecord
-    validates :body, presence: true
+  validates :body, presence: true
 
-    belongs_to :user, polymorphic: true
-    belongs_to :visitor, polymorphic: true
+   belongs_to :registerable, polymorphic: true
 
-
-    belongs_to :question,
-        primary_key: :id,
-        foreign_key: :question_id,
-        class_name: :Question
-
+  belongs_to :question,
+             primary_key: :id,
+             foreign_key: :question_id,
+             class_name: :Question
 end
-

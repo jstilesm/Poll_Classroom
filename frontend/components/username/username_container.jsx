@@ -3,7 +3,8 @@ import Username from "./username";
 import { requestQuestionoption } from "../../actions/question_options_actions";
 import { requestQuestion } from "../../actions/question_actions";
 import { requestMultresponse } from "../../actions/mult_response_actions";
-import { login, clearErrors } from "../../actions/session_actions";
+import { clearErrors } from "../../actions/session_actions";
+import { login } from "../../actions/visitor_actions";
 
 const mSTP = (state, ownProps) => {
   // debugger
@@ -18,6 +19,7 @@ const mDTP = (dispatch) => {
       dispatch(requestQuestionoption(question_optionId)),
     requestMultresponse: (mult_responseId) =>
       dispatch(requestMultresponse(mult_responseId)),
+    visitorLogin: (visitor) => dispatch(login(visitor)),
   };
 };
 
