@@ -6,7 +6,7 @@ class ResponseChannel < ApplicationCable::Channel
 
   def respond(response)
     @response = Response.new(question_options_id: response['question_options_id'],
-                             question_id: response['question_id'])
+                             question_id: response['question_id'], body: response['body'])
     @response.registerable = current_user
 
     if @response.save

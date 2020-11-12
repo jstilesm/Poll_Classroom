@@ -14,6 +14,7 @@ class AnswersGroup extends React.Component {
 
     this.renderQuestionBody = this.renderQuestionBody.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
+    this.textbuttonClick = this.textbuttonClick.bind(this);
 
     this.subscription = window.App.cable.subscriptions.create(
       { channel: "ResponseChannel", groupId: this.props.group.id },
@@ -34,11 +35,24 @@ class AnswersGroup extends React.Component {
     const question_choices = this.state.question_choices;
     question_choices[question.id] = question_option.id;
     this.setState({ question_choices });
-
+    // console.log(this.state.textarea_content);
     this.subscription.respond({
       question_options_id: question_option.id,
       question_id: question.id,
-      body: "", // TODO: add the real body
+    });
+    // this.props.createMultresponse({ question_options_id: question_option.id });
+  }
+  textbuttonClick(e, question) {
+    const question_choices = this.state.question_choices;
+    question_choices[question.id] = question.id;
+    this.setState({ question_choices });
+
+    const answer_body = this.state.textarea_content[question.id];
+
+    e.preventDefault();
+    this.subscription.respond({
+      question_id: question.id,
+      body: answer_body,
     });
     // this.props.createMultresponse({ question_options_id: question_option.id });
   }
@@ -67,8 +81,12 @@ class AnswersGroup extends React.Component {
     } else if (question.closed === true) {
       return null;
     } else {
+      // let textpressed = question.id in this.state.textarea_content;
       let value = this.state.textarea_content[question.id];
       let buttonShouldBeBlue = value !== undefined && value !== "";
+      const selected = this.state.question_choices[question.id] === question.id;
+      // const textselected =
+      //   this.state.question_choices[question.id] === question_option.id;
       return (
         <>
           <textarea
@@ -77,15 +95,18 @@ class AnswersGroup extends React.Component {
             value={value}
             onChange={(e) => {
               this.state.textarea_content[question.id] = e.currentTarget.value;
+
               this.setState({ textarea_content: this.state.textarea_content });
             }}
           ></textarea>
           <div className="text-submit">
             <Button
+              disabled={selected}
               whiteGrey={!buttonShouldBeBlue}
               blue={buttonShouldBeBlue}
               extraLarge={true}
               centered={true}
+              onClick={(e) => this.textbuttonClick(e, question)}
             >
               Submit
             </Button>

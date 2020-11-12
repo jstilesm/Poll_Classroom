@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login_visitor(visitor)
-    visitor.reseqt_session_token!
+    visitor.reset_session_token!
     session[:visitor_session_token] = visitor.session_token
     @current_visitor = visitor
   end
