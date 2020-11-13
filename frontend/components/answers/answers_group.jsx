@@ -101,7 +101,7 @@ class AnswersGroup extends React.Component {
           ></textarea>
           <div className="text-submit">
             <Button
-              disabled={selected}
+              disabled={selected || !buttonShouldBeBlue}
               whiteGrey={!buttonShouldBeBlue}
               blue={buttonShouldBeBlue}
               extraLarge={true}

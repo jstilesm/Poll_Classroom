@@ -39,7 +39,7 @@ class ShowQuestion extends React.Component {
               question_choices[question_options_id] = 0;
             }
             question_choices[question_options_id] += 1;
-            console.log(question_choices[question_options_id]);
+            // console.log(question_choices[question_options_id]);
             that.setState({ question_choices });
           }
         },
@@ -52,29 +52,49 @@ class ShowQuestion extends React.Component {
   }
 
   renderQuestionOptions(question) {
+    let width = 0;
+    let question_hash = this.state.question_choices;
     if (question.kind === "mult_response") {
+      let sum = 0;
+      for (let i in question_hash) {
+        sum += parseFloat(question_hash[i]);
+      }
+
       // sum up all the counts from all the question_choices
       // loop over this.state.question_choices
 
       return question.question_options.map((question_option) => {
-        // divide the count for the current question option by the total
-        // compute the width with the max_width * percent
+        let question_hash = this.state.question_choices;
 
-        // `${Math.floor(0.3333 * 100)}%`
-        return (
-          <>
-            <div className="options-show-page">{question_option.label}</div>
-            <div style={{ width: `` }}>
-              {this.state.question_choices[question_option.id]}
+        let part = question_hash[question_option.id];
+
+        let percentage = Math.floor((part / sum) * 100);
+        // console.log(percentage);
+        width = Math.floor((percentage / 100) * 500);
+        if (isNaN(width)) {
+          width = 0;
+          return (
+            <div className="question-answercontainer">
+              <div className="options-show-page">{question_option.label}</div>
+              <div className="bluebar-show" style={{ display: "none" }}></div>
             </div>
-          </>
-        );
+          );
+        } else {
+          return (
+            <div className="question-answercontainer">
+              <div className="options-show-page">{question_option.label}</div>
+              <div className="bluebar-show" style={{ width: `${width}px` }}>
+                {width / 5}%
+              </div>
+            </div>
+          );
+        }
       });
     } else {
       return this.state.text_answers.map((text_answer) => {
         return (
           <>
-            <div>{text_answer}</div>
+            <div className="text-answers">- {text_answer}</div>
           </>
         );
       });

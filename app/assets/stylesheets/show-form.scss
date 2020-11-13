@@ -155,3 +155,26 @@
 .white-show-box {
   height: 540px;
 }
+
+.bluebar-show {
+  height: 40px;
+  background-color: #6193c5;
+  color: white;
+  text-align: end;
+  vertical-align: center;
+  padding-top: 25px;
+  margin-top: 80px;
+  margin-left: 10px;
+  padding-right: 10px;
+}
+
+.question-answercontainer {
+  display: flex;
+}
+
+.text-answers {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 50px;
+  margin-top: 10px;
+}
