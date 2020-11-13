@@ -78,7 +78,7 @@ const NavBar = ({ currentUser, logout, testUser }) => {
   const pollNav = () => (
     <header className="poll-nav-bar">
       <div className="poll-items">
-        <a className="poll-logo" href="http://localhost:3000/#/poll">
+        <a className="poll-logo" href="https://poll-aa.herokuapp.com/#/poll">
           <img
             className="poll-mini-logo"
             src="https://lh3.googleusercontent.com/7ITYJK1YP86NRQqnWEATFWdvcGZ6qmPauJqIEEN7Cw48DZk9ghmEz_bJR2ccRw8aWQA"
@@ -86,12 +86,18 @@ const NavBar = ({ currentUser, logout, testUser }) => {
           <p className="poll-home">Home</p>
         </a>
 
-        <a className="poll-logo" href="http://localhost:3000/#/poll-signup">
+        <a
+          className="poll-logo"
+          href="https://poll-aa.herokuapp.com/#/poll-signup"
+        >
           <span className="fas fa-user-plus"></span>
           <p className="poll-home">Registration</p>
         </a>
 
-        <a className="poll-logo" href="http://localhost:3000/#/poll-signup">
+        <a
+          className="poll-logo"
+          href="https://poll-aa.herokuapp.com/#/poll-signup"
+        >
           <span className="fas fa-user-circle"></span>
           <p className="poll-home">Log in</p>
         </a>
