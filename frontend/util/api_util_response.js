@@ -10,11 +10,4 @@ export const fetchResponse = (responseId) =>
     method: "GET",
   });
 
-export const createResponse = (response) =>
-  $.ajax({
-    url: `/api/responses`,
-    method: "POST",
-    data: { response },
-  });
-
 // mult_response = {question_options_id: 1}
