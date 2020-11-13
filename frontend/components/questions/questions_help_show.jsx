@@ -7,9 +7,13 @@ class ShowQuestion extends React.Component {
   constructor(props) {
     super(props);
     // console.log(this.props.question);
-    this.state = { closed: "", text_answers: {}, question_choices: {} };
 
-    // this.state = { status: this.props.question };
+    this.state = {
+      closed: "",
+      text_answers: [],
+      question_choices: {},
+    };
+
     this.activated = this.activated.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);
@@ -19,28 +23,25 @@ class ShowQuestion extends React.Component {
       { channel: "ResponseChannel", groupId: this.props.question.group_id },
       {
         received: (broadcast) => {
-          // console.log(JSON.parse(broadcast.data));
-
           if (this.props.question.kind === "text_response") {
             const text_answers = this.state.text_answers;
-            text_answers[this.props.question.id] = JSON.parse(
-              broadcast.data
-            ).body;
+
+            let body = JSON.parse(broadcast.data).body;
+            text_answers.push(body);
+
             that.setState({ text_answers });
           } else {
-            const question_choices = this.state.question_choices;
-            question_choices[this.props.question.id] = JSON.parse(
-              broadcast.data
-            ).question_options_id;
+            const question_choices = this.state.question_choices; // {}
+
+            let question_options_id = JSON.parse(broadcast.data)
+              .question_options_id;
+            if (question_choices[question_options_id] === undefined) {
+              question_choices[question_options_id] = 0;
+            }
+            question_choices[question_options_id] += 1;
+            console.log(question_choices[question_options_id]);
             that.setState({ question_choices });
           }
-
-          // let question_option_choice = JSON.parse(broadcast.data)
-          //   .question_options_id;
-          // let question_choice = JSON.parse(broadcast.data).question_id;
-
-          // {id: 4, body: null, question_options_id: 29, question_id: 44}
-          // {id: 93, body: "asd", question_options_id: null, question_id: 3}
         },
       }
     );
@@ -52,9 +53,31 @@ class ShowQuestion extends React.Component {
 
   renderQuestionOptions(question) {
     if (question.kind === "mult_response") {
-      return question.question_options.map((question_option) => (
-        <div className="options-show-page">{question_option.label}</div>
-      ));
+      // sum up all the counts from all the question_choices
+      // loop over this.state.question_choices
+
+      return question.question_options.map((question_option) => {
+        // divide the count for the current question option by the total
+        // compute the width with the max_width * percent
+
+        // `${Math.floor(0.3333 * 100)}%`
+        return (
+          <>
+            <div className="options-show-page">{question_option.label}</div>
+            <div style={{ width: `` }}>
+              {this.state.question_choices[question_option.id]}
+            </div>
+          </>
+        );
+      });
+    } else {
+      return this.state.text_answers.map((text_answer) => {
+        return (
+          <>
+            <div>{text_answer}</div>
+          </>
+        );
+      });
     }
   }
 
