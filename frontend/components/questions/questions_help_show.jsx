@@ -14,6 +14,19 @@ class ShowQuestion extends React.Component {
       question_choices: {},
     };
 
+    this.props.question.responses.map((response) => {
+      console.log(response, this.state);
+      const question_options_id = response.question_options_id;
+      if (question_options_id === null) {
+        this.state.text_answers.push(response.body);
+      } else {
+        if (this.state.question_choices[question_options_id] === undefined) {
+          this.state.question_choices[question_options_id] = 0;
+        }
+        this.state.question_choices[question_options_id] += 1;
+      }
+    });
+    console.log(this.state);
     this.activated = this.activated.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);

@@ -35,11 +35,8 @@ class Question < ApplicationRecord
 
   accepts_nested_attributes_for :question_options, allow_destroy: true
 
-  has_many :text_responses,
+  has_many :responses,
            primary_key: :id,
            foreign_key: :question_id,
-           class_name: :TextResponse
-
-  has_many :mult_responses,
-           through: :question_options
+           class_name: :Response
 end

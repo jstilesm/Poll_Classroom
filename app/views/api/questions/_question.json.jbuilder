@@ -9,3 +9,7 @@ json.allow_unregistered @question.allow_unregistered
 json.question_options do
   json.array! @question.question_options, :id, :label
 end
+json.responses do
+  json.array! @question.responses, :id, :body, :question_options_id, :question_id, :registerable_id, :registerable_type
+end
+
