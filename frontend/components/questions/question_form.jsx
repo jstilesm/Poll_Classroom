@@ -79,7 +79,7 @@ class QuestionForm extends React.Component {
               onChange={this.updateQuestionOption(1, "label")}
             />
           </label>
-          <Button whiteSpecial={true}>Add Option</Button>
+          {/* <Button whiteSpecial={true}>Add Option</Button> */}
         </>
       );
     } else {
@@ -88,6 +88,7 @@ class QuestionForm extends React.Component {
   }
 
   renderQuestionForm() {
+    console.log(this.props.groups);
     let multlogo;
     let surveylogo;
     let subtext;
@@ -141,7 +142,8 @@ class QuestionForm extends React.Component {
         {this.renderQuestionOptions(options)}
 
         <div className="create-button-container">
-          <Button whiteSpecial={true} marginRight={true}>
+          <select id="groups-list"></select>
+          <Button whiteSpecial={true} marginRight={true} to="/questions/new">
             Add another activity
           </Button>
           <Button blue={true} widePadding={true} onClick={this.handleSubmit}>

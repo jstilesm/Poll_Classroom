@@ -15,6 +15,7 @@ const mSTP = ({ state, errors, ownProps }) => {
       allow_unregistered: false,
       question_options: [{ label: "" }, { label: "" }],
       group_id: 0,
+      groups: Object.values(state.entities.groups),
     },
   };
 };
