@@ -9,13 +9,13 @@ function Modal({ errors, modal, closeModal }) {
   }
   let component;
   switch (modal) {
-    case "Add Question":
-      component = <CreateGroupFormContainer />;
+    case "Add Group":
+      component = <CreateGroupFormContainer closeModal={closeModal} />;
       break;
     default:
       return null;
   }
-  console.log(errors);
+  // console.log(errors);
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>

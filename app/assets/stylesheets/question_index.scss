@@ -26,8 +26,8 @@
 }
 
 .questions-box {
-  display: inline-flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
   width: 60%;
   // padding-left: 400px;
   // padding-top: 200px;
@@ -104,17 +104,18 @@
 
 .modal-background {
   position: fixed;
-  top: 130px;
+  top: 60px;
   width: 100%;
   height: 100%;
-  bottom: 0;
+  // bottom: 0;
   right: 0;
   left: 0;
-  background: lightgrey;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   z-index: 10;
 }
 
 .modal {
+  font-family: $font;
   position: absolute;
   background: lightgrey;
   top: 50%;

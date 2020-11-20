@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
       resources :groups, only: [:create]
     end
-    resources :groups, only: %i[index show update destroy] do
+    resources :groups, only: %i[index create show update destroy] do
       resources :questions, only: [:create]
     end
 

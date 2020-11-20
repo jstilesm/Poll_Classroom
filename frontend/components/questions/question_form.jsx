@@ -7,12 +7,18 @@ class QuestionForm extends React.Component {
     super(props);
     this.state = this.props.question;
     this.state.kind = "mult_response";
+    // this.state.groups = [];
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.renderQuestionForm = this.renderQuestionForm.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.updateQuestionOption = this.updateQuestionOption.bind(this);
+  }
+  componentDidMount() {
+    this.props.requestGroups();
+    console.log(this.props.groups);
   }
 
   componentWillUnmount() {
@@ -22,7 +28,7 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log(this.state);
+    console.log(this.state);
     // console.log(this.props.errors);
     this.props.processForm(this.state).then((e) => {
       this.props.history.push(`/questions/${e.question.id}`);
@@ -54,6 +60,22 @@ class QuestionForm extends React.Component {
   // foo = {far: 1}
   // foo["far"]
   // foo.far
+
+  renderErrors() {
+    if (this.props.errors !== undefined) {
+      return (
+        <ul className="create-errors">
+          {this.props.errors.map((error, i) => (
+            <li className="create-question-error-items" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return null;
+    }
+  }
 
   renderQuestionOptions(options) {
     if (options === true) {
@@ -88,7 +110,8 @@ class QuestionForm extends React.Component {
   }
 
   renderQuestionForm() {
-    console.log(this.props.groups);
+    // this.props.requestGroups();
+    // console.log(this.props.groups);
     let multlogo;
     let surveylogo;
     let subtext;
@@ -119,7 +142,6 @@ class QuestionForm extends React.Component {
             onClick={(e) => this.buttonClick(e)}
           ></div>
         </div>
-
         <div className="creation-subtext">{subtext}</div>
         <label>
           Title
@@ -131,18 +153,15 @@ class QuestionForm extends React.Component {
             onChange={this.update("title")}
           />
         </label>
-        <ul className="create-errors">
-          {this.props.errors.map((error, i) => (
-            <li className="create-question-error-items" key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-
+        {this.renderErrors()}
         {this.renderQuestionOptions(options)}
-
+        <div className="select-group">Select Group</div>
         <div className="create-button-container">
-          <select id="groups-list"></select>
+          <select className="group-create-dropdown" id="groups-list">
+            {this.props.groups.map((group) => (
+              <option value={group.name}>{group.name}</option>
+            ))}
+          </select>
           <Button whiteSpecial={true} marginRight={true} to="/questions/new">
             Add another activity
           </Button>
@@ -154,7 +173,7 @@ class QuestionForm extends React.Component {
     );
   }
   render() {
-    console.log(this.state);
+    // console.log(this);
 
     return (
       <div className="question-form-container">
@@ -163,7 +182,6 @@ class QuestionForm extends React.Component {
             X
           </Link>
         </div>
-
         {this.renderQuestionForm()}
       </div>
     );

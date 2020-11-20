@@ -11,10 +11,10 @@ class Api::GroupsController < ApplicationController
   end
 
   def create
-    @group = Question.new(group_params)
+    @group = Group.new(groups_params)
     #  debugger
     @group.user = current_user
-    @group.group_id = params[:group_id]
+    # @group.group_id = params[:group_id]
 
     if @group.save
       render '/api/groups/show'
@@ -44,6 +44,6 @@ class Api::GroupsController < ApplicationController
   private
 
   def groups_params
-    params.require(:groups).permit(:name)
+    params.require(:group).permit(:name, :user_id)
   end
 end

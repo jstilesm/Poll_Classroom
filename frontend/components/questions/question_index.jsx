@@ -16,6 +16,7 @@ class QuestionIndex extends React.Component {
     // debugger
 
     this.props.requestGroups();
+    // console.log(this.props);
     // debugger
   }
 
@@ -81,8 +82,14 @@ class QuestionIndex extends React.Component {
           no need to upgrade.
         </div>
         <div className="show-title">Activated and pinned activities</div>
-
         <div className="main-index-page">
+          <div className="group-buttons">
+            <Button onClick={this.props.openModal} whiteGrey={true}>
+              New Group
+            </Button>
+            <Button whiteGrey={true}>Delete Group</Button>
+          </div>
+
           {/* <Link to="/questions/new">New Question</Link> */}
           <ul className="questions-box">
             {this.props.groups.map(this.renderGroup)}

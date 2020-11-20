@@ -147,3 +147,56 @@
   width: 694px;
   margin-left: -10px;
 }
+
+.group-create-dropdown {
+  background-color: white;
+  color: $blue;
+  // box-shadow: inset 0px 34px 0px -15px white;
+  background-color: white;
+  border: 1px solid $blue;
+  font-size: $nav-button-link;
+  border-radius: 2px;
+  padding: 9px;
+  font-family: $font;
+  cursor: pointer;
+  text-decoration: none;
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-right: 270px;
+}
+
+.select-group {
+  margin-top: 30px;
+  margin-bottom: -15px;
+}
+
+.group-create-modal {
+  background-color: white;
+  // font-style: $font;
+  height: 130px;
+  width: 300px;
+}
+
+.group-create-modal-title {
+  color: black;
+  // font-style: $font;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+.group-input-form {
+  width: 260px;
+  height: 15px;
+  margin-left: 15px;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.group-input-buttons {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 10px;
+  justify-content: flex-end;
+}

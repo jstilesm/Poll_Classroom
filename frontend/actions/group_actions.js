@@ -45,19 +45,19 @@ export const requestGroup = (groupId) => (dispatch) => {
   );
 };
 
-export const creategroup = (group) => (dispatch) => {
+export const createGroup = (group) => (dispatch) => {
   return APIUtil.createGroup(group).then((group) =>
     dispatch(receiveGroup(group))
   );
 };
 
-export const updategroup = (group) => (dispatch) => {
+export const updateGroup = (group) => (dispatch) => {
   return APIUtil.updateGroup(group).then((group) =>
     dispatch(receiveGroup(group))
   );
 };
 
-export const deletegroup = (groupId) => (dispatch) => {
+export const deleteGroup = (groupId) => (dispatch) => {
   return APIUtil.deleteGroup(groupId).then(() =>
     dispatch(removeGroup(groupId))
   );
