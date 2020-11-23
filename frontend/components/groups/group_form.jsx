@@ -12,10 +12,16 @@ class GroupForm extends React.Component {
     // console.log(this.state);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateName = this.updateName.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
     this.setState({ user_id: this.props.currentUser.id });
+    if (this.state.name === "") {
+      this.setState({ name: "New_Group" });
+      console.log(this.state);
+    }
+    console.log(this.state);
     this.props.processForm(this.state).then(this.props.closeModal);
   }
 
@@ -27,8 +33,25 @@ class GroupForm extends React.Component {
       this.setState({ name });
     };
   }
+
+  // renderErrors() {
+  //   if (this.props.errors !== undefined) {
+  //     return (
+  //       <ul className="create-errors">
+  //         {this.props.errors.map((error, i) => (
+  //           <li className="create-question-error-items" key={`error-${i}`}>
+  //             {error}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     );
+  //   } else {
+  //     return null;
+  //   }
+  // }
+
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="group-create-modal">
         <div className="group-create-modal-title">Create empty group</div>
@@ -40,10 +63,9 @@ class GroupForm extends React.Component {
             onChange={this.updateName()}
             placeholder="Group name"
           />
+          {/* {this.renderErrors()} */}
           <div className="group-input-buttons">
-            <Button whiteGrey={true} onClick={this.props.closeModal}>
-              Cancel
-            </Button>
+            <Button whiteGrey={true}>Cancel</Button>
             <Button blue={true} onClick={this.handleSubmit}>
               Create Group
             </Button>

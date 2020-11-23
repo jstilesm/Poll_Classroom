@@ -3,6 +3,8 @@ import * as APIUtil from "../util/api_util_group";
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
 export const REMOVE_GROUP = "REMOVE_GROUP";
+export const RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 const receiveGroups = (groups) => {
   return {
@@ -25,6 +27,18 @@ const removeGroup = (groupId) => {
   };
 };
 
+const receiveGroupErrors = (errors) => {
+  // debugger;
+  return {
+    type: RECEIVE_GROUP_ERRORS,
+    errors,
+  };
+};
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS,
+});
+
 /*
 1. `requestGroups`
 2. `requestGroup(groupId)`
@@ -34,31 +48,36 @@ const removeGroup = (groupId) => {
 */
 
 export const requestGroups = () => (dispatch) => {
-  return APIUtil.fetchGroups().then((groups) =>
-    dispatch(receiveGroups(groups))
+  return APIUtil.fetchGroups().then(
+    (groups) => dispatch(receiveGroups(groups)),
+    (er) => dispatch(receiveGroupErrors(er.responseJSON))
   );
 };
 
 export const requestGroup = (groupId) => (dispatch) => {
-  return APIUtil.fetchGroup(groupId).then((group) =>
-    dispatch(receiveGroup(group))
+  return APIUtil.fetchGroup(groupId).then(
+    (group) => dispatch(receiveGroup(group)),
+    (er) => dispatch(receiveGroupErrors(er.responseJSON))
   );
 };
 
 export const createGroup = (group) => (dispatch) => {
-  return APIUtil.createGroup(group).then((group) =>
-    dispatch(receiveGroup(group))
+  return APIUtil.createGroup(group).then(
+    (group) => dispatch(receiveGroup(group)),
+    (er) => dispatch(receiveGroupErrors(er.responseJSON))
   );
 };
 
 export const updateGroup = (group) => (dispatch) => {
-  return APIUtil.updateGroup(group).then((group) =>
-    dispatch(receiveGroup(group))
+  return APIUtil.updateGroup(group).then(
+    (group) => dispatch(receiveGroup(group)),
+    (er) => dispatch(receiveGroupErrors(er.responseJSON))
   );
 };
 
 export const deleteGroup = (groupId) => (dispatch) => {
-  return APIUtil.deleteGroup(groupId).then(() =>
-    dispatch(removeGroup(groupId))
+  return APIUtil.deleteGroup(groupId).then(
+    () => dispatch(removeGroup(groupId)),
+    (er) => dispatch(receiveGroupErrors(er.responseJSON))
   );
 };

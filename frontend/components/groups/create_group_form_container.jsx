@@ -8,7 +8,7 @@ const mSTP = (state, errors, ownProps) => {
   // debugger
   return {
     currentUser: state.entities.users[state.session.id],
-    errors: errors.question,
+    errors: errors.group,
     group: {
       name: "",
       user_id: 0,

@@ -7,6 +7,8 @@
 #  user_id :integer          not null
 #
 class Group < ApplicationRecord
+  # validates :name, :user_id, presence: true
+
   has_many :questions,
            primary_key: :id,
            foreign_key: :group_id,

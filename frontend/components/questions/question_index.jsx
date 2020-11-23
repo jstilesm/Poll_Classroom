@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import QuestionIndexItem from "./question_index_item";
 import Button from "../buttons/button";
+import GroupDropdown from "../dropdown/dropdown-group";
 
 class QuestionIndex extends React.Component {
   constructor(props) {
@@ -43,6 +44,10 @@ class QuestionIndex extends React.Component {
                 <span className="arrow-collapsible"></span>
                 {group.name}
                 <div className="group-activities">
+                  <GroupDropdown
+                    group={this.props.group}
+                    deleteGroup={this.props.deleteGroup}
+                  />
                   {group.questions.length} activities
                 </div>
               </div>
@@ -87,7 +92,6 @@ class QuestionIndex extends React.Component {
             <Button onClick={this.props.openModal} whiteGrey={true}>
               New Group
             </Button>
-            <Button whiteGrey={true}>Delete Group</Button>
           </div>
 
           {/* <Link to="/questions/new">New Question</Link> */}
