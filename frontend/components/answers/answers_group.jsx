@@ -20,7 +20,7 @@ class AnswersGroup extends React.Component {
       { channel: "ResponseChannel", groupId: this.props.group.id },
       {
         received: (broadcast) => {
-          console.log(JSON.parse(broadcast.data));
+          // console.log(JSON.parse(broadcast.data));
         },
 
         respond: function (response) {

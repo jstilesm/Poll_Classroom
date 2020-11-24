@@ -32,6 +32,6 @@ export const updateGroup = (group) =>
 
 export const deleteGroup = (groupId) =>
   $.ajax({
-    url: `api/groups${groupId}`,
+    url: `api/groups/${groupId}`,
     method: "DELETE",
   });

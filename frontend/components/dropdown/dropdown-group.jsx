@@ -39,14 +39,6 @@ class GroupDropdown extends React.Component {
           {this.state.show ? (
             <ul onClick={(e) => console.log(e)}>
               <div className="options-box">
-                <li className="edit-icon" onClick={(e) => e.stopPropagation()}>
-                  <Link
-                    className="edit-words"
-                    to={`/questions/${this.props.group.id}/edit`}
-                  >
-                    <i className="fas fa-pencil-alt"></i>Edit
-                  </Link>
-                </li>
                 <li
                   className="delete-icon"
                   onClick={() => this.props.deleteGroup(this.props.group.id)}
