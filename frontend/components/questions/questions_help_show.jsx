@@ -25,7 +25,7 @@ class ShowQuestion extends React.Component {
         }
         this.state.question_choices[question_options_id] += 1;
       }
-    });
+  });
     console.log(this.state);
     this.activated = this.activated.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
