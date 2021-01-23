@@ -9,7 +9,7 @@ class QuestionIndex extends React.Component {
     super(props);
     this.renderGroup = this.renderGroup.bind(this);
     this.state = {
-      hidden: false,
+      hidden: {},
     };
     this.update = this.update.bind(this);
   }
@@ -21,24 +21,27 @@ class QuestionIndex extends React.Component {
     // debugger
   }
 
-  update(e) {
+  update(e, i) {
     e.preventDefault();
-    if (!this.state.hidden) {
-      this.setState({ hidden: true });
+    // debugger;
+    let hidden = this.state.hidden;
+    if (hidden[i]) {
+      hidden[i] = false;
     } else {
-      this.setState({ hidden: false });
+      hidden[i] = true;
     }
+    this.setState({ hidden });
   }
 
-  renderGroup(group) {
+  renderGroup(group, i) {
     let hideClass = "";
-    if (this.state.hidden) {
+    if (this.state.hidden[i]) {
       hideClass = " hide-items";
     }
     return (
       <div>
         <div className={"group-dropdown" + hideClass}>
-          <h1 className="group-title" onClick={(e) => this.update(e)}>
+          <h1 className="group-title" onClick={(e) => this.update(e, i)}>
             <div>
               <div className="group-header">
                 <span className="arrow-collapsible"></span>

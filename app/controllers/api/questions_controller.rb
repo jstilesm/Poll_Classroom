@@ -8,7 +8,7 @@ class Api::QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user = current_user
-    @question.group_id = params[:group_id]
+  
 
     if @question.save
       render '/api/questions/show'

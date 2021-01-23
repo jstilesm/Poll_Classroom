@@ -28,7 +28,7 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+
     // console.log(this.props.errors);
     this.props.processForm(this.state).then((e) => {
       this.props.history.push(`/questions/${e.question.id}`);
@@ -157,10 +157,17 @@ class QuestionForm extends React.Component {
         {this.renderQuestionOptions(options)}
         <div className="select-group">Select Group</div>
         <div className="create-button-container">
-          <select className="group-create-dropdown" id="groups-list">
-            {this.props.groups.map((group) => (
-              <option value={group.name}>{group.name}</option>
-            ))}
+          <select
+            value={this.state.group_id}
+            onChange={(e) => {
+              this.setState({ group_id: parseInt(e.target.value) });
+            }}
+            className="group-create-dropdown"
+            id="groups-list"
+          >
+            {this.props.groups.map((group) => {
+              return <option value={group.id}>{group.name}</option>;
+            })}
           </select>
           <Button whiteSpecial={true} marginRight={true} to="/questions/new">
             Add another activity
@@ -173,7 +180,7 @@ class QuestionForm extends React.Component {
     );
   }
   render() {
-    // console.log(this);
+    console.log(this.state);
 
     return (
       <div className="question-form-container">
