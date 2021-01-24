@@ -18,7 +18,6 @@ const mSTP = (state, ownProps) => {
       name: "",
     },
     currentUser: state.entities.users[state.session.id],
-
     groups: Object.values(state.entities.groups),
   };
 };

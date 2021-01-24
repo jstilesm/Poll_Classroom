@@ -25,7 +25,7 @@ class Question < ApplicationRecord
              primary_key: :id,
              foreign_key: :group_id,
              class_name: :Group,
-             optional: true
+             optional: false
 
   has_many :question_options,
            inverse_of: :question,

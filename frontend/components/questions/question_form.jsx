@@ -15,21 +15,20 @@ class QuestionForm extends React.Component {
     this.renderQuestionForm = this.renderQuestionForm.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.updateQuestionOption = this.updateQuestionOption.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
   componentDidMount() {
-    this.props.requestGroups();
-    console.log(this.props.groups);
+    this.props.requestGroups().then((e) => {
+      this.setState({ group_id: e.groups[0].id });
+    });
   }
 
   componentWillUnmount() {
-    // debugger
     this.props.clearErrors();
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
-    // console.log(this.props.errors);
     this.props.processForm(this.state).then((e) => {
       this.props.history.push(`/questions/${e.question.id}`);
     });

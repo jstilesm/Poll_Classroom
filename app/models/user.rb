@@ -37,6 +37,10 @@ class User < ApplicationRecord
 
   # fig_vaper
 
+  before_create do
+    self.username = "#{first_name}#{last_name}#{rand(1..1000)}"
+  end
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
@@ -68,6 +72,7 @@ class User < ApplicationRecord
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
+
 
   private
 

@@ -14,16 +14,12 @@ class QuestionIndex extends React.Component {
     this.update = this.update.bind(this);
   }
   componentDidMount() {
-    // debugger
-
     this.props.requestGroups();
-    // console.log(this.props);
-    // debugger
   }
 
   update(e, i) {
     e.preventDefault();
-    // debugger;
+
     let hidden = this.state.hidden;
     if (hidden[i]) {
       hidden[i] = false;

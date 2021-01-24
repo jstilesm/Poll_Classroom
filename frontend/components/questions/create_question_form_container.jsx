@@ -5,10 +5,7 @@ import { clearErrors } from "../../actions/session_actions";
 import { requestGroups } from "../../actions/group_actions";
 
 const mSTP = (state, errors, ownProps) => {
-  // console.log(this.state);
-  // debugger
   return {
-    // currentUser: state.entities.users[state.session.id],
     errors: errors.question,
     question: {
       title: "",
@@ -17,7 +14,7 @@ const mSTP = (state, errors, ownProps) => {
       closed: false,
       allow_unregistered: false,
       question_options: [{ label: "" }, { label: "" }],
-      group_id: 0,
+      group_id: undefined,
     },
     groups: Object.values(state.entities.groups),
   };

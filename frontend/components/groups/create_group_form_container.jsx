@@ -5,7 +5,6 @@ import { clearErrors } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
 
 const mSTP = (state, errors, ownProps) => {
-  // debugger
   return {
     currentUser: state.entities.users[state.session.id],
     errors: errors.group,

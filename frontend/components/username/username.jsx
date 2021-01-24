@@ -14,9 +14,12 @@ class Username extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { username, group_id } = this.props.match.params;
-    this.props.visitorLogin({ username: this.state.name }).then(() => {
-      this.props.history.push(`/poll/${username}/${group_id}`);
-    });
+    this.props
+      .visitorLogin({ username: this.state.name })
+      .then(() => {
+        this.props.history.push(`/poll/${username}/${group_id}`);
+      })
+      .fail((e) => {});
   }
   render() {
     const { username } = this.props.match.params;
