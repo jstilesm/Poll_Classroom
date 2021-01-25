@@ -74,12 +74,10 @@ class QuestionIndex extends React.Component {
           <Button blue={true} medium={true} centered={true} to="/questions/new">
             Create
           </Button>
-          <Button whiteSpecial={true} medium={true} centered={true}>
-            Import
-          </Button>
+          {/* <Button whiteSpecial={true} medium={true} centered={true}></Button> */}
           <div className="greybar"></div>
-          <Button listButton={true}>Activities</Button>
-          <Button listButton={true}>Trash</Button>
+          <Button listButton={true}></Button>
+          <Button listButton={true}></Button>
         </div>
         <div className="show-header">
           Your current plan allows you to post as much as you want. So there is
