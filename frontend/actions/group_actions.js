@@ -1,5 +1,5 @@
 import * as APIUtil from "../util/api_util_group";
-
+import { RECEIVE_QUESTION } from "./question_actions";
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
 export const REMOVE_GROUP = "REMOVE_GROUP";
@@ -35,6 +35,13 @@ const receiveGroupErrors = (errors) => {
   };
 };
 
+const receiveQuestion = (question) => {
+  return {
+    type: RECEIVE_QUESTION,
+    question,
+  };
+};
+
 export const clearErrors = () => ({
   type: CLEAR_ERRORS,
 });
@@ -49,7 +56,10 @@ export const clearErrors = () => ({
 
 export const requestGroups = () => (dispatch) => {
   return APIUtil.fetchGroups().then(
-    (groups) => dispatch(receiveGroups(groups)),
+    (groups) => {
+      groups.map((q) => q.questions.map((q) => dispatch(receiveQuestion(q))));
+      return dispatch(receiveGroups(groups));
+    },
     (er) => dispatch(receiveGroupErrors(er.responseJSON))
   );
 };

@@ -15,7 +15,6 @@ class ShowQuestion extends React.Component {
     };
 
     this.props.question.responses.map((response) => {
-      console.log(response, this.state);
       const question_options_id = response.question_options_id;
       if (question_options_id === null) {
         this.state.text_answers.push(response.body);
@@ -25,8 +24,8 @@ class ShowQuestion extends React.Component {
         }
         this.state.question_choices[question_options_id] += 1;
       }
-  });
-    console.log(this.state);
+    });
+
     this.activated = this.activated.bind(this);
     this.renderQuestionOptions = this.renderQuestionOptions.bind(this);
     this.renderQuestion = this.renderQuestion.bind(this);
@@ -76,25 +75,25 @@ class ShowQuestion extends React.Component {
       // sum up all the counts from all the question_choices
       // loop over this.state.question_choices
 
-      return question.question_options.map((question_option) => {
+      return question.question_options.map((question_option, i) => {
         let question_hash = this.state.question_choices;
 
         let part = question_hash[question_option.id];
 
         let percentage = Math.floor((part / sum) * 100);
-        // console.log(percentage);
+
         width = Math.floor((percentage / 100) * 500);
         if (isNaN(width)) {
           width = 0;
           return (
-            <div className="question-answercontainer">
+            <div key={i} className="question-answercontainer">
               <div className="options-show-page">{question_option.label}</div>
               <div className="bluebar-show" style={{ display: "none" }}></div>
             </div>
           );
         } else {
           return (
-            <div className="question-answercontainer">
+            <div key={i} className="question-answercontainer">
               <div className="options-show-page">{question_option.label}</div>
               <div className="bluebar-show" style={{ width: `${width}px` }}>
                 {width / 5}%
@@ -104,11 +103,11 @@ class ShowQuestion extends React.Component {
         }
       });
     } else {
-      return this.state.text_answers.map((text_answer) => {
+      return this.state.text_answers.map((text_answer, i) => {
         return (
-          <>
-            <div className="text-answers">- {text_answer}</div>
-          </>
+          <div key={i} className="text-answers">
+            - {text_answer}
+          </div>
         );
       });
     }
@@ -126,15 +125,7 @@ class ShowQuestion extends React.Component {
 
   renderQuestion() {
     let number = this.props.question.id;
-    // let data;
-    // // console.log(this.props.question);
-    // Object.keys(this.state.text_answers).forEach(function (object_id) {
-    //   if (number === object_id) {
-    //     console.log("hi");
-    //     data = this.state.text_answers[object_id];
-    //   }
-    // });
-    // console.log(data);
+
     let question = this.props.question;
     return (
       <div className="poll-question">

@@ -9,7 +9,12 @@ const groupsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_GROUPS:
-      return action.groups;
+      for (let i = 0; i < action.groups.length; i++) {
+        const group = action.groups[i];
+        group.questions = group.questions.map((q) => q.id);
+        nextState[group.id] = group;
+      }
+      return nextState;
     case RECEIVE_GROUP:
       nextState[action.group.id] = action.group;
       return nextState;

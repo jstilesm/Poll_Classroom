@@ -35,7 +35,7 @@ class QuestionIndex extends React.Component {
       hideClass = " hide-items";
     }
     return (
-      <div>
+      <div key={i}>
         <div className={"group-dropdown" + hideClass}>
           <h1 className="group-title" onClick={(e) => this.update(e, i)}>
             <div>
@@ -44,7 +44,7 @@ class QuestionIndex extends React.Component {
                 {group.name}
                 <div className="group-activities">
                   <GroupDropdown
-                    group={this.props.group}
+                    group={group}
                     deleteGroup={this.props.deleteGroup}
                   />
                   {group.questions.length} activities
@@ -53,15 +53,19 @@ class QuestionIndex extends React.Component {
             </div>
           </h1>
           <div className="group-dropdown-question">
-            {group.questions.map((question) => (
-              <QuestionIndexItem
-                key={question.id}
-                question={question}
-                deleteQuestion={this.props.deleteQuestion}
-                updateQuestion={this.props.updateQuestion}
-                requestQuestion={this.props.requestQuestion}
-              />
-            ))}
+            {group.questions.map((question_id) => {
+              const question = this.props.questions[question_id];
+              if (!question) return;
+              return (
+                <QuestionIndexItem
+                  key={question.id}
+                  question={question}
+                  deleteQuestion={this.props.deleteQuestion}
+                  updateQuestion={this.props.updateQuestion}
+                  requestQuestion={this.props.requestQuestion}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

@@ -23,15 +23,13 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :questions,
-           primary_key: :id,
-           foreign_key: :author_id,
-           class_name: :Question
 
   has_many :groups,
            primary_key: :id,
            foreign_key: :user_id,
            class_name: :Group
+
+  has_many :questions, through: :groups
 
   has_many :responses, as: :registerable
 

@@ -1,9 +1,7 @@
 class Api::GroupsController < ApplicationController
   def index
     @groups = current_user.groups
-    # @groups = User.all.first.groups
-    # debugger
-    render 'api/groups/index'
+  
   end
 
   def show
@@ -12,9 +10,9 @@ class Api::GroupsController < ApplicationController
 
   def create
     @group = Group.new(groups_params)
-    #  debugger
+
     @group.user = current_user
-    # @group.group_id = params[:group_id]
+
 
     if @group.save
       render '/api/groups/show'

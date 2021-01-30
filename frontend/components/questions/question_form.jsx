@@ -164,8 +164,12 @@ class QuestionForm extends React.Component {
             className="group-create-dropdown"
             id="groups-list"
           >
-            {this.props.groups.map((group) => {
-              return <option value={group.id}>{group.name}</option>;
+            {this.props.groups.map((group, id) => {
+              return (
+                <option key={id} value={group.id}>
+                  {group.name}
+                </option>
+              );
             })}
           </select>
           <Button whiteSpecial={true} marginRight={true} to="/questions/new">
@@ -179,7 +183,7 @@ class QuestionForm extends React.Component {
     );
   }
   render() {
-    console.log(this.state);
+    // console.log(this.state);
 
     return (
       <div className="question-form-container">

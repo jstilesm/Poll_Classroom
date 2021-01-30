@@ -12,7 +12,7 @@ RSpec.describe Api::GroupsController, type: :controller do
   # debugger
   let!(:user2) { User.create({ username: 'jill_bruce', first_name: 'jill', last_name: 'bruce', email: 'jill@bruce.com', password: 'abcdef' }) }
   let!(:group) { Group.create({ name: "Dummies", user_id: user.id }) }
-  let!(:test_question) { Question.create({ title: title, author_id: user.id, group_id: group.id, kind: 'text_response' }) }
+  let!(:test_question) { Question.create({ title: title, group_id: group.id, kind: 'text_response' }) }
 
   describe 'validate models' do
     it 'creates nessecary records' do

@@ -7,16 +7,14 @@ import {
 } from "../../actions/question_actions";
 import { requestGroups } from "../../actions/group_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
-import { update } from "../../util/api_util_session";
 import { createGroup, deleteGroup } from "../../actions/group_actions";
 
 const mSTP = (state, ownProps) => {
-  // console.log(state);
-  // debugger
   return {
     group: {
       name: "",
     },
+    questions: state.entities.questions,
     currentUser: state.entities.users[state.session.id],
     groups: Object.values(state.entities.groups),
   };
