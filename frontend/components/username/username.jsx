@@ -43,9 +43,12 @@ class Username extends React.Component {
               onChange={(e) => this.setState({ name: e.target.value })}
             />
           </label>
-          <Button blue={true} large={true}>
-            Continue
-          </Button>
+          <div className="link-join-button">
+            <Button blue={true} large={true}>
+              Continue
+            </Button>
+          </div>
+
           {/* if skip is selected generate a visitior */}
           {/* <p className="skip">Skip</p> */}
           <p className="subtext">
