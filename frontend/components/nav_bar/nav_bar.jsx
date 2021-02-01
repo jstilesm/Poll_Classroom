@@ -78,7 +78,8 @@ const NavBar = ({ currentUser, logout, testUser }) => {
   const pollNav = () => (
     <header className="poll-nav-bar">
       <div className="poll-items">
-        <a className="poll-logo" href="localhost:3000/#/poll">
+        <a className="poll-logo" href="https://poll-aa.herokuapp.com/#/poll">
+          {/* "localhost:3000/#/poll" */}
           {/* "https://poll-aa.herokuapp.com/#/poll" */}
           <img
             className="poll-mini-logo"
