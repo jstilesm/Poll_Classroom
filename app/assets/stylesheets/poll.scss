@@ -34,8 +34,9 @@
   height: 1000px;
   width: 100%;
   background-image: image_url("GreyLogo.png");
+  // background-size: auto;
   // background-position-x: right;
-  background-size: contain;
+  background-size: auto;
   padding-left: -5px;
   overflow: scroll;
   color: white;
