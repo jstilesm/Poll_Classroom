@@ -89,7 +89,8 @@ const NavBar = ({ currentUser, logout, testUser }) => {
 
         <a
           className="poll-logo"
-          href="localhost:3000/#/poll-signup"
+          href="https://poll-aa.herokuapp.com/#/poll-signup"
+          // "localhost:3000/#/poll-signup"
           // "https://poll-aa.herokuapp.com/#/poll-signup"
         >
           <span className="fas fa-user-plus"></span>
@@ -98,7 +99,8 @@ const NavBar = ({ currentUser, logout, testUser }) => {
 
         <a
           className="poll-logo"
-          href="localhost:3000/#/poll-signup"
+          href="https://poll-aa.herokuapp.com/#/poll-signup"
+          // "localhost:3000/#/poll-signup"
           // "https://poll-aa.herokuapp.com/#/poll-signup"
         >
           <span className="fas fa-user-circle"></span>

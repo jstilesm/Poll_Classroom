@@ -39,7 +39,10 @@ class PollShow extends React.Component {
         <form onSubmit={this.handleSubmit} className="form-box-black">
           <h1 className="join-title">Join Presentation</h1>
           <p className="join-subtitle">
-            Type "tester/1" To view the tester's questions
+            Type the "username"/"group id" To view a users question group
+            <br />
+            <br />
+            Ex: "tester/1"
           </p>
           <label className="link">
             <input
@@ -51,9 +54,11 @@ class PollShow extends React.Component {
             />
           </label>
           {this.errors()}
-          <Button blue={true} large={true}>
-            Join
-          </Button>
+          <div className="link-join-button">
+            <Button blue={true} large={true}>
+              Join
+            </Button>
+          </div>
         </form>
       </div>
     );

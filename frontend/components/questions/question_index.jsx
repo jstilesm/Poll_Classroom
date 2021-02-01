@@ -42,6 +42,8 @@ class QuestionIndex extends React.Component {
               <div className="group-header">
                 <span className="arrow-collapsible"></span>
                 {group.name}
+                <br></br>
+                ID:{group.id}
                 <div className="group-activities">
                   <GroupDropdown
                     group={group}

@@ -73,7 +73,7 @@
 .form-box-black {
   color: white;
   background-color: black;
-  width: 350px;
+  width: 460px;
   flex-wrap: wrap;
   padding-right: 10px;
   padding-top: 25px;
@@ -89,7 +89,7 @@
 .link-input {
   width: 292px;
   height: 30px;
-  margin-left: 10px;
+  margin-left: 65px;
   outline: none;
   font-family: $font;
   font-weight: 600;
@@ -114,6 +114,9 @@
   margin-right: 15px;
 }
 
+.link-join-button {
+  margin-left: 55px;
+}
 .answers {
   color: white;
 }
