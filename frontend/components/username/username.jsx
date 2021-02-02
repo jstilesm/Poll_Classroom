@@ -53,8 +53,7 @@ class Username extends React.Component {
           {/* <p className="skip">Skip</p> */}
           <p className="subtext">
             Using a screen name allows the presenter and other participants to
-            attach your screen name to your responses. You can change your
-            screen name at any time.
+            attach your screen name to your responses.
           </p>
         </form>
       </div>
