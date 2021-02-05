@@ -40,10 +40,13 @@ class QuestionIndex extends React.Component {
           <h1 className="group-title" onClick={(e) => this.update(e, i)}>
             <div>
               <div className="group-header">
-                <span className="arrow-collapsible"></span>
-                {group.name}
-                <br></br>
-                ID:{group.id}
+                <div>
+                  <span className="arrow-collapsible"></span>
+                  {group.name}
+                  <br></br>
+                  ID:{group.id}
+                </div>
+
                 <div className="group-activities">
                   <GroupDropdown
                     group={group}
