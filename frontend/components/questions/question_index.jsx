@@ -52,7 +52,9 @@ class QuestionIndex extends React.Component {
                     group={group}
                     deleteGroup={this.props.deleteGroup}
                   />
-                  {group.questions.length} activities
+                  <div className="group-activities-title">
+                    {group.questions.length} activities
+                  </div>
                 </div>
               </div>
             </div>

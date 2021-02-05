@@ -39,23 +39,15 @@
 }
 
 .question-item {
-  // margin-left: -15px;
   display: flex;
   justify-content: space-between;
   font-size: $main-button-link;
   width: 100%;
-  padding-top: 10px;
+  padding: 10px 18px;
   padding-bottom: 10px;
-}
-.question-item-green {
-  display: flex;
-  justify-content: space-between;
-  font-size: $main-button-link;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #cce7cc;
-  // margin-left: -15px;
+  &.green {
+    background-color: #cce7cc;
+  }
 }
 
 .dropdown {

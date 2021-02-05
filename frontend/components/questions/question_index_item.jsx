@@ -19,7 +19,7 @@ class QuestionIndexItem extends React.Component {
       <>
         <div
           className={
-            this.props.question.closed ? "question-item" : "question-item-green"
+            this.props.question.closed ? "question-item" : "question-item green"
           }
         >
           <div className="index-leftside">
