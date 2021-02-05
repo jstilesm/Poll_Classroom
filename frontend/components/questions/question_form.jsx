@@ -172,9 +172,9 @@ class QuestionForm extends React.Component {
               );
             })}
           </select>
-          <Button whiteSpecial={true} marginRight={true} to="/questions/new">
+          {/* <Button whiteSpecial={true} marginRight={true} to="/questions/new">
             Add another activity
-          </Button>
+          </Button> */}
           <Button blue={true} widePadding={true} onClick={this.handleSubmit}>
             Create
           </Button>
