@@ -10,12 +10,16 @@ class ClickDropdown extends React.Component {
     this.whenBlur = this.whenBlur.bind(this);
     this.whenFocus = this.whenFocus.bind(this);
   }
+  whenClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
   whenBlur(e) {
     e.preventDefault();
     if (e.type !== "focus") {
-      this.setState({ show: true });
-    } else {
       this.setState({ show: false });
+    } else {
+      this.setState({ show: true });
     }
   }
 
@@ -32,6 +36,7 @@ class ClickDropdown extends React.Component {
       <div>
         <button
           className="threedots"
+          onClick={this.whenClick}
           onFocus={this.whenFocus}
           onBlur={this.whenBlur}
         >

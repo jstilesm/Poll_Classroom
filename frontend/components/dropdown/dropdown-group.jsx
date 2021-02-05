@@ -10,17 +10,24 @@ class GroupDropdown extends React.Component {
     this.whenBlur = this.whenBlur.bind(this);
     this.whenFocus = this.whenFocus.bind(this);
   }
+  whenClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
   whenBlur(e) {
     e.preventDefault();
+
     if (e.type !== "focus") {
-      this.setState({ show: true });
-    } else {
       this.setState({ show: false });
+    } else {
+      this.setState({ show: true });
     }
   }
 
   whenFocus(e) {
     e.preventDefault();
+
+    console.log("when focus", e.type);
     if (e.type === "focus") {
       this.setState({ show: true });
     } else {
@@ -32,6 +39,7 @@ class GroupDropdown extends React.Component {
       <div>
         <button
           className="threedots"
+          onClick={this.whenClick}
           onFocus={this.whenFocus}
           onBlur={this.whenBlur}
         >
