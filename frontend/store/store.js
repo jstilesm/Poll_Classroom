@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-const ENABLE_LOGGER = false;
+const ENABLE_LOGGER = true;
 
 let middleware = applyMiddleware(thunk, logger);
 if (!ENABLE_LOGGER) {

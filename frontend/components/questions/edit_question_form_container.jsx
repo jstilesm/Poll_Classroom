@@ -8,8 +8,6 @@ import EditQuestionForm from "./edit_question_form";
 import { updateQuestionoption } from "../../actions/question_options_actions";
 
 const mSTP = (state, ownProps) => {
-  // debugger
-  //   console.log(state.entities);
   return {
     question: state.entities.questions[ownProps.match.params.questionId],
     formType: "Update Question",

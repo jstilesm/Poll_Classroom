@@ -4,9 +4,9 @@ import QuestionForm from "./question_form";
 import { clearErrors } from "../../actions/session_actions";
 import { requestGroups } from "../../actions/group_actions";
 
-const mSTP = (state, errors, ownProps) => {
+const mSTP = (state, ownProps) => {
   return {
-    errors: errors.question,
+    errors: state.errors.question,
     question: {
       title: "",
       kind: "mult_response",
