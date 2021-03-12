@@ -30,7 +30,6 @@ class GroupForm extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
     return (
       <div className="group-create-modal">
         <div className="group-create-modal-title">Create empty group</div>
@@ -42,7 +41,7 @@ class GroupForm extends React.Component {
             onChange={this.updateName()}
             placeholder="Group name"
           />
-          {/* {this.renderErrors()} */}
+
           <div className="group-input-buttons">
             <Button whiteGrey={true}>Cancel</Button>
             <Button blue={true} onClick={this.handleSubmit}>
