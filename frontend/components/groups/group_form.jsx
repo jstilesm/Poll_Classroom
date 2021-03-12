@@ -6,13 +6,9 @@ class GroupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.group;
-    // console.log(this.props.currentUser);
 
-    // console.log(this.props);
-    // console.log(this.state);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateName = this.updateName.bind(this);
-    // this.renderErrors = this.renderErrors.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -26,29 +22,12 @@ class GroupForm extends React.Component {
   }
 
   updateName() {
-    // this.setState({ user_id: this.props.currentUser.id });
     return (e) => {
       let name = this.state.name;
       name = e.currentTarget.value;
       this.setState({ name });
     };
   }
-
-  // renderErrors() {
-  //   if (this.props.errors !== undefined) {
-  //     return (
-  //       <ul className="create-errors">
-  //         {this.props.errors.map((error, i) => (
-  //           <li className="create-question-error-items" key={`error-${i}`}>
-  //             {error}
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     );
-  //   } else {
-  //     return null;
-  //   }
-  // }
 
   render() {
     // console.log(this.state);

@@ -35,7 +35,7 @@ class AnswersGroup extends React.Component {
     const question_choices = this.state.question_choices;
     question_choices[question.id] = question_option.id;
     this.setState({ question_choices });
-    // console.log(this.state.textarea_content);
+
     this.subscription.respond({
       question_options_id: question_option.id,
       question_id: question.id,
