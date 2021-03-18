@@ -183,8 +183,6 @@ class QuestionForm extends React.Component {
     );
   }
   render() {
-    // console.log(this.state);
-
     return (
       <div className="question-form-container">
         <div className="x-background">

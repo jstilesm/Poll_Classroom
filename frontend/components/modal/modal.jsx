@@ -29,7 +29,6 @@ function Modal({ errors, modal, closeModal }) {
 const mSTP = (state) => {
   return {
     modal: state.ui.modal,
-    // errors: state.errors.question
   };
 };
 
