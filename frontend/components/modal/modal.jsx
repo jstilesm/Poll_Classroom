@@ -15,7 +15,7 @@ function Modal({ errors, modal, closeModal }) {
     default:
       return null;
   }
-  // console.log(errors);
+
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -27,7 +27,6 @@ function Modal({ errors, modal, closeModal }) {
 }
 
 const mSTP = (state) => {
-  // debugger
   return {
     modal: state.ui.modal,
     // errors: state.errors.question

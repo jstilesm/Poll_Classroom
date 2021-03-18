@@ -19,9 +19,7 @@ class AnswersGroup extends React.Component {
     this.subscription = window.App.cable.subscriptions.create(
       { channel: "ResponseChannel", groupId: this.props.group.id },
       {
-        received: (broadcast) => {
-          // console.log(JSON.parse(broadcast.data));
-        },
+        received: (broadcast) => {},
 
         respond: function (response) {
           return this.perform("respond", response);

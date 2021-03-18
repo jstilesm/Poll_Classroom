@@ -15,9 +15,8 @@ class GroupForm extends React.Component {
     this.setState({ user_id: this.props.currentUser.id });
     if (this.state.name === "") {
       this.setState({ name: "New_Group" });
-      console.log(this.state);
     }
-    console.log(this.state);
+
     this.props.processForm(this.state).then(this.props.closeModal);
   }
 
