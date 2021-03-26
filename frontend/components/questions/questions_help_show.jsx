@@ -6,7 +6,6 @@ import Button from "../buttons/button";
 class ShowQuestion extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(this.props.question);
 
     this.state = {
       closed: "",

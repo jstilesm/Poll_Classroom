@@ -46,7 +46,7 @@ class PollShow extends React.Component {
           </p>
           <label className="link">
             <input
-              className="link-input-answer"
+              className="link-input"
               type="text"
               value={this.state.value}
               placeholder=""
@@ -55,7 +55,7 @@ class PollShow extends React.Component {
           </label>
           {this.errors()}
 
-          <Button blue={true} large={true}>
+          <Button blue={true} largeb={true}>
             Join
           </Button>
         </form>

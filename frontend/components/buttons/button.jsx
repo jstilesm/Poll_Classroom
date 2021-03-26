@@ -33,6 +33,10 @@ const Button = (p) => {
     delete props.large;
     className += "button-large ";
   }
+  if (props.largeb) {
+    delete props.largeb;
+    className += "button-largeb ";
+  }
   if (props.extraLarge) {
     delete props.extraLarge;
     className += "button-extra-large ";
