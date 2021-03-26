@@ -44,7 +44,7 @@ class Username extends React.Component {
             />
           </label>
           <div className="link-join-button">
-            <Button blue={true} large={true}>
+            <Button blue={true} largey={true}>
               Continue
             </Button>
           </div>
