@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../buttons/button";
+import BlackBox from "../form-box/black-box";
 
 class PollShow extends React.Component {
   constructor(props) {
@@ -36,14 +37,19 @@ class PollShow extends React.Component {
         </a>
 
         <div className="grey-logo"></div>
-        <form onSubmit={this.handleSubmit} className="form-box-black">
-          <h1 className="join-title">Join Presentation</h1>
-          <p className="join-subtitle">
-            Type the "username"/"group id" To view a users question group
-            <br />
-            <br />
-            Ex: "tester/1"
-          </p>
+        <BlackBox
+          onSubmit={this.handleSubmit}
+          title="Join Presentation"
+          subtitle={
+            <>
+              Type the "username"/"group id" To view a users question group
+              <br />
+              <br />
+              Ex: "tester/1"
+            </>
+          }
+        >
+          <p></p>
           <label className="link">
             <input
               className="link-input"
@@ -54,11 +60,10 @@ class PollShow extends React.Component {
             />
           </label>
           {this.errors()}
-
           <Button blue={true} largeb={true}>
             Join
           </Button>
-        </form>
+        </BlackBox>
       </div>
     );
   }

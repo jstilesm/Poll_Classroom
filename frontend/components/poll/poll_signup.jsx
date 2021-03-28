@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../buttons/button";
 import { checkUser } from "../../util/api_util_session";
+import BlackBox from "../form-box/black-box";
 
 class PollSignup extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class PollSignup extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderPasswordField = this.renderPasswordField.bind(this);
+    this.renderSignup = this.renderSignup.bind(this);
   }
 
   // componentDidUpdate(oldProps, oldState) {
@@ -40,11 +42,13 @@ class PollSignup extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger;
     e.preventDefault();
-    if (!this.state.userExists && this.props.formType === "Log in") {
+    if (!this.state.userExists && this.props.formType === "log in") {
       checkUser(this.state.identifier).then((resp) => {
         this.setState({ userExists: resp });
-        console.log(resp);
+        // console.log(resp);
+
         if (resp === false || resp === undefined) {
           this.setState({ error_message: "Account not Found" });
         } else {
@@ -59,7 +63,7 @@ class PollSignup extends React.Component {
     } else {
       // this.setState({ userExists: false });
       this.props
-        .formFunction(this.state)
+        .login(this.state)
         .then(() => this.props.history.push("/questions"));
     }
   }
@@ -107,7 +111,7 @@ class PollSignup extends React.Component {
           <br />
           <label className="password">
             <input
-              className="password-input"
+              className="link-input"
               type="password"
               value={this.state.password}
               placeholder="Password"
@@ -119,132 +123,103 @@ class PollSignup extends React.Component {
     }
   }
 
+  renderSignup() {
+    return (
+      <main className="">
+        <div className="poll-page">
+          <img
+            className="PollEverywhere-blacklogo"
+            src="https://davhizrhxzcu1.cloudfront.net/assets/media_kit/logo_white-b3ae877b0dff730405738e5ad768060f7d6d56b89a75f397012ca915f5472364.png"
+          ></img>
+          <form onSubmit={this.handleSubmit} className="form-box">
+            <label className="firstname">
+              <input
+                className="firstname-input"
+                type="text"
+                value={this.state.first_name}
+                placeholder="First name"
+                onChange={this.update("first_name")}
+              />
+            </label>
+            <label className="lastname">
+              <input
+                className="lastname-input"
+                type="text"
+                value={this.state.last_name}
+                placeholder="Last name"
+                onChange={this.update("last_name")}
+              />
+            </label>
+            {/* <label className="username" >
+                          <input className="username-input" type="username" value={this.state.username} placeholder="Username" onChange={this.update('username')} />
+                      </label> */}
+            <label className="email">
+              <input
+                className="email-input"
+                type="email"
+                value={this.state.email}
+                placeholder="Email"
+                onChange={this.update("email")}
+              />
+            </label>
+            <label className="password">
+              <input
+                className="password-input"
+                type="password"
+                value={this.state.password}
+                placeholder="Password"
+                onChange={this.update("password")}
+              />
+            </label>
+            {this.errors()}
+            <Button blue={true} large={true} type="submit">
+              Sign up
+            </Button>
+          </form>
+        </div>
+      </main>
+    );
+  }
+
   render() {
     // console.log(this.state)
     if (this.props.formType === "sign up") {
       // debugger
+      return this.renderSignup();
+    } else {
       return (
-        <main className="">
+        <div className="login-form">
           <div className="poll-page">
-            <img
-              className="PollEverywhere-blacklogo"
-              src="https://davhizrhxzcu1.cloudfront.net/assets/media_kit/logo_white-b3ae877b0dff730405738e5ad768060f7d6d56b89a75f397012ca915f5472364.png"
-            ></img>
-            <form onSubmit={this.handleSubmit} className="form-box">
-              <label className="firstname">
-                <input
-                  className="firstname-input"
-                  type="text"
-                  value={this.state.first_name}
-                  placeholder="First name"
-                  onChange={this.update("first_name")}
-                />
-              </label>
-              <label className="lastname">
-                <input
-                  className="lastname-input"
-                  type="text"
-                  value={this.state.last_name}
-                  placeholder="Last name"
-                  onChange={this.update("last_name")}
-                />
-              </label>
-              {/* <label className="username" >
-                            <input className="username-input" type="username" value={this.state.username} placeholder="Username" onChange={this.update('username')} />
-                        </label> */}
+            <BlackBox
+              onSubmit={this.handleSubmit}
+              className="login-form-box"
+              title={this.props.formType}
+            >
               <label className="email">
                 <input
-                  className="email-input"
-                  type="email"
-                  value={this.state.email}
-                  placeholder="Email"
-                  onChange={this.update("email")}
+                  className="link-input"
+                  type="text"
+                  value={this.state.identifier}
+                  placeholder="Email or username"
+                  onChange={this.update("identifier")}
                 />
               </label>
-              <label className="password">
-                <input
-                  className="password-input"
-                  type="password"
-                  value={this.state.password}
-                  placeholder="Password"
-                  onChange={this.update("password")}
-                />
-              </label>
+              {this.renderPasswordField()}
               {this.errors()}
-              <Button blue={true} large={true} type="submit">
-                Sign up
+
+              <Button largeb={true} red={true} type="submit">
+                Next
               </Button>
-            </form>
+              <div className="link-to-signup-container">
+                <p className="link-to-signup">Need an account?</p>
+                <Link className="link-to-signup" to="/signup">
+                  Create one now
+                </Link>
+              </div>
+            </BlackBox>
           </div>
-        </main>
+        </div>
       );
-    } else {
-      if (
-        (this.state.error_message.length > 0 && this.state.userExists) ||
-        this.state.userExists
-      ) {
-        return (
-          <main className="">
-            <div className="poll-page">
-              <form onSubmit={this.handleSubmit} className="login-form-box">
-                <h2 className="login-title">{this.props.formType}</h2>
-
-                <label className="email">
-                  <input
-                    className="email-input"
-                    type="text"
-                    value={this.state.identifier}
-                    placeholder="Email or Username"
-                    onChange={this.update("identifier")}
-                  />
-                </label>
-                {this.renderPasswordField()}
-                {this.errors()}
-                <Button red={true} large={true} type="submit">
-                  {this.props.formType}
-                </Button>
-                <div className="link-to-signup-container">
-                  <p className="link-to-signup">Need an account?</p>
-                  <Link className="link-to-signup" to="/signup">
-                    Create one now
-                  </Link>
-                </div>
-              </form>
-            </div>
-          </main>
-        );
-      } else {
-        return (
-          <div className="login-form">
-            <div className="poll-page">
-              <form onSubmit={this.handleSubmit} className="login-form-box">
-                <h2 className="login-title">{this.props.formType}</h2>
-
-                <label className="email">
-                  <input
-                    className="email-input"
-                    type="text"
-                    value={this.state.identifier}
-                    placeholder="Email or username"
-                    onChange={this.update("identifier")}
-                  />
-                </label>
-                {this.errors()}
-
-                <Button large={true} red={true} type="submit">
-                  Next
-                </Button>
-                <div className="link-to-signup-container">
-                  <p className="link-to-signup">Need an account?</p>
-                  <Link className="link-to-signup" to="/signup">
-                    Create one now
-                  </Link>
-                </div>
-              </form>
-            </div>
-          </div>
-        );
-      }
     }
   }
 }

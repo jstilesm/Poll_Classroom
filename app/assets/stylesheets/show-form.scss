@@ -9,7 +9,6 @@
   top: 0px;
   margin-top: 60px;
   overflow: hidden;
-  font-family: $font;
   // overflow: hidden;
 }
 
@@ -84,7 +83,6 @@
 }
 
 .creation-subtext {
-  font-style: $font;
   margin-bottom: 10px;
 }
 
@@ -133,7 +131,7 @@
 .show-page-title {
   font-weight: bold;
   font-size: $subLarge;
-  font: $font;
+
   display: flex;
   justify-content: center;
   margin-top: 20px;

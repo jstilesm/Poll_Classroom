@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../buttons/button";
+import BlackBox from "../form-box/black-box";
 
 class Username extends React.Component {
   constructor(props) {
@@ -23,17 +24,22 @@ class Username extends React.Component {
   }
   render() {
     const { username } = this.props.match.params;
+
     return (
       <div className="poll-page">
-        <form onSubmit={this.handleSubmit} className="username-form-box">
-          <h1 className="username-title">
-            Welcome to {username}'s Presentation
-          </h1>
-          <p className="username-paragraph-title"> Introduce yourself</p>
-          <p className="username-paragraph">
-            Enter the screen name you would like to appear alongside your
-            responses.
-          </p>
+        <BlackBox
+          onSubmit={this.handleSubmit}
+          title={`Welcome to ${username}'s Presentation`}
+          subtitle={
+            <>
+              <p> Introduce yourself</p>
+              <p>
+                Enter the screen name you would like to appear alongside your
+                responses.
+              </p>
+            </>
+          }
+        >
           <label className="link">
             <input
               className="link-input"
@@ -55,7 +61,7 @@ class Username extends React.Component {
             Using a screen name allows the presenter and other participants to
             attach your screen name to your responses.
           </p>
-        </form>
+        </BlackBox>
       </div>
     );
 

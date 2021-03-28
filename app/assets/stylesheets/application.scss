@@ -12,8 +12,12 @@
  *
  
  */
-@import "./question_index.scss";
 @import "./reset.scss";
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+@import "./question_index.scss";
 @import "./signup-alt.scss";
 @import "./edit-form.scss";
 @import "./create-form.scss";
@@ -24,9 +28,8 @@
 @import "./fonts.scss";
 @import "./username.scss";
 @import "./answers.scss";
-@import "./poll-signup.scss"; // .body {
-//     font-family: sans-serif;
-// }
+@import "./poll-signup.scss";
+
 //  Splash CSS
 .logo-form {
   background-image: image_url("poll_everywhere.png");
@@ -129,12 +132,10 @@
 .main-text {
   font-weight: $bold;
   font-size: $Large;
-  font-family: $font;
   font-size: $Large;
   padding-bottom: 20px;
 }
 .subtext {
-  font-family: $font;
   font-size: $subparaHeader;
   display: flex;
   justify-content: center;
@@ -142,7 +143,6 @@
 }
 
 .main-content {
-  font-family: $font;
   font-size: $subLarge;
 }
 .main-image {
@@ -174,7 +174,6 @@
     font-weight: $bold-light;
   }
   padding: 5px;
-  font-family: $font;
   flex-wrap: flex;
   font-size: $subparaHeader;
   display: flex;
@@ -219,7 +218,6 @@
 
 .footerlink-a {
   text-decoration: none;
-  font-family: $font;
   color: black;
   font-size: $subparaHeader;
   height: 50%;
@@ -233,7 +231,6 @@
 
 .footerlinks {
   text-decoration: none;
-  font-family: $font;
   color: black;
   font-size: $subparaHeader;
   height: 50%;
@@ -264,7 +261,6 @@
   padding: 10px;
 }
 .link-to-signup {
-  font-family: $font;
   font-size: $nav-button-link;
   margin: 5px;
 }
@@ -276,7 +272,6 @@
 
 .engage-blurb {
   display: flex;
-  font-family: $font;
   align-items: center;
   flex-direction: column;
   padding: 100px;
@@ -285,7 +280,6 @@
 }
 
 .bottom-links {
-  font-family: $font;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,7 +347,6 @@
 }
 // Title of Main Page NOT USED
 .title {
-  font-family: $font;
   color: white;
   font-size: $Large;
   // display: flex;
@@ -393,7 +386,6 @@
 .header-main {
   position: relative;
   right: 50px;
-  font-family: $font;
 }
 /* nav bar container */
 .topnav {
@@ -466,7 +458,6 @@
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: $font;
   font-size: $nav-button-link;
   margin: 15px;
   // font-weight:bold;
@@ -531,7 +522,6 @@
 
 /*  Title   for the log in page */
 .login-title {
-  font-family: $font;
   font-size: $entry-field-header;
   display: flex;
   padding-left: 5px;
@@ -559,7 +549,6 @@
 
 /* title to the sign up page */
 .signup-title {
-  font-family: $font;
   color: white;
   margin: 30px 20px;
   font-size: 50px;
@@ -643,7 +632,6 @@
   margin-bottom: 200px;
   padding-left: 30px;
   padding-top: 20px;
-  font-family: $font;
 }
 
 .show-title {
@@ -654,6 +642,5 @@
   margin-bottom: 200px;
   padding-left: 30px;
   padding-top: 20px;
-  font-family: $font;
   font-weight: 600;
 }
