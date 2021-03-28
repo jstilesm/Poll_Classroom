@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { logout } from "../../actions/session_actions";
 import Button from "../buttons/button";
 import BlackBox from "../form-box/black-box";
 
@@ -20,11 +21,24 @@ class PollShow extends React.Component {
   // check if link is valid, if it is then redirects to the page, if not then shows errors
 
   handleSubmit(e) {
+    this.setState({ error_message: "" });
     e.preventDefault();
-    this.props.history.push(`/poll/${this.state.value}/username`);
+    if (this.state.value.includes("/")) {
+      this.props.history.push(`/poll/${this.state.value}/username`);
+    } else {
+      this.setState({ error_message: "Invalid Room" });
+    }
   }
 
-  errors() {}
+  errors() {
+    if (this.state.error_message !== "") {
+      return (
+        <ul className="errors">
+          <li className="error-items">{this.state.error_message}</li>
+        </ul>
+      );
+    }
+  }
 
   render() {
     return (

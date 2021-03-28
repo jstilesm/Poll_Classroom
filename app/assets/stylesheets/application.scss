@@ -12,9 +12,10 @@
  *
  
  */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap");
 @import "./reset.scss";
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 @import "./question_index.scss";
@@ -338,7 +339,6 @@ body {
 /* main logo to the page */
 
 .logo {
-  // font-family: 'Gill Sans';
   // color: white;
   height: 100%;
   padding-left: 25px;

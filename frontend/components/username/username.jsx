@@ -20,7 +20,9 @@ class Username extends React.Component {
       .then(() => {
         this.props.history.push(`/poll/${username}/${group_id}`);
       })
-      .fail((e) => {});
+      .fail((e) => {
+        alert("yusuck");
+      });
   }
   render() {
     const { username } = this.props.match.params;
