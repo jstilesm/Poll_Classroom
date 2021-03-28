@@ -15,7 +15,11 @@ class QuestionShow extends React.Component {
     this.props.requestQuestion(number);
   }
   renderQuestions() {
-    if (this.props.question !== undefined) {
+    // debugger;
+    if (
+      this.props.question !== undefined &&
+      this.props.question.responses !== undefined
+    ) {
       return (
         <ShowQuestion
           question={this.props.question}

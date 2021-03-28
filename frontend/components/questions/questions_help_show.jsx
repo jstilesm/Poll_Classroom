@@ -12,7 +12,7 @@ class ShowQuestion extends React.Component {
       text_answers: [],
       question_choices: {},
     };
-
+    // console.log(this.props);
     this.props.question.responses.map((response) => {
       const question_options_id = response.question_options_id;
       if (question_options_id === null) {
