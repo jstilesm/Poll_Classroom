@@ -125,7 +125,7 @@ class PollSignup extends React.Component {
       // debugger
       return (
         <main className="">
-          <div className="poll-signup-background">
+          <div className="poll-page">
             <img
               className="PollEverywhere-blacklogo"
               src="https://davhizrhxzcu1.cloudfront.net/assets/media_kit/logo_white-b3ae877b0dff730405738e5ad768060f7d6d56b89a75f397012ca915f5472364.png"
@@ -185,7 +185,7 @@ class PollSignup extends React.Component {
       ) {
         return (
           <main className="">
-            <div className="poll-signup-background">
+            <div className="poll-page">
               <form onSubmit={this.handleSubmit} className="login-form-box">
                 <h2 className="login-title">{this.props.formType}</h2>
 
@@ -216,7 +216,7 @@ class PollSignup extends React.Component {
       } else {
         return (
           <div className="login-form">
-            <div className="poll-signup-background">
+            <div className="poll-page">
               <form onSubmit={this.handleSubmit} className="login-form-box">
                 <h2 className="login-title">{this.props.formType}</h2>
 
