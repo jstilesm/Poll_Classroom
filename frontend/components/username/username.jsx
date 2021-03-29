@@ -21,7 +21,7 @@ class Username extends React.Component {
         this.props.history.push(`/poll/${username}/${group_id}`);
       })
       .fail((e) => {
-        alert("yusuck");
+        alert("Invalid Username Group Combination");
       });
   }
   render() {
